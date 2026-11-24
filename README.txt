@@ -1,5 +1,35 @@
+AKTUALIZACJA: JASNY / CIEMNY WYGLĄD I CENNIK — 24.11.2026
+
+Podstawa: dostarczony przez właściciela plik Malowanie-Bielsko-VS-Code (nowy).zip.
+Zachowano nowy opis firmy, statystyki, pionowy film, media społecznościowe
+oraz własne poprawki styles.css. Nagłówek, menu i stopka są wspólne dla podstron.
+
+WYGLĄD
+- Słońce / księżyc w nagłówku przełącza jasny i ciemny wygląd.
+- Domyślnie strona dopasowuje się do preferencji systemu urządzenia.
+- Ręczny wybór jest zapamiętywany w tej przeglądarce (localStorage).
+- Menu > Wygląd strony > Zgodnie z urządzeniem przywraca automatyczny tryb.
+- Wygląd działa też na blogu, podstronach usług i stronie Cennik.
+- dist/appearance.css zawiera nowe kolory i wygląd przełączników.
+- dist/appearance.js odpowiada za automatyczny i ręczny wybór.
+  Skrypt jest celowo wczytywany przed CSS, aby ograniczyć błysk jasnego tła.
+
+CENNIK
+- dist/cennik/index.html to na razie tylko zapowiedź kalkulatora i kontakt.
+- Ankieta, stawki i obliczenia NIE są jeszcze wdrożone.
+- scripts/generate-pricing.mjs odtwarza tę podstronę ze wspólnego nagłówka/menu.
+- CENNIK-ZALOZENIA.txt zapisuje opis przyszłego kalkulatora do dalszych prac.
+- Podstrona ma noindex i nie jest w sitemap, dopóki nie powstanie właściwa treść.
+
+FILM
+Zachowano link do filmu na GitHubie podany w Twoim kodzie.
+Film wymaga połączenia z internetem; nie jest dołączony jako lokalny plik MP4.
+
+W ZIP-ie są pliki strony i źródła do edycji. Pominięto historię .git,
+pliki dostępu do hostingu i tymczasowe materiały robocze.
+
 MALOWANIE BIELSKO — KOMPLETNY PROJEKT DO EDYCJI
-Wersja strony: 5. Eksport przygotowany 24 listopada 2026.
+Wersja strony: 6. Eksport przygotowany 24 listopada 2026.
 
 Na początek przeczytaj START-TUTAJ.txt.
 
@@ -62,6 +92,7 @@ Uruchom kolejno:
 
 node scripts/generate-blog.mjs
 node scripts/generate-services.mjs
+node scripts/generate-pricing.mjs
 
 Generatory używają wyłącznie wbudowanych modułów Node.js. Nie ma zależności
 do pobierania ani polecenia npm install. Po wygenerowaniu wróć do podglądu.
@@ -71,7 +102,7 @@ dist/blog/*/index.html. Pamiętaj jednak, że następne uruchomienie generatora
 nadpisze te podstrony treścią z JSON i szablonu w scripts.
 
 Wspólny nagłówek, menu i stopkę zmieniaj w dist/index.html. Następnie uruchom
-oba generatory w podanej wyżej kolejności, aby przenieść zmiany na podstrony.
+trzy generatory w podanej wyżej kolejności, aby przenieść zmiany na podstrony.
 Dane kontaktowe występują również w szablonach generatorów; przy ich zmianie
 wyszukaj stary numer lub e-mail w całym projekcie (Ctrl+Shift+F).
 
@@ -122,8 +153,8 @@ https://malowanie-bielsko.sleekcroissant3.chatgpt.site
 Przy przenoszeniu pod własną domenę otwórz w VS Code Zamień w plikach
 (Ctrl+Shift+H). W polu plików do uwzględnienia wpisz: dist/**, scripts/**
 Zamień powyższy adres na pełny nowy adres, np. https://twoja-domena.pl
-bez końcowego ukośnika. Zmiana ma objąć HTML, XML, TXT i oba generatory.
-Następnie uruchom oba generatory oraz sprawdź dist/sitemap.xml i dist/robots.txt.
+bez końcowego ukośnika. Zmiana ma objąć HTML, XML, TXT i trzy generatory.
+Następnie uruchom trzy generatory oraz sprawdź dist/sitemap.xml i dist/robots.txt.
 Pozostaw istniejące ścieżki /blog/ i /uslugi/. Ta instrukcja zakłada publikację
 w głównym katalogu domeny. Podgląd lokalny nie wymaga zmiany adresów SEO.
 

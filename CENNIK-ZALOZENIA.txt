@@ -1,0 +1,23 @@
+CENNIK — ZAŁOŻENIA DO KOLEJNEGO ETAPU
+
+Obecnie: pozycja Cennik w menu i prosta strona informacyjna.
+Nie uruchomiono ankiety, stawek ani obliczania ceny.
+
+Docelowe działanie zgodnie z opisem właściciela:
+1. Klient wybiera usługę spośród wszystkich pozycji strony:
+   malowanie, gładzie, ściany dekoracyjne, sufity i zabudowy G-K,
+   renowacja i ochrona drewna, prace wykończeniowe.
+2. Pytania zależą od wybranej usługi. Osobny zestaw dla gładzi,
+   malowania i każdej pozostałej kategorii.
+3. Czynniki do uwzględnienia: odświeżenie / stan deweloperski,
+   obecność mebli, istniejące gładzie, obecność i rodzaj tynku,
+   zakres zabezpieczeń, osadzanie narożników, dodatkowe prace
+   i opis ich rodzaju. Dokładne pytania do ustalenia z właścicielem.
+4. Na końcu klient podaje obmiar z jednostką właściwą dla prac.
+5. Wynik: orientacyjny przedział kosztów na podstawie odpowiedzi
+   i obmiaru. Stawki, jednostki, zależności oraz zakres ceny do ustalenia.
+
+Nie wpisano przykładowych cen ani założeń o kosztach materiałów i podatkach.
+Przed uruchomieniem trzeba ustalić powyższe reguły i treść zastrzeżenia
+o orientacyjnym charakterze wyceny. Wówczas można usunąć noindex ze strony
+i dodać /cennik/ do mapy witryny.

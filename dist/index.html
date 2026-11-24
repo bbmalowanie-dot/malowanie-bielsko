@@ -4,6 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#e3f0ef">
+  <meta name="color-scheme" content="light dark">
+  <script src="appearance.js"></script>
   <meta name="description" content="Malowanie, gładzie Q1–Q4, ściany dekoracyjne i zabudowy G-K. Poznaj ofertę Malowanie Bielsko. Poproś o bezpłatną wycenę telefonicznie lub wyślij projekt e-mailem.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://malowanie-bielsko.sleekcroissant3.chatgpt.site/">
@@ -17,8 +19,8 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="brand-theme.css">
   <link rel="stylesheet" href="blog-contact.css">
+  <link rel="stylesheet" href="appearance.css">
   <script src="app.js" defer></script>
-  <script id="organizationData" type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Malowanie Bielsko","url":"https://malowanie-bielsko.sleekcroissant3.chatgpt.site/","email":"bb.malowanie@gmail.com","telephone":"+48726747602","logo":{"@type":"ImageObject","url":"https://malowanie-bielsko.sleekcroissant3.chatgpt.site/assets/logo-transparent.png"}}</script>
   
   <!-- Dodatkowy styl dla układu dwukolumnowego z pionowym wideo -->
   <style>
@@ -64,9 +66,10 @@
       z-index: 0;
       text-align: center;
       padding: 2rem;
-      color: #1C5B6B;
+      color: var(--about-accent, #1C5B6B);
     }
   </style>
+  <script id="organizationData" type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Malowanie Bielsko","url":"https://malowanie-bielsko.sleekcroissant3.chatgpt.site/","email":"bb.malowanie@gmail.com","telephone":"+48726747602","logo":{"@type":"ImageObject","url":"https://malowanie-bielsko.sleekcroissant3.chatgpt.site/assets/logo-transparent.png"}}</script>
 </head>
 <body>
   <a href="#main" class="skip-link">Przejdź do treści</a>
@@ -76,7 +79,11 @@
       <span class="brand-name">MALOWANIE<br>BIELSKO</span>
     </a>
     <a class="header-quote" href="#kontakt"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4V5Z"/><path d="M8 9h8M8 12h5"/></svg><span>Umów się na bezpłatną wycenę</span></a>
-    <button class="menu-toggle" type="button" aria-haspopup="dialog" aria-controls="menuDialog" aria-expanded="false"><span>Menu</span><span class="menu-lines" aria-hidden="true"></span></button>
+    <button class="theme-toggle" type="button" data-theme-toggle aria-label="Włącz ciemny wygląd" title="Włącz ciemny wygląd">
+      <span class="theme-toggle-option theme-option-dark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20.5 13.4A8.7 8.7 0 0 1 10.6 3.5 8.7 8.7 0 1 0 20.5 13.4Z"/></svg><span>Ciemny</span></span>
+      <span class="theme-toggle-option theme-option-light" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5 19 19M5 19l1.5-1.5M17.5 6.5 19 5"/></svg><span>Jasny</span></span>
+    </button>
+    <button aria-label="Otwórz menu" class="menu-toggle" type="button" aria-haspopup="dialog" aria-controls="menuDialog" aria-expanded="false"><span>Menu</span><span class="menu-lines" aria-hidden="true"></span></button>
   </header>
 
   <main id="main">
@@ -124,17 +131,17 @@
             <p>Tworzymy wnętrza na terenie Bielska-Białej, Śląska i Małopolski. W każdą realizację wkładamy zaangażowanie, dopracowując detale z najwyższą rzemieślniczą precyzją.</p>
             <p>Nasza zasada jest prosta: dowozimy umówioną jakość i <strong>nigdy nie spóźniamy się z terminem oddania inwestycji</strong>. Gwarantujemy sprawiedliwe rozliczenie bez ukrytych kosztów. U nas masz wszystko czarno na białym.</p>
             
-            <div style="display: flex; justify-content: space-between; gap: 1rem; margin: 2rem 0; border-top: 1px solid rgba(28, 91, 107, 0.15); border-bottom: 1px solid rgba(28, 91, 107, 0.15); padding: 1.5rem 0;">
+            <div style="display: flex; justify-content: space-between; gap: 1rem; margin: 2rem 0; border-top: 1px solid var(--about-line, rgba(28, 91, 107, 0.15)); border-bottom: 1px solid var(--about-line, rgba(28, 91, 107, 0.15)); padding: 1.5rem 0;">
               <div>
-                <span style="display: block; font-size: 3rem; font-weight: 300; color: #1C5B6B; line-height: 1; letter-spacing: -0.03em; margin-bottom: 0.5rem;">6</span>
+                <span style="display: block; font-size: 3rem; font-weight: 300; color: var(--about-accent, #1C5B6B); line-height: 1; letter-spacing: -0.03em; margin-bottom: 0.5rem;">6</span>
                 <span style="display: block; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: inherit;">Lat<br>doświadczenia</span>
               </div>
               <div>
-                <span style="display: block; font-size: 3rem; font-weight: 300; color: #1C5B6B; line-height: 1; letter-spacing: -0.03em; margin-bottom: 0.5rem;">200+</span>
+                <span style="display: block; font-size: 3rem; font-weight: 300; color: var(--about-accent, #1C5B6B); line-height: 1; letter-spacing: -0.03em; margin-bottom: 0.5rem;">200+</span>
                 <span style="display: block; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: inherit;">Udanych<br>realizacji</span>
               </div>
               <div>
-                <span style="display: block; font-size: 3rem; font-weight: 300; color: #1C5B6B; line-height: 1; letter-spacing: -0.03em; margin-bottom: 0.5rem;">100%</span>
+                <span style="display: block; font-size: 3rem; font-weight: 300; color: var(--about-accent, #1C5B6B); line-height: 1; letter-spacing: -0.03em; margin-bottom: 0.5rem;">100%</span>
                 <span style="display: block; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: inherit;">Dotrzymanych<br>terminów</span>
               </div>
             </div>
@@ -227,7 +234,15 @@
 
   <dialog class="menu-dialog" id="menuDialog" aria-label="Menu główne">
     <div class="menu-header"><span>MALOWANIE BIELSKO</span><button type="button" class="dialog-close" aria-label="Zamknij menu"><span>Zamknij</span><span aria-hidden="true">×</span></button></div>
-    <nav aria-label="Menu główne"><a href="#o-nas">Poznaj nas</a><a href="#uslugi">Usługi</a><a href="#wycena">Proces wyceny</a><a href="#blog">Blog</a><a href="#kontakt">Kontakt</a></nav>
+    <nav aria-label="Menu główne"><a href="#o-nas">Poznaj nas</a><a href="#uslugi">Usługi</a><a href="#wycena">Proces wyceny</a><a href="#blog">Blog</a><a href="cennik/">Cennik</a><a href="#kontakt">Kontakt</a></nav>
+    <fieldset class="appearance-settings">
+      <legend>Wygląd strony</legend>
+      <div class="appearance-options">
+        <label class="appearance-option"><input type="radio" name="appearance" value="system" checked><span>Zgodnie z urządzeniem</span></label>
+        <label class="appearance-option"><input type="radio" name="appearance" value="light"><span>Jasny</span></label>
+        <label class="appearance-option"><input type="radio" name="appearance" value="dark"><span>Ciemny</span></label>
+      </div>
+    </fieldset>
     <div class="menu-footer" style="display: flex; flex-wrap: wrap; width: 100%; justify-content: space-between; align-items: center; gap: 20px;">
       <div style="flex: 1 1 0%; min-width: max-content; text-align: left;">
         <a href="mailto:bb.malowanie@gmail.com">bb.malowanie@gmail.com</a>

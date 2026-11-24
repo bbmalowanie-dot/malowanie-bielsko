@@ -18,6 +18,9 @@ z plikami index.html, więc samo dwukrotne kliknięcie HTML nie zastępuje serwe
 Najważniejsze miejsca do edycji:
 - dist/index.html: strona główna, sekcje, dane kontaktowe.
 - dist/brand-theme.css: wspólna kolorystyka i sekcja procesu wyceny.
+- dist/appearance.css: ciemna paleta, przełączniki i wygląd Cennika.
+- dist/appearance.js: wybór i zapamiętywanie wyglądu.
+- dist/cennik/index.html: zapowiedź kalkulatora (bez obliczeń).
 - dist/styles.css: podstawowy układ strony i menu.
 - dist/blog-contact.css: blog, artykuły i karty kontaktu.
 - dist/service-pages.css: wygląd podstron usług.
@@ -31,6 +34,7 @@ Wybierz Terminal > Nowy terminal. W katalogu Malowanie-Bielsko uruchom kolejno:
 
 node scripts/generate-blog.mjs
 node scripts/generate-services.mjs
+node scripts/generate-pricing.mjs
 
 Te polecenia są potrzebne przy edycji źródeł JSON lub wspólnego szablonu,
 a nie do zwykłego otwarcia gotowej strony. Nie wymagają npm install.

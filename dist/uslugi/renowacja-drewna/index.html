@@ -4,6 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#e3f0ef">
+  <meta name="color-scheme" content="light dark">
+  <script src="../../appearance.js"></script>
   <meta name="description" content="Przywracamy drewnu jego naturalny charakter. Oczyszczamy powierzchnie, uzupełniamy ubytki i dobieramy ochronne wykończenie.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://malowanie-bielsko.sleekcroissant3.chatgpt.site/uslugi/renowacja-drewna/">
@@ -17,6 +19,7 @@
   <link rel="stylesheet" href="../../service-pages.css">
   <link rel="stylesheet" href="../../brand-theme.css">
   <link rel="stylesheet" href="../../blog-contact.css">
+  <link rel="stylesheet" href="../../appearance.css">
   <script src="../../app.js" defer></script>
 </head>
 <body class="service-page">
@@ -27,7 +30,11 @@
       <span class="brand-name">MALOWANIE<br>BIELSKO</span>
     </a>
     <a class="header-quote" href="../../index.html#kontakt"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4V5Z"/><path d="M8 9h8M8 12h5"/></svg><span>Umów się na bezpłatną wycenę</span></a>
-    <button class="menu-toggle" type="button" aria-haspopup="dialog" aria-controls="menuDialog" aria-expanded="false"><span>Menu</span><span class="menu-lines" aria-hidden="true"></span></button>
+    <button class="theme-toggle" type="button" data-theme-toggle aria-label="Włącz ciemny wygląd" title="Włącz ciemny wygląd">
+      <span class="theme-toggle-option theme-option-dark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20.5 13.4A8.7 8.7 0 0 1 10.6 3.5 8.7 8.7 0 1 0 20.5 13.4Z"/></svg><span>Ciemny</span></span>
+      <span class="theme-toggle-option theme-option-light" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5 19 19M5 19l1.5-1.5M17.5 6.5 19 5"/></svg><span>Jasny</span></span>
+    </button>
+    <button aria-label="Otwórz menu" class="menu-toggle" type="button" aria-haspopup="dialog" aria-controls="menuDialog" aria-expanded="false"><span>Menu</span><span class="menu-lines" aria-hidden="true"></span></button>
   </header>
 
   <main id="main" class="service-main">
@@ -67,11 +74,46 @@
     </nav>
   </main>
 
-  <footer class="site-footer"><a class="footer-brand" href="../../index.html#start">MALOWANIE BIELSKO</a><span>© <span id="year">2026</span></span><span>Malowanie i wykończenie wnętrz</span></footer>
+  <footer class="site-footer" style="display: flex; flex-wrap: wrap; width: 100%; justify-content: space-between; align-items: center; gap: 20px;">
+    <div style="flex: 1 1 0%; min-width: max-content; text-align: left;">
+      <a class="footer-brand" href="../../index.html#start" style="text-decoration: none;">MALOWANIE BIELSKO</a> 
+      <span style="margin-left: 10px;">© <span id="year">2026</span></span>
+    </div>
+    
+    <div style="flex: 1 1 0%; min-width: max-content; display: flex; gap: 25px; justify-content: center;">
+      <a href="https://www.instagram.com/malowanie_bielsko/" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">Instagram</a>
+      <a href="https://www.facebook.com/profile.php?id=61594850486109&locale=pl_PL" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">Facebook</a>
+      <a href="https://www.google.com/search?q=malowanie+bielsko&ie=UTF-8#sv=CCYSMAoHCgN1ZG0SABoUdnNzLXB2LS9nLzExbDZzam04YnMqDwoNL2cvMTFsNnNqbThicxgKINji7okM" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">Google</a>
+    </div>
+    
+    <div style="flex: 1 1 0%; min-width: max-content; text-align: right;">
+      <span>Wykończenia wnętrz najwyższej jakości</span>
+    </div>
+  </footer>
   <dialog class="menu-dialog" id="menuDialog" aria-label="Menu główne">
     <div class="menu-header"><span>MALOWANIE BIELSKO</span><button type="button" class="dialog-close" aria-label="Zamknij menu"><span>Zamknij</span><span aria-hidden="true">×</span></button></div>
-    <nav aria-label="Menu główne"><a href="../../index.html#o-nas">Poznaj nas</a><a href="../../index.html#uslugi">Usługi</a><a href="../../index.html#wycena">Proces wyceny</a><a href="../../index.html#blog">Blog</a><a href="../../index.html#kontakt">Kontakt</a></nav>
-    <div class="menu-footer"><a href="mailto:bb.malowanie@gmail.com">bb.malowanie@gmail.com</a><a href="tel:+48726747602">726 747 602</a></div>
+    <nav aria-label="Menu główne"><a href="../../index.html#o-nas">Poznaj nas</a><a href="../../index.html#uslugi">Usługi</a><a href="../../index.html#wycena">Proces wyceny</a><a href="../../index.html#blog">Blog</a><a href="../../cennik/">Cennik</a><a href="../../index.html#kontakt">Kontakt</a></nav>
+    <fieldset class="appearance-settings">
+      <legend>Wygląd strony</legend>
+      <div class="appearance-options">
+        <label class="appearance-option"><input type="radio" name="appearance" value="system" checked><span>Zgodnie z urządzeniem</span></label>
+        <label class="appearance-option"><input type="radio" name="appearance" value="light"><span>Jasny</span></label>
+        <label class="appearance-option"><input type="radio" name="appearance" value="dark"><span>Ciemny</span></label>
+      </div>
+    </fieldset>
+    <div class="menu-footer" style="display: flex; flex-wrap: wrap; width: 100%; justify-content: space-between; align-items: center; gap: 20px;">
+      <div style="flex: 1 1 0%; min-width: max-content; text-align: left;">
+        <a href="mailto:bb.malowanie@gmail.com">bb.malowanie@gmail.com</a>
+      </div>
+      <div style="flex: 1 1 0%; min-width: max-content; display: flex; gap: 25px; justify-content: center;">
+        <a href="https://www.instagram.com/malowanie_bielsko/" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">Instagram</a>
+        <a href="https://www.facebook.com/profile.php?id=61594850486109&locale=pl_PL" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">Facebook</a>
+        <a href="https://www.google.com/search?q=malowanie+bielsko&ie=UTF-8#sv=CCYSMAoHCgN1ZG0SABoUdnNzLXB2LS9nLzExbDZzam04YnMqDwoNL2cvMTFsNnNqbThicxgKINji7okM" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">Google</a>
+      </div>
+      <div style="flex: 1 1 0%; min-width: max-content; text-align: right;">
+        <a href="tel:+48726747602">726 747 602</a>
+      </div>
+    </div>
   </dialog>
 </body>
 </html>

@@ -19,7 +19,8 @@ const header = home.match(/  <header[\s\S]*?<\/header>/)[0]
   .replaceAll('href="#', 'href="../../index.html#')
   .replaceAll('src="assets/', 'src="../../assets/');
 const menu = home.match(/  <dialog class="menu-dialog"[\s\S]*?<\/dialog>/)[0]
-  .replaceAll('href="#', 'href="../../index.html#');
+  .replaceAll('href="#', 'href="../../index.html#')
+  .replaceAll('href="cennik/"', 'href="../../cennik/"');
 const footer = home.match(/  <footer[\s\S]*?<\/footer>/)[0]
   .replaceAll('href="#start"', 'href="../../index.html#start"');
 const check = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 12 4 4 8-9"/></svg>';
@@ -32,6 +33,8 @@ for (const service of services) {
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#e3f0ef">
+  <meta name="color-scheme" content="light dark">
+  <script src="../../appearance.js"></script>
   <meta name="description" content="${escape(service.intro)}">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://malowanie-bielsko.sleekcroissant3.chatgpt.site/uslugi/${service.slug}/">
@@ -45,6 +48,7 @@ for (const service of services) {
   <link rel="stylesheet" href="../../service-pages.css">
   <link rel="stylesheet" href="../../brand-theme.css">
   <link rel="stylesheet" href="../../blog-contact.css">
+  <link rel="stylesheet" href="../../appearance.css">
   <script src="../../app.js" defer></script>
 </head>
 <body class="service-page">
