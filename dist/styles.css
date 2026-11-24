@@ -66,10 +66,11 @@ dialog{padding:0;border:none;color:var(--ink);max-width:none;max-height:none}dia
   }
 }
 
-/* --- IDEALNY SKOK DLA SEKCJI KONTAKT --- */
+/* Contact navigation aligns the heading with the measured header in app.js. */
+.site-header.is-aligning-contact { transition: none; }
 #kontakt {
   padding-top: 70px !important; 
-  scroll-margin-top: -40px !important; /* Chowa mały napis (Śląsk, Małopolska...) pod menu */
+  scroll-margin-top: 0 !important;
 }
 #kontakt .contact-title {
   margin-top: 0 !important; /* Usuwa fabryczny, wielki margines 70px z góry */
@@ -78,7 +79,6 @@ dialog{padding:0;border:none;color:var(--ink);max-width:none;max-height:none}dia
 @media(max-width: 700px) {
   #kontakt {
     padding-top: 60px !important;
-    scroll-margin-top: -20px !important;
   }
   #kontakt .contact-title {
     margin-bottom: 30px !important;

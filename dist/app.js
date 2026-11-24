@@ -10,7 +10,25 @@ function openDialog(dialog) {
   dialog.showModal();
   document.body.classList.add('dialog-open');
 }
-function closeDialog(dialog) { dialog.close(); }
+function closeDialog(dialog) {
+  dialog.close();
+  document.body.classList.remove('dialog-open');
+}
+
+function scrollToContact(behavior = reduceMotion.matches ? 'instant' : 'smooth') {
+  const title = document.querySelector('#contactTitle');
+  const section = document.querySelector('#kontakt');
+  if (!title || !section) return;
+
+  // Measure the compact header before scrolling, including its mobile layout.
+  // The title starts directly below it, matching the contact section reference.
+  header.classList.add('is-aligning-contact', 'is-fixed');
+  const top = window.scrollY + title.getBoundingClientRect().top - header.offsetHeight;
+  section.setAttribute('tabindex', '-1');
+  section.focus({ preventScroll: true });
+  window.scrollTo({ top: Math.max(0, top), behavior });
+  requestAnimationFrame(() => header.classList.remove('is-aligning-contact'));
+}
 
 menuToggle.addEventListener('click', () => {
   openDialog(menu);
@@ -34,6 +52,11 @@ menu.querySelectorAll('a[href^="#"]').forEach(link => {
   link.addEventListener('click', event => {
     event.preventDefault();
     closeDialog(menu);
+    if (link.hash === '#kontakt') {
+      history.replaceState(null, '', link.getAttribute('href'));
+      scrollToContact();
+      return;
+    }
     const section = document.querySelector(link.getAttribute('href'));
     if (!section) return;
     section.setAttribute('tabindex', '-1');
@@ -42,6 +65,23 @@ menu.querySelectorAll('a[href^="#"]').forEach(link => {
     history.replaceState(null, '', link.getAttribute('href'));
   });
 });
+
+// Apply the same alignment to quote buttons and links arriving from subpages.
+document.querySelectorAll('a[href="#kontakt"]').forEach(link => {
+  if (menu.contains(link)) return;
+  link.addEventListener('click', event => {
+    if (event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    history.replaceState(null, '', '#kontakt');
+    scrollToContact();
+  });
+});
+const alignContactHash = () => {
+  if (location.hash === '#kontakt') scrollToContact('instant');
+};
+window.addEventListener('hashchange', alignContactHash);
+window.addEventListener('load', alignContactHash, { once: true });
+if (location.hash === '#kontakt') requestAnimationFrame(alignContactHash);
 
 if ('IntersectionObserver' in window) {
   if (landing) {

@@ -1,3 +1,11 @@
+AKTUALIZACJA: WYRÓWNANIE SEKCJI KONTAKT — 24.11.2026
+
+Kliknięcie Kontakt w menu i przycisków bezpłatnej wyceny ustawia cały
+tytuł sekcji bezpośrednio pod paskiem nawigacji. Wysokość paska jest
+mierzona osobno dla bieżącego układu, również na telefonie.
+Poprawka obejmuje też wejście z podstrony i bezpośredni adres #kontakt.
+Zmienione pliki: dist/app.js oraz dist/styles.css.
+
 AKTUALIZACJA: JASNY / CIEMNY WYGLĄD I CENNIK — 24.11.2026
 
 Podstawa: dostarczony przez właściciela plik Malowanie-Bielsko-VS-Code (nowy).zip.
@@ -29,7 +37,7 @@ W ZIP-ie są pliki strony i źródła do edycji. Pominięto historię .git,
 pliki dostępu do hostingu i tymczasowe materiały robocze.
 
 MALOWANIE BIELSKO — KOMPLETNY PROJEKT DO EDYCJI
-Wersja strony: 6. Eksport przygotowany 24 listopada 2026.
+Wersja strony: 7. Eksport przygotowany 24 listopada 2026.
 
 Na początek przeczytaj START-TUTAJ.txt.
 
