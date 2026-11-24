@@ -1,0 +1,48 @@
+MALOWANIE BIELSKO — START W VISUAL STUDIO CODE
+
+To kompletna strona w HTML, CSS i JavaScript. Do podglądu wystarczy Live Server.
+Nie trzeba używać Reacta, Vite, npm ani terminala.
+
+1. Rozpakuj całe archiwum ZIP, np. do Dokumentów. Nie otwieraj plików wewnątrz ZIP.
+2. W VS Code wybierz Plik > Otwórz folder (File > Open Folder).
+   Wskaż folder Malowanie-Bielsko, w którym znajdują się dist, content i scripts.
+3. Otwórz Rozszerzenia (Ctrl+Shift+X), wyszukaj Live Server autora Ritwick Dey
+   i kliknij Zainstaluj / Install. Identyfikator rozszerzenia: ritwickdey.LiveServer.
+4. W panelu plików rozwiń dist. Kliknij prawym przyciskiem dist/index.html
+   i wybierz Open with Live Server. Strona otworzy się w przeglądarce.
+5. Edytuj pliki i zapisuj je przez Ctrl+S. Live Server odświeża podgląd po zapisie.
+
+Używaj lokalnego serwera: linki do usług i artykułów prowadzą do katalogów
+z plikami index.html, więc samo dwukrotne kliknięcie HTML nie zastępuje serwera.
+
+Najważniejsze miejsca do edycji:
+- dist/index.html: strona główna, sekcje, dane kontaktowe.
+- dist/brand-theme.css: wspólna kolorystyka i sekcja procesu wyceny.
+- dist/styles.css: podstawowy układ strony i menu.
+- dist/blog-contact.css: blog, artykuły i karty kontaktu.
+- dist/service-pages.css: wygląd podstron usług.
+- content/services.json: pełne opisy usług.
+- content/posts.json: treści artykułów blogowych.
+- dist/assets/: komplet grafik, w tym logo PNG z przezroczystym tłem.
+
+Po zmianie plików content/*.json trzeba odtworzyć odpowiednie podstrony.
+Opcjonalnie zainstaluj Node.js LTS z https://nodejs.org/ i ponownie otwórz VS Code.
+Wybierz Terminal > Nowy terminal. W katalogu Malowanie-Bielsko uruchom kolejno:
+
+node scripts/generate-blog.mjs
+node scripts/generate-services.mjs
+
+Te polecenia są potrzebne przy edycji źródeł JSON lub wspólnego szablonu,
+a nie do zwykłego otwarcia gotowej strony. Nie wymagają npm install.
+
+NA WŁASNY SERWER
+Wgraj zawartość folderu dist do katalogu strony (np. public_html), tak aby
+index.html, assets, blog i uslugi znalazły się obok siebie. Zachowaj podfoldery.
+Hosting ma obsługiwać zwykłe pliki HTML oraz index.html wewnątrz katalogów.
+Node.js, baza danych i zaplecze serwerowe nie są potrzebne.
+
+Przed publikacją pod własną domeną zaktualizuj adresy SEO zgodnie z README.txt.
+Pełne informacje o edycji, blogu, kontakcie i publikacji znajdziesz w README.txt.
+
+Instrukcja rozszerzenia Live Server:
+https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer

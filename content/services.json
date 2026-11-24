@@ -1,0 +1,85 @@
+[
+  {
+    "slug": "malowanie",
+    "label": "Malowanie",
+    "title": "Malowanie wnętrz",
+    "intro": "Od odświeżenia pokoju po malowanie dużych powierzchni. Dobieramy metodę aplikacji i rodzaj farby do Twojego wnętrza.",
+    "tags": ["Natrysk hydrodynamiczny", "Malowanie wałkiem", "Doradztwo techniczne"],
+    "features": [
+      ["Aplikacja natryskowa i tradycyjna", "Dobieramy metodę do zlecenia: bezsmugowy natrysk hydrodynamiczny na dużych metrażach lub tradycyjny wałek przy odświeżeniach."],
+      ["Perfekcyjna powłoka pod każde światło", "Aksamitne, jednolite wykończenie bez smug i pasów, widoczne nawet przy oświetleniu LED."],
+      ["Precyzyjne odcięcia i elastyczne akryle", "Idealnie równe odcięcia ścian od sufitów i profesjonalne akrylowanie szpalet, zapobiegające mikropęknięciom."],
+      ["Dobór farb i doradztwo techniczne", "Stosujemy farby najwyższej jakości na rynku i pomagamy dobrać odpowiednie powłoki do wnętrza."],
+      ["Pancerne zabezpieczenia i czysty odbiór", "Pełna ochrona. Po zakończeniu prac oddajemy inwestorowi czyste, gotowe wnętrze."]
+    ]
+  },
+  {
+    "slug": "gladzie",
+    "label": "Gładzie",
+    "title": "Szpachlowanie i gładzie",
+    "intro": "Gładkie ściany zaczynają się od przygotowania podłoża. Technologię i standard wykończenia ustalamy indywidualnie przy wycenie.",
+    "tags": ["Standardy Q1–Q4", "Aplikacja natryskowa", "Aplikacja tradycyjna"],
+    "features": [
+      ["Standardy wykończenia Q1–Q4", "Dobór technologii i standardu ustalamy indywidualnie przy wycenie."],
+      ["Aplikacja natryskowa i tradycyjna", "Dopasowujemy metodę nakładania gładzi do specyfiki inwestycji."],
+      ["Kompleksowe przygotowanie podłoża", "Naprawa pęknięć, zbrojenie łączeń, szpachlowanie tynków i płyt G-K, gruntowanie."],
+      ["Czystość i pancerne zabezpieczenia", "Dokładna ochrona wnętrza. Zostawiamy po sobie wyłącznie gładkie ściany."],
+      ["Gwarancja terminu i sprawna realizacja", "Szanujemy Twój czas — zawsze dotrzymujemy ustalonej daty odbioru."]
+    ]
+  },
+  {
+    "slug": "sciany-dekoracyjne",
+    "label": "Ściany dekoracyjne",
+    "title": "Ściany dekoracyjne",
+    "intro": "Beton, naturalna faktura kamienia czy subtelny efekt piasku. Nadajemy ścianom charakter i zabezpieczamy dekoracyjne wykończenie.",
+    "tags": ["Beton architektoniczny", "Trawertyn", "Tynki i efekty dekoracyjne"],
+    "features": [
+      ["Beton architektoniczny", "Wykonujemy industrialne ściany z naturalnymi wżerami, gładkie lub w podziale na płyty."],
+      ["Trawertyn klasyczny i drapany", "Elegancka faktura naturalnego kamienia z charakterystycznymi ubytkami i żyłkowaniem."],
+      ["Tynki strukturalne", "Aplikujemy trwałe masy dekoracyjne nadające wnętrzom surowy lub nowoczesny styl."],
+      ["Glinka wenecka i efekty piasku", "Subtelne, aksamitne wykończenia z efektem przetartego pergaminu i pustynnego piasku."],
+      ["Hydrofobowa ochrona i trwałość", "Zabezpieczamy dekoracje dedykowanymi lakierami odpornymi na zmywanie, kurz i wilgoć."]
+    ]
+  },
+  {
+    "slug": "sufity-zabudowy-gk",
+    "label": "Sufity i zabudowy G-K",
+    "title": "Sufity i zabudowy G-K",
+    "intro": "Od równej płaszczyzny sufitu po wnęki karniszowe i zabudowy LED. Wykonujemy konstrukcje z płyt gipsowo-kartonowych dopasowane do przestrzeni.",
+    "tags": ["Sufity podwieszane", "Zabudowy LED", "Ścianki działowe"],
+    "features": [
+      ["Laserowa precyzja i idealny poziom", "Konstrukcje montujemy w oparciu o niwelatory laserowe, gwarantując idealną płaszczyznę sufitu."],
+      ["Trwałe spoinowanie bez pęknięć", "Stosujemy profesjonalne taśmy zbrojące i elastyczne masy szpachlowe na wszystkich łączeniach płyt."],
+      ["Zabudowy LED i wnęki karniszowe", "Wykonujemy nowoczesne sufity wielopoziomowe, ukryte linie świetlne oraz zabudowy karniszy."],
+      ["Ścianki działowe i wygłuszenia", "Stawiamy stabilne ściany z wełną mineralną, zapewniając właściwą izolację akustyczną i termiczną."],
+      ["Sztywne konstrukcje pod obciążenia", "Wzmacniamy profile pod montaż ciężkich szafek, luster, telewizorów oraz masywnych lamp."]
+    ]
+  },
+  {
+    "slug": "renowacja-drewna",
+    "label": "Renowacja i ochrona drewna",
+    "title": "Renowacja i ochrona drewna",
+    "intro": "Przywracamy drewnu jego naturalny charakter. Oczyszczamy powierzchnie, uzupełniamy ubytki i dobieramy ochronne wykończenie.",
+    "tags": ["Renowacja", "Impregnacja", "Oleje, lakiery i woski"],
+    "features": [
+      ["Uzupełnianie ubytków i pęknięć", "Wypełniamy szczeliny i ubytki profesjonalnymi masami oraz kitami dobranymi pod odcień drewna."],
+      ["Precyzyjne oczyszczanie powierzchni", "Usuwamy stare, spękane warstwy lakierów i bezpyłowo szlifujemy drewno do surowego stanu."],
+      ["Głęboka impregnacja techniczna", "Zabezpieczamy materiał przed wilgocią, promieniami UV, sinizną oraz szkodnikami biologicznymi."],
+      ["Olejowanie, lakierowanie i woski", "Stosujemy twarde woski olejne i lakiery podkreślające usłojenie oraz naturalną strukturę."],
+      ["Schody, belki i elementy ozdobne", "Odnawiamy drewniane stopnie, balustrady, podsufitki, lamele oraz dekoracyjne konstrukcje."]
+    ]
+  },
+  {
+    "slug": "prace-wykonczeniowe",
+    "label": "Prace wykończeniowe",
+    "title": "Detale i prace wykończeniowe",
+    "intro": "Parapety, ukryte drzwi, listwy i lamele. Dbamy o detale oraz prace naprawcze, które składają się na gotowe wnętrze.",
+    "tags": ["Parapety i drzwi ukryte", "Listwy i lamele", "Poprawki i naprawy"],
+    "features": [
+      ["Osadzanie i obróbka parapetów", "Precyzyjny montaż, poziomowanie oraz estetyczne wyprowadzenie glifów i styków ze ścianą."],
+      ["Obróbka drzwi ukrytych", "Szpachlowanie ościeżnic na zero ze ścianą z użyciem siatek zbrojących przeciw spękaniom."],
+      ["Montaż listew i lameli", "Czyste docinanie kątów listew przypodłogowych, ściennych sztukaterii oraz nowoczesnych lameli."],
+      ["Poprawki i prace naprawcze", "Usuwanie pęknięć tynku, prostowanie krzywizn oraz naprawa narożników przed finiszem."]
+    ]
+  }
+]
