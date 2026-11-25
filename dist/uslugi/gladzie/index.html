@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#e3f0ef">
   <meta name="color-scheme" content="light dark">
-  <script src="../../appearance.js"></script>
+  <script src="../../appearance.js?v=8"></script>
   <meta name="description" content="Gładkie ściany zaczynają się od przygotowania podłoża. Technologię i standard wykończenia ustalamy indywidualnie przy wycenie.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://malowanie-bielsko.sleekcroissant3.chatgpt.site/uslugi/gladzie/">
@@ -19,8 +19,9 @@
   <link rel="stylesheet" href="../../service-pages.css">
   <link rel="stylesheet" href="../../brand-theme.css">
   <link rel="stylesheet" href="../../blog-contact.css">
-  <link rel="stylesheet" href="../../appearance.css">
-  <script src="../../app.js" defer></script>
+  <link rel="stylesheet" href="../../appearance.css?v=8">
+  <link rel="stylesheet" href="../../layout-refinements.css?v=8">
+  <script src="../../app.js?v=8" defer></script>
 </head>
 <body class="service-page">
   <a href="#main" class="skip-link">Przejdź do treści</a>
@@ -74,21 +75,19 @@
     </nav>
   </main>
 
-  <footer class="site-footer" style="display: flex; flex-wrap: wrap; width: 100%; justify-content: space-between; align-items: center; gap: 20px;">
-    <div style="flex: 1 1 0%; min-width: max-content; text-align: left;">
-      <a class="footer-brand" href="../../index.html#start" style="text-decoration: none;">MALOWANIE BIELSKO</a> 
-      <span style="margin-left: 10px;">© <span id="year">2026</span></span>
+  <footer class="site-footer">
+    <div class="footer-identity">
+      <a class="footer-brand" href="../../index.html#start">MALOWANIE BIELSKO</a>
+      <span class="footer-copyright">© <span id="year">2026</span></span>
     </div>
     
-    <div style="flex: 1 1 0%; min-width: max-content; display: flex; gap: 25px; justify-content: center;">
+    <div class="footer-socials">
       <a href="https://www.instagram.com/malowanie_bielsko/" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">Instagram</a>
       <a href="https://www.facebook.com/profile.php?id=61594850486109&locale=pl_PL" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">Facebook</a>
       <a href="https://www.google.com/search?q=malowanie+bielsko&ie=UTF-8#sv=CCYSMAoHCgN1ZG0SABoUdnNzLXB2LS9nLzExbDZzam04YnMqDwoNL2cvMTFsNnNqbThicxgKINji7okM" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">Google</a>
     </div>
     
-    <div style="flex: 1 1 0%; min-width: max-content; text-align: right;">
-      <span>Wykończenia wnętrz najwyższej jakości</span>
-    </div>
+    <p class="footer-tagline">Wykończenia wnętrz najwyższej jakości</p>
   </footer>
   <dialog class="menu-dialog" id="menuDialog" aria-label="Menu główne">
     <div class="menu-header"><span>MALOWANIE BIELSKO</span><button type="button" class="dialog-close" aria-label="Zamknij menu"><span>Zamknij</span><span aria-hidden="true">×</span></button></div>
@@ -96,21 +95,20 @@
     <fieldset class="appearance-settings">
       <legend>Wygląd strony</legend>
       <div class="appearance-options">
-        <label class="appearance-option"><input type="radio" name="appearance" value="system" checked><span>Zgodnie z urządzeniem</span></label>
         <label class="appearance-option"><input type="radio" name="appearance" value="light"><span>Jasny</span></label>
         <label class="appearance-option"><input type="radio" name="appearance" value="dark"><span>Ciemny</span></label>
       </div>
     </fieldset>
-    <div class="menu-footer" style="display: flex; flex-wrap: wrap; width: 100%; justify-content: space-between; align-items: center; gap: 20px;">
-      <div style="flex: 1 1 0%; min-width: max-content; text-align: left;">
+    <div class="menu-footer">
+      <div class="menu-email">
         <a href="mailto:bb.malowanie@gmail.com">bb.malowanie@gmail.com</a>
       </div>
-      <div style="flex: 1 1 0%; min-width: max-content; display: flex; gap: 25px; justify-content: center;">
+      <div class="menu-socials">
         <a href="https://www.instagram.com/malowanie_bielsko/" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">Instagram</a>
         <a href="https://www.facebook.com/profile.php?id=61594850486109&locale=pl_PL" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">Facebook</a>
         <a href="https://www.google.com/search?q=malowanie+bielsko&ie=UTF-8#sv=CCYSMAoHCgN1ZG0SABoUdnNzLXB2LS9nLzExbDZzam04YnMqDwoNL2cvMTFsNnNqbThicxgKINji7okM" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">Google</a>
       </div>
-      <div style="flex: 1 1 0%; min-width: max-content; text-align: right;">
+      <div class="menu-phone">
         <a href="tel:+48726747602">726 747 602</a>
       </div>
     </div>

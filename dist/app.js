@@ -6,6 +6,12 @@ const menu = document.querySelector('#menuDialog');
 const menuToggle = document.querySelector('.menu-toggle');
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
+// Keep mobile content and section links below the fixed navigation bar.
+const measureHeader = () => document.documentElement.style.setProperty('--header-height', `${header.offsetHeight}px`);
+measureHeader();
+if ('ResizeObserver' in window) new ResizeObserver(measureHeader).observe(header);
+else window.addEventListener('resize', measureHeader);
+
 function openDialog(dialog) {
   dialog.showModal();
   document.body.classList.add('dialog-open');
@@ -21,9 +27,10 @@ function scrollToContact(behavior = reduceMotion.matches ? 'instant' : 'smooth')
   if (!title || !section) return;
 
   // Measure the compact header before scrolling, including its mobile layout.
-  // The title starts directly below it, matching the contact section reference.
+  // Keep the small service-area caption and the complete title visible.
   header.classList.add('is-aligning-contact', 'is-fixed');
-  const top = window.scrollY + title.getBoundingClientRect().top - header.offsetHeight;
+  const introduction = document.querySelector('#contactIntro') || title;
+  const top = window.scrollY + introduction.getBoundingClientRect().top - header.offsetHeight - 20;
   section.setAttribute('tabindex', '-1');
   section.focus({ preventScroll: true });
   window.scrollTo({ top: Math.max(0, top), behavior });

@@ -1,3 +1,16 @@
+﻿AKTUALIZACJA: WYGLĄD, STOPKA I UKŁAD NA TELEFONACH — 25.11.2026
+
+Wyrównano stopkę i uproszczono menu. Jasny/ciemny wygląd wybierzesz
+przyciskiem w nagłówku lub dwiema opcjami w menu. Domyślny wygląd nadal
+wynika z ustawień urządzenia, a wybór ręczny jest zapamiętywany.
+Nowy plik dist/layout-refinements.css zawiera wspólne wyrównanie
+oraz układ dostosowany do telefonów. Nagłówek pozostaje dostępny,
+kafelki usług mają czytelny układ, a kontakt krótki podpis o całej Polsce.
+Ręczny wybór ma pierwszeństwo przed preferencją systemową. CSS i meta
+color-scheme wskazują „only light” lub „only dark”, aby zapobiegać
+automatycznemu przemalowaniu kolorów w obsługujących to przeglądarkach.
+Osobne, wymuszone filtry kolorów przeglądarki mogą ignorować te deklaracje.
+
 AKTUALIZACJA: WYRÓWNANIE SEKCJI KONTAKT — 24.11.2026
 
 Kliknięcie Kontakt w menu i przycisków bezpłatnej wyceny ustawia cały
@@ -16,7 +29,7 @@ WYGLĄD
 - Słońce / księżyc w nagłówku przełącza jasny i ciemny wygląd.
 - Domyślnie strona dopasowuje się do preferencji systemu urządzenia.
 - Ręczny wybór jest zapamiętywany w tej przeglądarce (localStorage).
-- Menu > Wygląd strony > Zgodnie z urządzeniem przywraca automatyczny tryb.
+- Przełącznik jest w nagłówku; menu zawiera tylko opcje Jasny i Ciemny.
 - Wygląd działa też na blogu, podstronach usług i stronie Cennik.
 - dist/appearance.css zawiera nowe kolory i wygląd przełączników.
 - dist/appearance.js odpowiada za automatyczny i ręczny wybór.
@@ -37,7 +50,7 @@ W ZIP-ie są pliki strony i źródła do edycji. Pominięto historię .git,
 pliki dostępu do hostingu i tymczasowe materiały robocze.
 
 MALOWANIE BIELSKO — KOMPLETNY PROJEKT DO EDYCJI
-Wersja strony: 7. Eksport przygotowany 24 listopada 2026.
+Wersja strony: 8. Aktualizacja 25 listopada 2026.
 
 Na początek przeczytaj START-TUTAJ.txt.
 
@@ -173,7 +186,7 @@ Po uruchomieniu własnej domeny możesz zgłosić mapę strony w Google Search C
 
 POCHODZENIE PACZKI
 Pliki dist, content i scripts odpowiadają wersji źródłowej:
-e94da230e2550b32e60cc4f77f59400ca3c67a98
+bf76984f931a63a0b11eab4259c69cb71599a5da
 Dokumentacja i rekomendacja rozszerzenia zostały dodane do eksportu.
 Paczka działa niezależnie od wcześniejszej platformy publikacji.
 SPIS-PLIKOW.sha256 zawiera sumy wszystkich pozostałych plików paczki;

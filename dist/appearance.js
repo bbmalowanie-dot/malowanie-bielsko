@@ -15,7 +15,11 @@
     const theme = preference === 'system' ? (system.matches ? 'dark' : 'light') : preference;
     root.dataset.theme = theme;
     root.dataset.themePreference = preference;
-    root.style.colorScheme = theme;
+    // The site's own palette takes priority over automatic browser recolouring.
+    const scheme = `only ${theme}`;
+    root.style.colorScheme = scheme;
+    const schemeMeta = document.querySelector('meta[name="color-scheme"]');
+    if (schemeMeta) schemeMeta.content = scheme;
     const browserColor = document.querySelector('meta[name="theme-color"]');
     if (browserColor) browserColor.content = theme === 'dark' ? '#102b36' : '#e3f0ef';
     document.querySelectorAll('[data-theme-toggle]').forEach(button => {
@@ -24,7 +28,7 @@
       button.setAttribute('title', label);
     });
     document.querySelectorAll('input[name="appearance"]').forEach(input => {
-      input.checked = input.value === preference;
+      input.checked = input.value === theme;
     });
   }
 
@@ -56,7 +60,11 @@
       button.addEventListener('click', () => chooseAppearance(root.dataset.theme === 'dark' ? 'light' : 'dark'));
     });
     document.querySelectorAll('input[name="appearance"]').forEach(input => {
-      input.addEventListener('change', () => { if (input.checked) chooseAppearance(input.value); });
+      const select = () => {
+        if (input.checked && preference !== input.value) chooseAppearance(input.value);
+      };
+      input.addEventListener('change', select);
+      input.addEventListener('click', select);
     });
     applyAppearance();
   }, { once: true });

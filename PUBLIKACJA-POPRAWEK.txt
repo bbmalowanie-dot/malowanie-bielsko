@@ -1,0 +1,35 @@
+﻿MALOWANIE BIELSKO — AKTUALIZACJA 25.11.2026, WERSJA 8
+
+W paczce są najnowsze poprawki jasnego i ciemnego wyglądu, stopki,
+układu na telefonach oraz sekcji Kontakt. Jest też 11 artykułów blogowych,
+6 podstron usług i zapowiedź Cennika.
+
+JAK ZAKTUALIZOWAĆ SWOJĄ STRONĘ
+1. Rozpakuj ZIP. Otwórz folder Malowanie-Bielsko, a następnie dist.
+2. Zachowaj kopię dotychczasowych plików na hostingu.
+3. Wgraj CAŁĄ ZAWARTOŚĆ dist do katalogu swojej strony (np. public_html),
+   zastępując pliki o tych samych nazwach i zachowując podfoldery.
+   index.html ma znaleźć się bezpośrednio w katalogu strony.
+   Nie wgrywaj folderu Malowanie-Bielsko ani dist jako dodatkowego poziomu.
+4. Jeśli hosting korzysta z pamięci podręcznej/CDN, wyczyść ją po aktualizacji.
+   Odśwież stronę i sprawdź obie wersje kolorystyczne oraz menu Kontakt.
+
+Nie pomijaj nowych plików layout-refinements.css, appearance.css i appearance.js.
+Wgraj także podstrony blog, uslugi i cennik — mają wspólny poprawiony wygląd.
+To gotowe HTML/CSS/JavaScript. Nie potrzeba npm, budowania projektu ani bazy danych.
+
+WŁASNA DOMENA
+Paczka zachowuje adresy SEO obecnej wersji:
+https://malowanie-bielsko.sleekcroissant3.chatgpt.site
+Jeśli publikujesz pod inną domeną, przed wgraniem zmień ten adres na własny
+w plikach dist i scripts. Dokładna instrukcja jest w README.txt, w części
+„SEO I WŁASNA DOMENA”.
+
+EDYCJA I PODGLĄD
+Otwórz folder Malowanie-Bielsko w VS Code. Zainstaluj Live Server i wybierz
+Open with Live Server dla dist/index.html. Więcej w START-TUTAJ.txt.
+Foldery content, scripts i .vscode oraz instrukcje służą do lokalnej edycji;
+na serwer wgrywasz tylko zawartość dist.
+
+Film zachowuje Twój dotychczasowy adres na GitHubie i wymaga internetu.
+Pozostałe grafiki, style, skrypty i gotowe podstrony znajdują się w paczce.
