@@ -1,4 +1,4 @@
-﻿AKTUALIZACJA: WYGLĄD, STOPKA I UKŁAD NA TELEFONACH — 25.11.2026
+AKTUALIZACJA: WYGLĄD, STOPKA I UKŁAD NA TELEFONACH — 25.11.2026
 
 Wyrównano stopkę i uproszczono menu. Jasny/ciemny wygląd wybierzesz
 przyciskiem w nagłówku lub dwiema opcjami w menu. Domyślny wygląd nadal
@@ -169,7 +169,7 @@ każda podstrona ma własny plik index.html.
 SEO I WŁASNA DOMENA
 Adresy canonical, Open Graph, dane strukturalne, mapa strony i robots.txt
 wskazują obecnie dotychczasowy adres:
-https://malowanie-bielsko.sleekcroissant3.chatgpt.site
+https://malowaniebielsko.pl
 
 Przy przenoszeniu pod własną domenę otwórz w VS Code Zamień w plikach
 (Ctrl+Shift+H). W polu plików do uwzględnienia wpisz: dist/**, scripts/**

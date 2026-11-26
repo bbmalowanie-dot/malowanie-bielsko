@@ -9,7 +9,7 @@ const escape = value => value.replace(/[&<>"']/g, char => ({'&':'&amp;', '<':'&l
 const sectionIds = ['malowanie', 'gladzie', 'dekoracje', 'zabudowy', 'drewno', 'wykonczenia'];
 services.forEach((service, index) => {
   const pattern = new RegExp(`<details id="usluga-${sectionIds[index]}"[\\s\\S]*?<\\/details>`);
-  const link = `<a class="text-link service-detail-link" href="uslugi/${service.slug}/" target="_blank" rel="noopener">Pełna specyfikacja<span class="sr-only">: ${escape(service.label)} — otwiera się w nowej karcie</span></a>`;
+  const link = `<a class="text-link service-detail-link" href="uslugi/${service.slug}/">Pełna specyfikacja<span class="sr-only">: ${escape(service.label)}</span></a>`;
   home = home.replace(pattern, section => section.includes('service-detail-link')
     ? section.replace(/<a class="text-link service-detail-link"[\s\S]*?<\/a>/, link)
     : section.replace('</div></details>', `${link}</div></details>`));
@@ -22,11 +22,13 @@ const menu = home.match(/  <dialog class="menu-dialog"[\s\S]*?<\/dialog>/)[0]
   .replaceAll('href="#', 'href="../../index.html#')
   .replaceAll('href="cennik/"', 'href="../../cennik/"');
 const footer = home.match(/  <footer[\s\S]*?<\/footer>/)[0]
-  .replaceAll('href="#start"', 'href="../../index.html#start"');
+  .replaceAll('href="#', 'href="../../index.html#');
 const check = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 12 4 4 8-9"/></svg>';
 
 for (const service of services) {
   const title = escape(service.title);
+  const seoTitle = `${title} Bielsko-Biała i okolice — Malowanie Bielsko`;
+  const description = escape(`${service.intro} Bielsko-Biała i okolice. Bezpłatna wycena: 726 747 602.`);
   const html = `<!doctype html>
 <html lang="pl">
 <head>
@@ -34,23 +36,23 @@ for (const service of services) {
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#e3f0ef">
   <meta name="color-scheme" content="light dark">
-  <script src="../../appearance.js?v=8"></script>
-  <meta name="description" content="${escape(service.intro)}">
+  <script src="../../appearance.js?v=9"></script>
+  <meta name="description" content="${description}">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://malowanie-bielsko.sleekcroissant3.chatgpt.site/uslugi/${service.slug}/">
-  <meta property="og:title" content="${title} — Malowanie Bielsko">
-  <meta property="og:description" content="${escape(service.intro)}">
+  <link rel="canonical" href="https://malowaniebielsko.pl/uslugi/${service.slug}/">
+  <meta property="og:title" content="${seoTitle}">
+  <meta property="og:description" content="${description}">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://malowanie-bielsko.sleekcroissant3.chatgpt.site/uslugi/${service.slug}/">
-  <title>${title} — Malowanie Bielsko</title>
-  <link rel="icon" type="image/png" href="../../assets/logo-transparent.png">
+  <meta property="og:url" content="https://malowaniebielsko.pl/uslugi/${service.slug}/">
+  <title>${seoTitle}</title>
+  <link rel="icon" type="image/png" href="../../assets/logo-192.png">
   <link rel="stylesheet" href="../../styles.css">
   <link rel="stylesheet" href="../../service-pages.css">
   <link rel="stylesheet" href="../../brand-theme.css">
   <link rel="stylesheet" href="../../blog-contact.css">
-  <link rel="stylesheet" href="../../appearance.css?v=8">
-  <link rel="stylesheet" href="../../layout-refinements.css?v=8">
-  <script src="../../app.js?v=8" defer></script>
+  <link rel="stylesheet" href="../../appearance.css?v=9">
+  <link rel="stylesheet" href="../../layout-refinements.css?v=9">
+  <script src="../../app.js?v=9" defer></script>
 </head>
 <body class="service-page">
   <a href="#main" class="skip-link">Przejdź do treści</a>
@@ -59,7 +61,7 @@ ${header}
   <main id="main" class="service-main">
     <nav class="service-breadcrumb" aria-label="Ścieżka strony"><a href="../../index.html#start">Wszystkie usługi</a><span aria-hidden="true">/</span><span aria-current="page">${escape(service.label)}</span></nav>
     <section class="service-intro" aria-labelledby="serviceTitle">
-      <p class="eyebrow">Poznaj zakres usługi</p>
+      <p class="eyebrow">Bielsko-Biała i okolice</p>
       <h1 id="serviceTitle">${title}</h1>
       <p class="service-lead">${escape(service.intro)}</p>
       <ul class="service-highlights" aria-label="Najważniejsze informacje">${service.tags.map(tag => `<li>${escape(tag)}</li>`).join('')}</ul>

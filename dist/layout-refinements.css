@@ -122,3 +122,24 @@
   .tile-icon svg { width: 28px; height: 28px; }
   .service-tile h2 { font-size: 20px; }
 }
+
+/* Mobile quick-contact bar (phone, SMS, quote) pinned to the bottom of the screen. */
+.mobile-cta { display: none; }
+@media (max-width: 760px) {
+  .mobile-cta {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 40;
+    display: grid; grid-template-columns: 1.3fr 1fr 1.5fr; gap: 8px;
+    padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
+    background: var(--appearance-surface); border-top: 1px solid var(--appearance-border);
+    box-shadow: 0 -8px 24px rgba(11, 53, 66, .12);
+  }
+  .mobile-cta a {
+    display: flex; align-items: center; justify-content: center; gap: 7px;
+    min-height: 48px; padding: 8px 10px; border-radius: 8px;
+    border: 1px solid var(--appearance-border); color: var(--appearance-text);
+    font-size: 15px; font-weight: 600; line-height: 1.2; text-align: center; text-decoration: none;
+  }
+  .mobile-cta a.mobile-cta-call { background: var(--appearance-selected); border-color: var(--appearance-selected); color: var(--appearance-selected-text); }
+  .mobile-cta svg { width: 18px; height: 18px; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linejoin: round; }
+  body { padding-bottom: calc(76px + env(safe-area-inset-bottom)); }
+}

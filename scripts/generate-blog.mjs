@@ -3,12 +3,21 @@ import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
-const origin = 'https://malowanie-bielsko.sleekcroissant3.chatgpt.site';
+const origin = 'https://malowaniebielsko.pl';
 const posts = JSON.parse(await readFile(resolve(root, 'content/posts.json'), 'utf8'));
 const services = JSON.parse(await readFile(resolve(root, 'content/services.json'), 'utf8'));
 const esc = value => String(value).replace(/[&<>"']/g, char => ({'&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;'}[char]));
 let home = await readFile(resolve(root, 'dist/index.html'), 'utf8');
-const organization = {'@type':'Organization',name:'Malowanie Bielsko',url:origin+'/',email:'bb.malowanie@gmail.com',telephone:'+48726747602',logo:{'@type':'ImageObject',url:origin+'/assets/logo-transparent.png'}};
+const organization = {
+  '@type':'HousePainter','@id':origin+'/#firma',name:'Malowanie Bielsko',url:origin+'/',
+  description:'Malowanie wnętrz, gładzie i szpachlowanie Q1–Q4, zabudowy G-K oraz prace wykończeniowe w Bielsku-Białej i okolicach.',
+  email:'bb.malowanie@gmail.com',telephone:'+48726747602',
+  logo:{'@type':'ImageObject',url:origin+'/assets/logo-transparent.png'},image:origin+'/assets/logo-transparent.png',
+  address:{'@type':'PostalAddress',addressLocality:'Bielsko-Biała',addressRegion:'śląskie',addressCountry:'PL'},
+  areaServed:[{'@type':'City',name:'Bielsko-Biała'},{'@type':'AdministrativeArea',name:'powiat bielski'}],
+  knowsAbout:['malowanie ścian i sufitów','malowanie natryskowe','gładzie gipsowe','szpachlowanie Q1–Q4','zabudowy G-K','sufity podwieszane'],
+  sameAs:['https://www.instagram.com/malowanie_bielsko/','https://www.facebook.com/profile.php?id=61594850486109']
+};
 const jsonLd = data => `<script type="application/ld+json">${JSON.stringify(data).replaceAll('<','\\u003c')}</script>`;
 const dateLabel = date => new Intl.DateTimeFormat('pl-PL',{day:'numeric',month:'long',year:'numeric',timeZone:'Europe/Warsaw'}).format(new Date(date+'T12:00:00Z'));
 const topics = [
@@ -58,11 +67,11 @@ function shell({title,description,path,prefix,body,schema}) {
   const footer = home.match(/  <footer[\s\S]*?<\/footer>/)[0].replaceAll('href="#',`href="${prefix}index.html#`).replaceAll('href="cennik/"',`href="${prefix}cennik/"`);
   return `<!doctype html>
 <html lang="pl"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#e3f0ef"><meta name="color-scheme" content="light dark"><script src="${prefix}appearance.js?v=8"></script>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#e3f0ef"><meta name="color-scheme" content="light dark"><script src="${prefix}appearance.js?v=9"></script>
 <title>${esc(title)} — Malowanie Bielsko</title>
 <meta name="description" content="${esc(description)}"><meta name="robots" content="index, follow"><link rel="canonical" href="${origin}${path}">
 <meta property="og:title" content="${esc(title)} — Malowanie Bielsko"><meta property="og:description" content="${esc(description)}"><meta property="og:type" content="${path==='/blog/'?'website':'article'}"><meta property="og:url" content="${origin}${path}"><meta property="og:image" content="${origin}/assets/logo-transparent.png">
-<link rel="icon" type="image/png" href="${prefix}assets/logo-transparent.png"><link rel="stylesheet" href="${prefix}styles.css"><link rel="stylesheet" href="${prefix}brand-theme.css"><link rel="stylesheet" href="${prefix}blog-contact.css"><link rel="stylesheet" href="${prefix}appearance.css?v=8"><link rel="stylesheet" href="${prefix}layout-refinements.css?v=8"><script src="${prefix}app.js?v=8" defer></script>
+<link rel="icon" type="image/png" href="${prefix}assets/logo-192.png"><link rel="stylesheet" href="${prefix}styles.css"><link rel="stylesheet" href="${prefix}brand-theme.css"><link rel="stylesheet" href="${prefix}blog-contact.css"><link rel="stylesheet" href="${prefix}appearance.css?v=9"><link rel="stylesheet" href="${prefix}layout-refinements.css?v=9"><script src="${prefix}app.js?v=9" defer></script>
 ${jsonLd(schema)}
 </head><body class="blog-page"><a href="#main" class="skip-link">Przejdź do treści</a>
 ${header}

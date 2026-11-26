@@ -17,17 +17,17 @@ const html = `<!doctype html>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#e3f0ef">
   <meta name="color-scheme" content="light dark">
-  <script src="../appearance.js?v=8"></script>
+  <script src="../appearance.js?v=9"></script>
   <title>Cennik — Malowanie Bielsko</title>
   <meta name="description" content="Przygotowujemy kalkulator orientacyjnej wyceny prac wykończeniowych. Już teraz poproś o indywidualną, bezpłatną wycenę.">
   <meta name="robots" content="noindex, follow">
-  <link rel="icon" type="image/png" href="../assets/logo-transparent.png">
+  <link rel="icon" type="image/png" href="../assets/logo-192.png">
   <link rel="stylesheet" href="../styles.css">
   <link rel="stylesheet" href="../brand-theme.css">
   <link rel="stylesheet" href="../blog-contact.css">
-  <link rel="stylesheet" href="../appearance.css?v=8">
-  <link rel="stylesheet" href="../layout-refinements.css?v=8">
-  <script src="../app.js?v=8" defer></script>
+  <link rel="stylesheet" href="../appearance.css?v=9">
+  <link rel="stylesheet" href="../layout-refinements.css?v=9">
+  <script src="../app.js?v=9" defer></script>
 </head>
 <body class="pricing-page">
   <a href="#main" class="skip-link">Przejdź do treści</a>

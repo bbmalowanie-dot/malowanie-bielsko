@@ -1,4 +1,4 @@
-﻿MALOWANIE BIELSKO — AKTUALIZACJA 25.11.2026, WERSJA 8
+MALOWANIE BIELSKO — AKTUALIZACJA 25.11.2026, WERSJA 8
 
 W paczce są najnowsze poprawki jasnego i ciemnego wyglądu, stopki,
 układu na telefonach oraz sekcji Kontakt. Jest też 11 artykułów blogowych,
@@ -20,7 +20,7 @@ To gotowe HTML/CSS/JavaScript. Nie potrzeba npm, budowania projektu ani bazy dan
 
 WŁASNA DOMENA
 Paczka zachowuje adresy SEO obecnej wersji:
-https://malowanie-bielsko.sleekcroissant3.chatgpt.site
+https://malowaniebielsko.pl
 Jeśli publikujesz pod inną domeną, przed wgraniem zmień ten adres na własny
 w plikach dist i scripts. Dokładna instrukcja jest w README.txt, w części
 „SEO I WŁASNA DOMENA”.
