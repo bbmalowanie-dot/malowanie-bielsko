@@ -1,0 +1,83 @@
+{
+  "_opis": "STAWKI KALKULATORA WYCENY. Kwoty netto w zł, ZAWSZE Z MATERIAŁEM. [od, do] = przedział. Po zmianie uruchom: node scripts/generate-pricing.mjs",
+
+  "minimalneZlecenie": 1500,
+  "zaokraglenie": 50,
+
+  "malowanie": {
+    "_opis": "Samo malowanie (2 warstwy, z gruntowaniem i zabezpieczeniem), za m² ścian i sufitów.",
+    "prywatny": [25, 32],
+    "biuro": [20, 28],
+    "lokal": [22, 30],
+    "hala": [14, 22],
+    "inne": [20, 28],
+    "halaMinimalnyMetraz": 1000,
+    "halaPonizejMinimum": "inne",
+    "kolory": {
+      "bialy": { "nazwa": "Tylko biały", "mnoznik": 1.0 },
+      "jeden": { "nazwa": "Biały + 1 kolor", "mnoznik": 1.12 },
+      "kilka": { "nazwa": "2–3 kolory", "mnoznik": 1.22 },
+      "wiele": { "nazwa": "4 kolory lub więcej", "mnoznik": 1.32 }
+    }
+  },
+
+  "gladzie": {
+    "_opis": "'sama' = gładź bez malowania. 'zMalowaniem' = gładź + malowanie na gotowo na biało. Za m².",
+    "podloza": {
+      "gipsowy": { "nazwa": "Tynk gipsowy", "sama": [65, 75], "zMalowaniem": [90, 100] },
+      "cementowy": { "nazwa": "Tynk cementowo-wapienny", "sama": [75, 90], "zMalowaniem": [100, 115] },
+      "gk": { "nazwa": "Płyty G-K", "sama": [70, 80], "zMalowaniem": [95, 105] },
+      "stare": { "nazwa": "Stare, pomalowane ściany", "sama": [75, 90], "zMalowaniem": [100, 115] },
+      "nie_wiem": { "nazwa": "Nie wiem", "sama": [65, 90], "zMalowaniem": [90, 115] }
+    },
+    "mnoznikFirma": 0.95
+  },
+
+  "sufityGK": {
+    "_opis": "Sufit podwieszany z płyt G-K: konstrukcja, płyty, montaż (bez gładzi i malowania). Za m² sufitu.",
+    "poziomy": {
+      "jeden": { "nazwa": "Jednopoziomowy", "stawka": [140, 180] },
+      "wiele": { "nazwa": "Wielopoziomowy / z uskokami", "stawka": [180, 230] }
+    },
+    "wnekaLED": { "nazwa": "Wnęka pod taśmę LED", "jednostka": "mb", "stawka": [120, 170] },
+    "wnekaKarnisz": { "nazwa": "Wnęka karniszowa", "jednostka": "mb", "stawka": [130, 180] },
+    "zbrojenieTasma": { "nazwa": "Zbrojenie połączeń płyt taśmą i szpachlowanie spoin", "jednostka": "m²", "stawka": [20, 28] }
+  },
+
+  "zabudowyGK": {
+    "_opis": "Ścianki działowe i zabudowy G-K z wełną, za m² ścianki (bez gładzi i malowania).",
+    "stawka": [150, 200]
+  },
+
+  "tapetowanie": {
+    "_opis": "Przygotowanie ściany, klej i klejenie tapety, za m². Tapetę dostarcza klient.",
+    "stawka": [45, 65]
+  },
+
+  "stan": {
+    "puste": { "nazwa": "Puste / stan deweloperski", "mnoznik": 1.0 },
+    "zamieszkane": { "nazwa": "Zamieszkane, z meblami", "mnoznik": 1.15 }
+  },
+  "obiektCzynny": { "nazwa": "Obiekt działa w trakcie prac", "mnoznik": 1.1 },
+
+  "wysokosc": {
+    "do3": { "nazwa": "Do 3 m", "mnoznik": 1.0 },
+    "do5": { "nazwa": "3–5 m", "mnoznik": 1.15 },
+    "powyzej5": { "nazwa": "Powyżej 5 m (podnośnik)", "mnoznik": 1.35 }
+  },
+
+  "rabatyIlosciowe": [
+    { "od": 1500, "mnoznik": 0.85 },
+    { "od": 500, "mnoznik": 0.9 },
+    { "od": 200, "mnoznik": 0.95 }
+  ],
+
+  "powierzchniaZPodlogi": {
+    "_opis": "Gdy klient zna tylko metraż podłogi: ile m² ścian/sufitów to orientacyjnie daje (wys. ok. 2,6 m).",
+    "scianyISufity": 3.4,
+    "sciany": 2.4,
+    "sufity": 1.0
+  },
+
+  "vatInfo": "Ceny netto, z materiałami. Dla mieszkań i domów objętych budownictwem społecznym (do 150 m² mieszkanie, do 300 m² dom) najczęściej stosuje się 8% VAT, w pozostałych przypadkach 23%."
+}

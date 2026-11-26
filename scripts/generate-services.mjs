@@ -22,7 +22,7 @@ const menu = home.match(/  <dialog class="menu-dialog"[\s\S]*?<\/dialog>/)[0]
   .replaceAll('href="#', 'href="../../index.html#')
   .replaceAll('href="cennik/"', 'href="../../cennik/"');
 const footer = home.match(/  <footer[\s\S]*?<\/footer>/)[0]
-  .replaceAll('href="#', 'href="../../index.html#');
+  .replaceAll('href="#', 'href="../../index.html#').replaceAll('href="cennik/', 'href="../../cennik/');
 const check = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 12 4 4 8-9"/></svg>';
 
 for (const service of services) {

@@ -5,17 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#e3f0ef">
   <meta name="color-scheme" content="light dark">
-  <script src="../appearance.js?v=9"></script>
-  <title>Cennik — Malowanie Bielsko</title>
-  <meta name="description" content="Przygotowujemy kalkulator orientacyjnej wyceny prac wykończeniowych. Już teraz poproś o indywidualną, bezpłatną wycenę.">
-  <meta name="robots" content="noindex, follow">
+  <script src="../appearance.js?v=12"></script>
+  <title>Cennik malowania i gładzi Bielsko-Biała — kalkulator wyceny | Malowanie Bielsko</title>
+  <meta name="description" content="Ile kosztuje malowanie i gładź w Bielsku-Białej? Sprawdź cennik i policz orientacyjną cenę w kalkulatorze. Domy, mieszkania, biura, hale. Bezpłatna wycena.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://malowaniebielsko.pl/cennik/">
+  <meta property="og:title" content="Cennik malowania i gładzi Bielsko-Biała — kalkulator wyceny">
+  <meta property="og:description" content="Policz orientacyjną cenę malowania i gładzi w kilka kliknięć i wyślij zdjęcia do dokładnej wyceny.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://malowaniebielsko.pl/cennik/">
+  <meta property="og:image" content="https://malowaniebielsko.pl/assets/logo-transparent.png">
   <link rel="icon" type="image/png" href="../assets/logo-192.png">
   <link rel="stylesheet" href="../styles.css">
   <link rel="stylesheet" href="../brand-theme.css">
   <link rel="stylesheet" href="../blog-contact.css">
-  <link rel="stylesheet" href="../appearance.css?v=9">
-  <link rel="stylesheet" href="../layout-refinements.css?v=9">
-  <script src="../app.js?v=9" defer></script>
+  <link rel="stylesheet" href="../appearance.css?v=12">
+  <link rel="stylesheet" href="../layout-refinements.css?v=12">
+  <link rel="stylesheet" href="../wycena.css?v=12">
+  <script src="../app.js?v=12" defer></script>
+  <script src="../wycena.js?v=12" defer></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Ile kosztuje malowanie mieszkania w Bielsku-Białej?","acceptedAnswer":{"@type":"Answer","text":"Malowanie ścian i sufitów na biało, razem z materiałami, to orientacyjnie 25–32 zł/m² netto. Mieszkanie 50 m² to zwykle ok. 170 m² ścian i sufitów. Dokładną cenę podajemy po bezpłatnych oględzinach."}},{"@type":"Question","name":"Ile kosztują gładzie z malowaniem na gotowo?","acceptedAnswer":{"@type":"Answer","text":"Na tynku gipsowym to orientacyjnie 90–100 zł/m² netto, ze wszystkimi materiałami: zabezpieczeniem, gruntowaniem, akrylami, gładzią, szlifowaniem i malowaniem."}},{"@type":"Question","name":"Ile kosztuje sufit podwieszany z płyt G-K?","acceptedAnswer":{"@type":"Answer","text":"Sufit jednopoziomowy to orientacyjnie 140–180 zł/m² netto z materiałem (konstrukcja, płyty, montaż). Wnęka pod LED kosztuje 120–170 zł/mb, wnęka karniszowa 130–180 zł/mb. Gładź i malowanie liczone są osobno."}},{"@type":"Question","name":"Czy mogę zamówić kilka usług naraz?","acceptedAnswer":{"@type":"Answer","text":"Tak. W kalkulatorze zaznaczysz np. sufity G-K z wnękami, zbrojenie połączeń taśmą, gładzie na ścianach i sufitach, malowanie i tapetę na jednej ścianie — policzymy wszystko razem."}},{"@type":"Question","name":"Od czego zależy cena gładzi?","acceptedAnswer":{"@type":"Answer","text":"Najbardziej od podłoża (tynk gipsowy, cementowo-wapienny, płyty G-K czy stare pomalowane ściany), jego stanu, liczby warstw i wymaganego standardu Q1–Q4."}},{"@type":"Question","name":"Czy ceny zawierają materiały?","acceptedAnswer":{"@type":"Answer","text":"Tak. Wszystkie ceny w cenniku i w kalkulatorze są z materiałami: zabezpieczenie powierzchni, grunty, akryle, gładź i farba."}},{"@type":"Question","name":"Czy ceny są netto czy brutto?","acceptedAnswer":{"@type":"Answer","text":"Ceny netto, z materiałami. Dla mieszkań i domów objętych budownictwem społecznym (do 150 m² mieszkanie, do 300 m² dom) najczęściej stosuje się 8% VAT, w pozostałych przypadkach 23%."}},{"@type":"Question","name":"Czy wycena jest płatna?","acceptedAnswer":{"@type":"Answer","text":"Nie. Oględziny i wycena w Bielsku-Białej i okolicach są bezpłatne. Możesz też przesłać zdjęcia przez formularz."}}]}</script>
 </head>
 <body class="pricing-page">
   <a href="#main" class="skip-link">Przejdź do treści</a>
@@ -34,19 +43,57 @@
   <main id="main" class="pricing-main">
     <nav class="article-breadcrumb" aria-label="Ścieżka strony"><a href="../index.html">Strona główna</a><span aria-hidden="true">/</span><span aria-current="page">Cennik</span></nav>
     <section class="pricing-intro" aria-labelledby="pricingTitle">
-      <p class="eyebrow">Cennik</p>
-      <h1 id="pricingTitle">Twój zakres prac.<br>Twoja wycena.</h1>
-      <p>Koszt wykończenia zależy od wnętrza, jego stanu i zakresu prac. Pomagamy ustalić, czego potrzebuje Twoja przestrzeń.</p>
+      <p class="eyebrow">Cennik · Bielsko-Biała i okolice</p>
+      <h1 id="pricingTitle">Policz koszt malowania i gładzi.</h1>
+      <p>Odpowiedz na kilka pytań i od razu zobacz orientacyjną cenę. Potem zostaw kontakt i dołącz zdjęcia — przygotujemy dokładną wycenę za darmo.</p>
     </section>
-    <section class="pricing-notice" aria-labelledby="pricingStatus">
-      <span class="pricing-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><rect x="7" y="3" width="18" height="26" rx="3"/><path d="M11 8h10v5H11Z M11 18h2m6 0h2m-10 6h2m6 0h2"/></svg></span>
-      <div>
-        <h2 id="pricingStatus">Kalkulator wyceny w przygotowaniu</h2>
-        <p>Wkrótce wybierzesz usługę, odpowiesz na pytania o planowane prace i podasz obmiar, aby poznać orientacyjny koszt. Tymczasem zapraszamy do bezpłatnej, indywidualnej wyceny.</p>
-        <div class="pricing-actions"><a href="mailto:bb.malowanie@gmail.com?subject=Bezp%C5%82atna%20wycena">Napisz lub prześlij projekt</a><a href="tel:+48726747602">Zadzwoń: 726 747 602</a></div>
+    <section class="calc-section" aria-label="Kalkulator wyceny">
+      <div class="calc-shell" id="kalkulator">
+        <noscript><p>Kalkulator wymaga włączonego JavaScriptu. Zadzwoń: <a href="tel:+48726747602">726 747 602</a> lub napisz: <a href="mailto:bb.malowanie@gmail.com">bb.malowanie@gmail.com</a>.</p></noscript>
       </div>
+      <script id="stawki" type="application/json">{"_opis":"STAWKI KALKULATORA WYCENY. Kwoty netto w zł, ZAWSZE Z MATERIAŁEM. [od, do] = przedział. Po zmianie uruchom: node scripts/generate-pricing.mjs","minimalneZlecenie":1500,"zaokraglenie":50,"malowanie":{"_opis":"Samo malowanie (2 warstwy, z gruntowaniem i zabezpieczeniem), za m² ścian i sufitów.","prywatny":[25,32],"biuro":[20,28],"lokal":[22,30],"hala":[14,22],"inne":[20,28],"halaMinimalnyMetraz":1000,"halaPonizejMinimum":"inne","kolory":{"bialy":{"nazwa":"Tylko biały","mnoznik":1},"jeden":{"nazwa":"Biały + 1 kolor","mnoznik":1.12},"kilka":{"nazwa":"2–3 kolory","mnoznik":1.22},"wiele":{"nazwa":"4 kolory lub więcej","mnoznik":1.32}}},"gladzie":{"_opis":"'sama' = gładź bez malowania. 'zMalowaniem' = gładź + malowanie na gotowo na biało. Za m².","podloza":{"gipsowy":{"nazwa":"Tynk gipsowy","sama":[65,75],"zMalowaniem":[90,100]},"cementowy":{"nazwa":"Tynk cementowo-wapienny","sama":[75,90],"zMalowaniem":[100,115]},"gk":{"nazwa":"Płyty G-K","sama":[70,80],"zMalowaniem":[95,105]},"stare":{"nazwa":"Stare, pomalowane ściany","sama":[75,90],"zMalowaniem":[100,115]},"nie_wiem":{"nazwa":"Nie wiem","sama":[65,90],"zMalowaniem":[90,115]}},"mnoznikFirma":0.95},"sufityGK":{"_opis":"Sufit podwieszany z płyt G-K: konstrukcja, płyty, montaż (bez gładzi i malowania). Za m² sufitu.","poziomy":{"jeden":{"nazwa":"Jednopoziomowy","stawka":[140,180]},"wiele":{"nazwa":"Wielopoziomowy / z uskokami","stawka":[180,230]}},"wnekaLED":{"nazwa":"Wnęka pod taśmę LED","jednostka":"mb","stawka":[120,170]},"wnekaKarnisz":{"nazwa":"Wnęka karniszowa","jednostka":"mb","stawka":[130,180]},"zbrojenieTasma":{"nazwa":"Zbrojenie połączeń płyt taśmą i szpachlowanie spoin","jednostka":"m²","stawka":[20,28]}},"zabudowyGK":{"_opis":"Ścianki działowe i zabudowy G-K z wełną, za m² ścianki (bez gładzi i malowania).","stawka":[150,200]},"tapetowanie":{"_opis":"Przygotowanie ściany, klej i klejenie tapety, za m². Tapetę dostarcza klient.","stawka":[45,65]},"stan":{"puste":{"nazwa":"Puste / stan deweloperski","mnoznik":1},"zamieszkane":{"nazwa":"Zamieszkane, z meblami","mnoznik":1.15}},"obiektCzynny":{"nazwa":"Obiekt działa w trakcie prac","mnoznik":1.1},"wysokosc":{"do3":{"nazwa":"Do 3 m","mnoznik":1},"do5":{"nazwa":"3–5 m","mnoznik":1.15},"powyzej5":{"nazwa":"Powyżej 5 m (podnośnik)","mnoznik":1.35}},"rabatyIlosciowe":[{"od":1500,"mnoznik":0.85},{"od":500,"mnoznik":0.9},{"od":200,"mnoznik":0.95}],"powierzchniaZPodlogi":{"_opis":"Gdy klient zna tylko metraż podłogi: ile m² ścian/sufitów to orientacyjnie daje (wys. ok. 2,6 m).","scianyISufity":3.4,"sciany":2.4,"sufity":1},"vatInfo":"Ceny netto, z materiałami. Dla mieszkań i domów objętych budownictwem społecznym (do 150 m² mieszkanie, do 300 m² dom) najczęściej stosuje się 8% VAT, w pozostałych przypadkach 23%."}</script>
     </section>
-    <a class="text-link" href="../index.html#start">Zobacz wszystkie usługi</a>
+    <section class="price-table-wrap" aria-labelledby="priceTableTitle">
+      <h2 id="priceTableTitle">Cennik orientacyjny (netto)</h2>
+      <p>Ceny za m² powierzchni ścian i sufitów, z materiałami. Ostateczna kwota zależy od stanu ścian, metrażu i dostępu — podajemy ją po bezpłatnych oględzinach. Minimalna wartość zlecenia: 1500 zł netto.</p>
+      <table class="price-table">
+        <thead><tr><th scope="col">Usługa</th><th scope="col">Cena netto</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Malowanie ścian i sufitów na biało (mieszkanie, dom)</th><td>25–32 zł/m²</td></tr>
+          <tr><th scope="row">Malowanie w kolorze, 2–3 kolory (mieszkanie, dom)</th><td>31–39 zł/m²</td></tr>
+          <tr><th scope="row">Malowanie biur</th><td>20–28 zł/m²</td></tr>
+          <tr><th scope="row">Malowanie hal i magazynów (natrysk, od 1000 m²)</th><td>14–22 zł/m²</td></tr>
+          <tr><th scope="row">Malowanie lokali usługowych</th><td>22–30 zł/m²</td></tr>
+          <tr><th scope="row">Gładź + malowanie na gotowo — tynk gipsowy</th><td>90–100 zł/m²</td></tr>
+          <tr><th scope="row">Gładź + malowanie na gotowo — tynk cementowo-wapienny</th><td>100–115 zł/m²</td></tr>
+          <tr><th scope="row">Gładź + malowanie na gotowo — płyty G-K</th><td>95–105 zł/m²</td></tr>
+          <tr><th scope="row">Gładź + malowanie na gotowo — stare, pomalowane ściany</th><td>100–115 zł/m²</td></tr>
+          <tr><th scope="row">Sama gładź — tynk gipsowy</th><td>65–75 zł/m²</td></tr>
+          <tr><th scope="row">Sama gładź — tynk cementowo-wapienny</th><td>75–90 zł/m²</td></tr>
+          <tr><th scope="row">Sama gładź — płyty G-K</th><td>70–80 zł/m²</td></tr>
+          <tr><th scope="row">Sama gładź — stare, pomalowane ściany</th><td>75–90 zł/m²</td></tr>
+          <tr><th scope="row">Sufit podwieszany G-K — jednopoziomowy</th><td>140–180 zł/m²</td></tr>
+          <tr><th scope="row">Sufit podwieszany G-K — wielopoziomowy / z uskokami</th><td>180–230 zł/m²</td></tr>
+          <tr><th scope="row">Wnęka pod taśmę LED</th><td>120–170 zł/mb</td></tr>
+          <tr><th scope="row">Wnęka karniszowa</th><td>130–180 zł/mb</td></tr>
+          <tr><th scope="row">Zbrojenie połączeń płyt taśmą i szpachlowanie spoin</th><td>20–28 zł/m²</td></tr>
+          <tr><th scope="row">Ścianki działowe i zabudowy G-K</th><td>150–200 zł/m²</td></tr>
+          <tr><th scope="row">Tapetowanie (tapeta klienta)</th><td>45–65 zł/m²</td></tr>
+        </tbody>
+      </table>
+      <p class="wz-note">Ceny netto, z materiałami. Dla mieszkań i domów objętych budownictwem społecznym (do 150 m² mieszkanie, do 300 m² dom) najczęściej stosuje się 8% VAT, w pozostałych przypadkach 23%.</p>
+    </section>
+    <section class="price-faq" aria-labelledby="priceFaqTitle">
+      <h2 id="priceFaqTitle">Najczęstsze pytania o ceny</h2>
+      <details><summary>Ile kosztuje malowanie mieszkania w Bielsku-Białej?</summary><p>Malowanie ścian i sufitów na biało, razem z materiałami, to orientacyjnie 25–32 zł/m² netto. Mieszkanie 50 m² to zwykle ok. 170 m² ścian i sufitów. Dokładną cenę podajemy po bezpłatnych oględzinach.</p></details>
+      <details><summary>Ile kosztują gładzie z malowaniem na gotowo?</summary><p>Na tynku gipsowym to orientacyjnie 90–100 zł/m² netto, ze wszystkimi materiałami: zabezpieczeniem, gruntowaniem, akrylami, gładzią, szlifowaniem i malowaniem.</p></details>
+      <details><summary>Ile kosztuje sufit podwieszany z płyt G-K?</summary><p>Sufit jednopoziomowy to orientacyjnie 140–180 zł/m² netto z materiałem (konstrukcja, płyty, montaż). Wnęka pod LED kosztuje 120–170 zł/mb, wnęka karniszowa 130–180 zł/mb. Gładź i malowanie liczone są osobno.</p></details>
+      <details><summary>Czy mogę zamówić kilka usług naraz?</summary><p>Tak. W kalkulatorze zaznaczysz np. sufity G-K z wnękami, zbrojenie połączeń taśmą, gładzie na ścianach i sufitach, malowanie i tapetę na jednej ścianie — policzymy wszystko razem.</p></details>
+      <details><summary>Od czego zależy cena gładzi?</summary><p>Najbardziej od podłoża (tynk gipsowy, cementowo-wapienny, płyty G-K czy stare pomalowane ściany), jego stanu, liczby warstw i wymaganego standardu Q1–Q4.</p></details>
+      <details><summary>Czy ceny zawierają materiały?</summary><p>Tak. Wszystkie ceny w cenniku i w kalkulatorze są z materiałami: zabezpieczenie powierzchni, grunty, akryle, gładź i farba.</p></details>
+      <details><summary>Czy ceny są netto czy brutto?</summary><p>Ceny netto, z materiałami. Dla mieszkań i domów objętych budownictwem społecznym (do 150 m² mieszkanie, do 300 m² dom) najczęściej stosuje się 8% VAT, w pozostałych przypadkach 23%.</p></details>
+      <details><summary>Czy wycena jest płatna?</summary><p>Nie. Oględziny i wycena w Bielsku-Białej i okolicach są bezpłatne. Możesz też przesłać zdjęcia przez formularz.</p></details>
+    </section>
   </main>
   <footer class="site-footer">
     <div class="footer-identity">
@@ -64,7 +111,7 @@
     <nav class="mobile-cta" aria-label="Szybki kontakt">
       <a class="mobile-cta-call" href="tel:+48726747602"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 3h3l1.6 4.2-2.1 1.4a11 11 0 0 0 6.3 6.3l1.4-2.1L21 14.4v3A2.6 2.6 0 0 1 18.4 20 15.4 15.4 0 0 1 4 5.6 2.6 2.6 0 0 1 6.6 3Z"/></svg>Zadzwoń</a>
       <a class="mobile-cta-sms" href="sms:+48726747602"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4V5Z"/></svg>SMS</a>
-      <a class="mobile-cta-quote" href="../index.html#kontakt">Bezpłatna wycena</a>
+      <a class="mobile-cta-quote" href="#kalkulator">Policz wycenę</a>
     </nav>
   </footer>
   <dialog class="menu-dialog" id="menuDialog" aria-label="Menu główne">

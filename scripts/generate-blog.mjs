@@ -63,8 +63,8 @@ await writeFile(resolve(root, 'dist/index.html'), home, 'utf8');
 
 function shell({title,description,path,prefix,body,schema}) {
   const header = home.match(/  <header[\s\S]*?<\/header>/)[0].replaceAll('href="#',`href="${prefix}index.html#`).replaceAll('src="assets/',`src="${prefix}assets/`);
-  const menu = home.match(/  <dialog class="menu-dialog"[\s\S]*?<\/dialog>/)[0].replaceAll('href="#',`href="${prefix}index.html#`).replaceAll('href="cennik/"',`href="${prefix}cennik/"`);
-  const footer = home.match(/  <footer[\s\S]*?<\/footer>/)[0].replaceAll('href="#',`href="${prefix}index.html#`).replaceAll('href="cennik/"',`href="${prefix}cennik/"`);
+  const menu = home.match(/  <dialog class="menu-dialog"[\s\S]*?<\/dialog>/)[0].replaceAll('href="#',`href="${prefix}index.html#`).replaceAll('href="cennik/',`href="${prefix}cennik/`);
+  const footer = home.match(/  <footer[\s\S]*?<\/footer>/)[0].replaceAll('href="#',`href="${prefix}index.html#`).replaceAll('href="cennik/',`href="${prefix}cennik/`);
   return `<!doctype html>
 <html lang="pl"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#e3f0ef"><meta name="color-scheme" content="light dark"><script src="${prefix}appearance.js?v=9"></script>
@@ -110,7 +110,7 @@ for(const post of posts) {
  await writeFile(resolve(dir,'index.html'),shell({title:post.title,description:post.description,path,prefix:'../../',body,schema}),'utf8');
 }
 
-const urls=['/','/blog/',...services.map(s=>'/uslugi/'+s.slug+'/'),...posts.map(p=>'/blog/'+p.slug+'/')];
+const urls=['/','/cennik/','/blog/',...services.map(s=>'/uslugi/'+s.slug+'/'),...posts.map(p=>'/blog/'+p.slug+'/')];
 const modificationDates=new Map(posts.map(post=>['/blog/'+post.slug+'/',post.modified??post.date]));
 await writeFile(resolve(root,'dist/sitemap.xml'),`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map(url=>`  <url><loc>${origin}${url}</loc>${modificationDates.has(url)?`<lastmod>${modificationDates.get(url)}</lastmod>`:''}</url>`).join('\n')}\n</urlset>\n`,'utf8');
 await writeFile(resolve(root,'dist/robots.txt'),`User-agent: *\nAllow: /\n\nSitemap: ${origin}/sitemap.xml\n`,'utf8');
