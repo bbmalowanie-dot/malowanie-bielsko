@@ -31,7 +31,7 @@ const PHOTOS = {
   'renowacja-drewna': [['renowacja-drzwi-drewnianych-przed', 540, 'Przed: zniszczone drewniane drzwi'], ['renowacja-drzwi-drewnianych-po-jaworze', 540, 'Po: odnowione drzwi wejściowe w Jaworzu'], ['renowacja-okien-drewnianych-przed', 720, 'Przed: zniszczony, zbutwiały parapet okna drewnianego'], ['renowacja-okien-drewnianych-jaworze', 540, 'Renowacja okien drewnianych w Jaworzu']],
   'prace-wykonczeniowe': [['poddasze-kamienica-przed-remontem', 540, 'Przed: poddasze w kamienicy przed remontem'], ['poddasze-kamienica-po-remoncie', 540, 'Po: poddasze w kamienicy po wykończeniu'], ['korytarz-sklepienie-ceglane-malowanie', 540, 'Korytarz z ceglanym sklepieniem po wykończeniu'], ['klatka-schodowa-cegla-renowacja', 540, 'Klatka schodowa z odsłoniętą cegłą']]
 };
-const gallery = slug => (PHOTOS[slug] || []).length ? `    <section class="service-gallery" aria-labelledby="galleryTitle">
+const gallery = slug => (PHOTOS[slug] || []).length ? `    <section class="service-gallery" id="realizacjeUslugi" aria-labelledby="galleryTitle">
       <h2 id="galleryTitle">Nasze realizacje</h2>
       <ul>${PHOTOS[slug].map(([file, w, alt]) => `<li><figure><img src="../../assets/realizacje/${file}-m.jpg" width="${w}" height="${w === 720 ? 540 : 720}" loading="lazy" alt="${escape(alt)}"><figcaption>${escape(alt)}</figcaption></figure></li>`).join('')}</ul>
       <a class="text-link" href="../../index.html#realizacje">Zobacz więcej realizacji przed i po</a>
@@ -93,11 +93,11 @@ for (const service of services) {
   <title>${seoTitle}</title>
   <link rel="icon" type="image/png" href="../../assets/logo-192.png">
   <link rel="stylesheet" href="../../styles.css">
-  <link rel="stylesheet" href="../../service-pages.css?v=2">
+  <link rel="stylesheet" href="../../service-pages.css?v=3">
   <link rel="stylesheet" href="../../brand-theme.css">
   <link rel="stylesheet" href="../../blog-contact.css">
   <link rel="stylesheet" href="../../appearance.css?v=9">
-  <link rel="stylesheet" href="../../layout-refinements.css?v=9">
+  <link rel="stylesheet" href="../../layout-refinements.css?v=13">
   <script src="../../app.js?v=9" defer></script>
   <script type="application/ld+json">${schema}</script>
 </head>
@@ -113,7 +113,7 @@ ${header}
       <p class="service-lead">${escape(service.intro)}</p>
       <ul class="service-highlights" aria-label="Najważniejsze informacje">${service.tags.map(tag => `<li>${escape(tag)}</li>`).join('')}</ul>
       <p class="svc-price"><span>Cena</span><strong>${priceFrom}</strong><small>${priceNote}</small></p>
-      ${ctaButtons()}
+      <p class="svc-intro-links"><a href="#realizacjeUslugi">Zobacz realizacje</a><a href="../../cennik/#kalkulator">Policz cenę w kalkulatorze</a></p>
     </section>
     <div class="service-detail-layout">
       <div class="service-content">

@@ -21,7 +21,7 @@
   <link rel="stylesheet" href="brand-theme.css">
   <link rel="stylesheet" href="blog-contact.css">
   <link rel="stylesheet" href="appearance.css?v=9">
-  <link rel="stylesheet" href="layout-refinements.css?v=9">
+  <link rel="stylesheet" href="layout-refinements.css?v=13">
   <script src="app.js?v=9" defer></script>
   <link rel="stylesheet" href="wycena.css?v=12">
   <link rel="stylesheet" href="home.css?v=17">
@@ -99,8 +99,8 @@
           <h1 id="landingTitle">Malowanie i gładzie w&nbsp;Bielsku-Białej</h1>
           <p class="lp-hero-lead">Równe ściany, czysto po pracy i&nbsp;termin, którego dotrzymujemy. Kosztorys dostajesz na piśmie — bez ukrytych kosztów.</p>
           <div class="lp-hero-ctas">
-            <a class="lp-hero-cta lp-hero-cta-primary" href="tel:+48726747602"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 3h3l1.6 4.2-2.1 1.4a11 11 0 0 0 6.3 6.3l1.4-2.1L21 14.4v3A2.6 2.6 0 0 1 18.4 20 15.4 15.4 0 0 1 4 5.6 2.6 2.6 0 0 1 6.6 3Z"/></svg>Zadzwoń: 726 747 602</a>
-            <a class="lp-hero-cta" href="cennik/#kalkulator">Policz wycenę online</a>
+            <a class="lp-hero-cta lp-hero-cta-primary" href="#realizacje">Zobacz nasze realizacje</a>
+            <a class="lp-hero-cta" href="cennik/">Sprawdź ceny</a>
           </div>
           <ul class="lp-hero-trust">
             <li><a href="https://share.google/P3WPBpt1GnGOxd6JP" target="_blank" rel="noopener"><span class="lp-hero-stars" aria-hidden="true">★★★★★</span><strong>5,0</strong> w&nbsp;Google</a></li>
@@ -345,7 +345,7 @@
             <label>Telefon<input name="telefon" type="tel" inputmode="tel" autocomplete="tel" maxlength="30" placeholder="np. 600 100 200"></label>
             <label>Kiedy zadzwonić?<select name="kiedy"><option>Jak najszybciej</option><option>Rano (8–12)</option><option>Po południu (12–17)</option><option>Wieczorem (17–20)</option><option>W weekend</option></select></label>
             <label class="wz-hp" aria-hidden="true">Strona www<input name="strona_www" tabindex="-1" autocomplete="off"></label>
-            <label class="cb-consent"><input type="checkbox" name="zgoda"><span>Zgadzam się na kontakt telefoniczny w sprawie wyceny.</span></label>
+            <label class="cb-consent"><input type="checkbox" name="zgoda"><span>Zgadzam się na kontakt telefoniczny w sprawie wyceny. <a href="/polityka-prywatnosci/" target="_blank">Polityka prywatności</a></span></label>
             <button type="submit">Zamów rozmowę</button>
             <p class="cb-msg" role="status" hidden></p>
           </form>
@@ -367,12 +367,24 @@
       <a href="https://www.google.com/search?q=malowanie+bielsko&ie=UTF-8#sv=CCYSMAoHCgN1ZG0SABoUdnNzLXB2LS9nLzExbDZzam04YnMqDwoNL2cvMTFsNnNqbThicxgKINji7okM" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">Google</a>
     </div>
     
-    <p class="footer-tagline">Malowanie i wykończenia wnętrz · Bielsko-Biała i okolice</p>
-    <nav class="mobile-cta" aria-label="Szybki kontakt">
-      <a class="mobile-cta-call" href="tel:+48726747602"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 3h3l1.6 4.2-2.1 1.4a11 11 0 0 0 6.3 6.3l1.4-2.1L21 14.4v3A2.6 2.6 0 0 1 18.4 20 15.4 15.4 0 0 1 4 5.6 2.6 2.6 0 0 1 6.6 3Z"/></svg>Zadzwoń</a>
-      <a class="mobile-cta-sms" href="sms:+48726747602"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4V5Z"/></svg>SMS</a>
-      <a class="mobile-cta-quote" href="cennik/#kalkulator">Policz wycenę</a>
+    <p class="footer-tagline">Malowanie i wykończenia wnętrz · Bielsko-Biała i okolice · <a href="/polityka-prywatnosci/" style="color: inherit;">Polityka prywatności</a></p>
+    <nav class="mobile-cta" aria-label="Kontakt">
+      <a class="mobile-cta-contact" href="#kontakt"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4V5Z"/></svg>Kontakt i bezpłatna wycena</a>
     </nav>
+    <script>
+    (function () {
+      // Pasek kontaktu pokazuje się dopiero po przewinięciu (po hero), a znika przy sekcji kontaktu.
+      var bar = document.querySelector('.mobile-cta'); if (!bar) return;
+      var contact = document.getElementById('kontakt'), hero = document.querySelector('.lp-hero, .service-intro');
+      var contactVisible = false;
+      var update = function () {
+        var past = hero ? hero.getBoundingClientRect().bottom < 0 : scrollY > innerHeight * 0.6;
+        bar.classList.toggle('is-visible', past && !contactVisible);
+      };
+      if (contact && 'IntersectionObserver' in window) new IntersectionObserver(function (e) { contactVisible = e[0].isIntersecting; update(); }).observe(contact);
+      addEventListener('scroll', update, { passive: true }); update();
+    })();
+    </script>
   </footer>
 
   <dialog class="menu-dialog" id="menuDialog" aria-label="Menu główne">

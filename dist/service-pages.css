@@ -126,3 +126,9 @@
 [data-theme="dark"] .svc-articles a, [data-theme="dark"] .estimate-sms { border-color: #3d6b78; }
 [data-theme="dark"] .svc-articles a:hover, [data-theme="dark"] .estimate-sms:hover { background: #1b414e; }
 [data-theme="dark"] .svc-final { background: #17394a; border: 1px solid #2e5866; }
+/* Wstęp podstrony: zamiast rzędu przycisków dwa spokojne linki */
+.svc-intro-links { display: flex; flex-wrap: wrap; gap: 10px 26px; margin: 20px 0 0; font-size: 16.5px; font-weight: 600; }
+.svc-intro-links a { color: inherit; text-decoration: underline; text-underline-offset: 5px; text-decoration-color: #84b9bf; }
+.svc-intro-links a::after { content: " →"; color: #387a83; }
+[data-theme="dark"] .svc-intro-links a::after { color: #a7dce0; }
+.service-gallery { scroll-margin-top: calc(var(--header-height, 121px) + 16px); }

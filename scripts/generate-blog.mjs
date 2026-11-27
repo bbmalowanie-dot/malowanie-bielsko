@@ -71,7 +71,7 @@ function shell({title,description,path,prefix,body,schema}) {
 <title>${esc(title)} — Malowanie Bielsko</title>
 <meta name="description" content="${esc(description)}"><meta name="robots" content="index, follow"><link rel="canonical" href="${origin}${path}">
 <meta property="og:title" content="${esc(title)} — Malowanie Bielsko"><meta property="og:description" content="${esc(description)}"><meta property="og:type" content="${path==='/blog/'?'website':'article'}"><meta property="og:url" content="${origin}${path}"><meta property="og:image" content="${origin}/assets/logo-transparent.png">
-<link rel="icon" type="image/png" href="${prefix}assets/logo-192.png"><link rel="stylesheet" href="${prefix}styles.css"><link rel="stylesheet" href="${prefix}brand-theme.css"><link rel="stylesheet" href="${prefix}blog-contact.css"><link rel="stylesheet" href="${prefix}appearance.css?v=9"><link rel="stylesheet" href="${prefix}layout-refinements.css?v=9"><script src="${prefix}app.js?v=9" defer></script>
+<link rel="icon" type="image/png" href="${prefix}assets/logo-192.png"><link rel="stylesheet" href="${prefix}styles.css"><link rel="stylesheet" href="${prefix}brand-theme.css"><link rel="stylesheet" href="${prefix}blog-contact.css"><link rel="stylesheet" href="${prefix}appearance.css?v=9"><link rel="stylesheet" href="${prefix}layout-refinements.css?v=13"><script src="${prefix}app.js?v=9" defer></script>
 ${jsonLd(schema)}
 </head><body class="blog-page"><a href="#main" class="skip-link">Przejdź do treści</a>
 ${header}
@@ -110,7 +110,7 @@ for(const post of posts) {
  await writeFile(resolve(dir,'index.html'),shell({title:post.title,description:post.description,path,prefix:'../../',body,schema}),'utf8');
 }
 
-const urls=['/','/cennik/','/blog/',...services.map(s=>'/uslugi/'+s.slug+'/'),...posts.map(p=>'/blog/'+p.slug+'/')];
+const urls=['/','/cennik/','/blog/','/polityka-prywatnosci/',...services.map(s=>'/uslugi/'+s.slug+'/'),...posts.map(p=>'/blog/'+p.slug+'/')];
 const modificationDates=new Map(posts.map(post=>['/blog/'+post.slug+'/',post.modified??post.date]));
 await writeFile(resolve(root,'dist/sitemap.xml'),`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map(url=>`  <url><loc>${origin}${url}</loc>${modificationDates.has(url)?`<lastmod>${modificationDates.get(url)}</lastmod>`:''}</url>`).join('\n')}\n</urlset>\n`,'utf8');
 await writeFile(resolve(root,'dist/robots.txt'),`User-agent: *\nAllow: /\n\nSitemap: ${origin}/sitemap.xml\n`,'utf8');

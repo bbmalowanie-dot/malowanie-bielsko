@@ -69,10 +69,10 @@ const html = `<!doctype html>
   <link rel="stylesheet" href="../brand-theme.css">
   <link rel="stylesheet" href="../blog-contact.css">
   <link rel="stylesheet" href="../appearance.css?v=12">
-  <link rel="stylesheet" href="../layout-refinements.css?v=12">
+  <link rel="stylesheet" href="../layout-refinements.css?v=13">
   <link rel="stylesheet" href="../wycena.css?v=12">
   <script src="../app.js?v=12" defer></script>
-  <script src="../wycena.js?v=12" defer></script>
+  <script src="../wycena.js?v=13" defer></script>
   <script type="application/ld+json">${JSON.stringify(schema).replaceAll('<', '\\u003c')}</script>
 </head>
 <body class="pricing-page">

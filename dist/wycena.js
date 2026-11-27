@@ -222,7 +222,7 @@
         <ul class="wz-thumbs" id="wzThumbs"></ul>
       </div>
       <label class="wz-hp" aria-hidden="true">Strona www<input name="strona_www" tabindex="-1" autocomplete="off"></label>
-      <label class="wz-check"><input type="checkbox" name="zgoda"><span>Zgadzam się na kontakt telefoniczny i e-mailowy w sprawie wyceny. Dane wykorzystamy wyłącznie do przygotowania oferty, a na prośbę wysłaną na kontakt@malowaniebielsko.pl usuniemy je. *</span></label>
+      <label class="wz-check"><input type="checkbox" name="zgoda"><span>Zgadzam się na kontakt telefoniczny i e-mailowy w sprawie wyceny. Dane wykorzystamy wyłącznie do przygotowania oferty, a na prośbę wysłaną na kontakt@malowaniebielsko.pl usuniemy je. <a href="/polityka-prywatnosci/" target="_blank">Polityka prywatności</a> *</span></label>
       <p class="wz-error" id="wzError" role="alert" hidden></p>
       <button class="wz-submit" type="submit">${mode === 'telefon' ? 'Zamów rozmowę' : 'Wyślij zgłoszenie'}</button>
       <p class="wz-or">albo zadzwoń: <a href="tel:+48726747602">726 747 602</a></p>
