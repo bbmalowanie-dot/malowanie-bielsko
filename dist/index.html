@@ -24,6 +24,7 @@
   <link rel="stylesheet" href="layout-refinements.css?v=9">
   <script src="app.js?v=9" defer></script>
   <link rel="stylesheet" href="wycena.css?v=12">
+  <link rel="stylesheet" href="home.css?v=17">
   <script src="oddzwon.js?v=12" defer></script>
   
   <!-- Dodatkowy styl dla układu dwukolumnowego z pionowym wideo -->
@@ -56,7 +57,7 @@
       margin: 0 auto; /* Wyśrodkowanie w kolumnie */
       max-width: 450px; /* Dodatkowe ograniczenie szerokości dla zachowania proporcji telefonu */
     }
-    .video-showcase video {
+    .video-showcase video, .video-showcase img {
       position: absolute;
       top: 0;
       left: 0;
@@ -92,10 +93,32 @@
 
   <main id="main">
     <section class="service-landing" id="start" aria-labelledby="landingTitle">
-      <div class="landing-heading">
-        <div><p class="eyebrow">Bielsko-Biała i okolice</p><h1 id="landingTitle">Malowanie i gładzie w&nbsp;Bielsku-Białej</h1></div>
-        <p class="landing-location">Wybierz usługę i sprawdź szczegóły albo od razu zadzwoń: <a href="tel:+48726747602">726 747 602</a></p>
+      <div class="lp-hero">
+        <div class="lp-hero-copy">
+          <p class="eyebrow">Bielsko-Biała i okolice</p>
+          <h1 id="landingTitle">Malowanie i gładzie w&nbsp;Bielsku-Białej</h1>
+          <p class="lp-hero-lead">Równe ściany, czysto po pracy i&nbsp;termin, którego dotrzymujemy. Kosztorys dostajesz na piśmie — bez ukrytych kosztów.</p>
+          <div class="lp-hero-ctas">
+            <a class="lp-hero-cta lp-hero-cta-primary" href="tel:+48726747602"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 3h3l1.6 4.2-2.1 1.4a11 11 0 0 0 6.3 6.3l1.4-2.1L21 14.4v3A2.6 2.6 0 0 1 18.4 20 15.4 15.4 0 0 1 4 5.6 2.6 2.6 0 0 1 6.6 3Z"/></svg>Zadzwoń: 726 747 602</a>
+            <a class="lp-hero-cta" href="cennik/#kalkulator">Policz wycenę online</a>
+          </div>
+          <ul class="lp-hero-trust">
+            <li><a href="https://share.google/P3WPBpt1GnGOxd6JP" target="_blank" rel="noopener"><span class="lp-hero-stars" aria-hidden="true">★★★★★</span><strong>5,0</strong> w&nbsp;Google</a></li>
+            <li><strong>6 lat</strong> doświadczenia</li>
+            <li><strong>200+</strong> realizacji</li>
+            <li><strong>Bezpłatna</strong> wycena</li>
+          </ul>
+        </div>
+        <figure class="lp-hero-media lp-hero-video">
+          <video autoplay loop muted playsinline preload="auto" poster="assets/video/malowanie-natryskowe-hero.jpg" width="720" height="1280" aria-label="Malowanie natryskowe ścian na klatce schodowej — nagranie z naszej budowy">
+            <source src="assets/video/malowanie-natryskowe-hero-m.mp4" type="video/mp4" media="(max-width: 900px)">
+            <source src="assets/video/malowanie-natryskowe-hero.mp4" type="video/mp4">
+          </video>
+          <figcaption>Na żywo z budowy: malowanie natryskowe ścian</figcaption>
+          <script>if (matchMedia('(prefers-reduced-motion: reduce)').matches) { var v = document.currentScript.parentNode.querySelector('video'); v.removeAttribute('autoplay'); v.pause(); }</script>
+        </figure>
       </div>
+      <p class="tiles-title eyebrow" id="nasze-uslugi">Nasze usługi — wybierz i sprawdź szczegóły</p>
       <div class="service-tiles">
         <a class="service-tile" href="uslugi/malowanie/">
           <span class="tile-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><rect x="7" y="8" width="27" height="12" rx="3"/><path d="M34 14h6v12H23v7M23 33v10"/><rect x="20" y="32" width="6" height="11" rx="2"/></svg></span>
@@ -123,6 +146,97 @@
         </a>
       </div>
       <div class="landing-bottom"><p>Ile to będzie kosztować? Sprawdź orientacyjną cenę w minutę.</p><a href="cennik/#kalkulator">Kalkulator wyceny <strong>Policz cenę i wyślij zdjęcia</strong></a></div>
+    </section>
+
+    <section class="works section-pad" id="realizacje" aria-labelledby="worksTitle">
+      <div class="works-heading">
+        <p class="eyebrow">Nasze realizacje</p>
+        <h2 id="worksTitle">Zobacz, jak pracujemy — przed i&nbsp;po.</h2>
+        <p>Prawdziwe zdjęcia z naszych remontów, bez wizualizacji i zdjęć z katalogu.</p>
+      </div>
+      <div class="ba-list">
+        <article class="ba-card">
+          <div class="ba-pair">
+            <figure><img src="assets/realizacje/mieszkanie-pekniety-sufit-przed-m.jpg" width="540" height="720" loading="lazy" alt="Mieszkanie w bloku przed remontem — popękany, odpadający sufit"><figcaption class="ba-tag">Przed</figcaption></figure>
+            <figure><img src="assets/realizacje/mieszkanie-gladzie-malowanie-po-m.jpg" width="540" height="720" loading="lazy" alt="To samo mieszkanie po remoncie — nowy sufit G-K, gładzie i białe ściany"><figcaption class="ba-tag ba-tag-after">Po</figcaption></figure>
+          </div>
+          <h3>Mieszkanie w bloku: nowy sufit, gładzie i malowanie</h3>
+          <p>Popękane sufity zastąpiliśmy sufitem podwieszanym G-K, ściany i sufity wyrównaliśmy gładzią i pomalowaliśmy na biało.</p>
+          <a class="text-link" href="uslugi/gladzie/">Gładzie — szczegóły</a>
+        </article>
+        <article class="ba-card">
+          <div class="ba-pair">
+            <figure><img src="assets/realizacje/poddasze-kamienica-przed-remontem-m.jpg" width="540" height="720" loading="lazy" alt="Poddasze w kamienicy przed remontem — zniszczone, odrapane ściany"><figcaption class="ba-tag">Przed</figcaption></figure>
+            <figure><img src="assets/realizacje/poddasze-kamienica-po-remoncie-m.jpg" width="540" height="720" loading="lazy" alt="Poddasze w kamienicy po remoncie — gładkie, jasne ściany i odsłonięta cegła"><figcaption class="ba-tag ba-tag-after">Po</figcaption></figure>
+          </div>
+          <h3>Poddasze w kamienicy: od zniszczonych ścian do gotowego wnętrza</h3>
+          <p>Naprawa podłoża, gładzie i malowanie z zachowaniem odsłoniętej cegły. Wszystko zabezpieczone, posprzątane, gotowe do zamieszkania.</p>
+          <a class="text-link" href="uslugi/malowanie/">Malowanie — szczegóły</a>
+        </article>
+        <article class="ba-card">
+          <div class="ba-pair">
+            <figure><img src="assets/realizacje/sciana-dekoracyjna-przed-m.jpg" width="540" height="720" loading="lazy" alt="Przedpokój przed zmianą — zniszczona pomarańczowa ściana"><figcaption class="ba-tag">Przed</figcaption></figure>
+            <figure><img src="assets/realizacje/sciana-dekoracyjna-czarna-zloto-m.jpg" width="406" height="720" loading="lazy" alt="Ściana dekoracyjna po wykonaniu — czarna faktura ze złotymi płatkami"><figcaption class="ba-tag ba-tag-after">Po</figcaption></figure>
+          </div>
+          <h3>Ściana dekoracyjna: czarny beton ze złotymi płatkami</h3>
+          <p>Ze zniszczonej ściany w przedpokoju zrobiliśmy efektowną, ręcznie wykonaną fakturę, która stała się ozdobą całego mieszkania.</p>
+          <a class="text-link" href="uslugi/sciany-dekoracyjne/">Ściany dekoracyjne — szczegóły</a>
+        </article>
+        <article class="ba-card">
+          <div class="ba-pair">
+            <figure><img src="assets/realizacje/malowanie-garazu-przed-m.jpg" width="540" height="720" loading="lazy" alt="Garaż przed malowaniem — surowe, szare ściany"><figcaption class="ba-tag">Przed</figcaption></figure>
+            <figure><img src="assets/realizacje/malowanie-garazu-po-jaworze-m.jpg" width="540" height="720" loading="lazy" alt="Garaż w Jaworzu po malowaniu — jasne, równe ściany i sufit"><figcaption class="ba-tag ba-tag-after">Po</figcaption></figure>
+          </div>
+          <h3>Garaż w Jaworzu: malowanie ścian i sufitu</h3>
+          <p>Surowe ściany przygotowaliśmy, zagruntowaliśmy i pomalowaliśmy. Jasne, łatwe w utrzymaniu wnętrze zamiast szarego betonu.</p>
+          <a class="text-link" href="uslugi/malowanie/">Malowanie — szczegóły</a>
+        </article>
+        <article class="ba-card">
+          <div class="ba-pair">
+            <figure><img src="assets/realizacje/renowacja-drzwi-drewnianych-przed-m.jpg" width="540" height="720" loading="lazy" alt="Drewniane drzwi wejściowe przed renowacją — porysowane, zniszczone"><figcaption class="ba-tag">Przed</figcaption></figure>
+            <figure><img src="assets/realizacje/renowacja-drzwi-drewnianych-po-jaworze-m.jpg" width="540" height="720" loading="lazy" alt="Drewniane drzwi wejściowe w Jaworzu po renowacji — odnowione i zabezpieczone"><figcaption class="ba-tag ba-tag-after">Po</figcaption></figure>
+          </div>
+          <h3>Drzwi wejściowe w Jaworzu: renowacja drewna</h3>
+          <p>Szlifowanie, naprawa ubytków i nowe zabezpieczenie lakierem. Drzwi wyglądają jak nowe, a drewno jest chronione na lata.</p>
+          <a class="text-link" href="uslugi/renowacja-drewna/">Renowacja drewna — szczegóły</a>
+        </article>
+      </div>
+
+      <h3 class="works-gallery-title">Z naszych budów</h3>
+      <ul class="works-gallery">
+        <li><figure><img src="assets/realizacje/mieszkanie-sufit-podwieszany-gk-konstrukcja-m.jpg" width="540" height="720" loading="lazy" alt="Konstrukcja sufitu podwieszanego G-K w mieszkaniu"><figcaption>Konstrukcja sufitu podwieszanego G-K</figcaption></figure></li>
+        <li><figure><img src="assets/realizacje/mieszkanie-gladzie-sufit-gk-w-trakcie-m.jpg" width="540" height="720" loading="lazy" alt="Szpachlowanie sufitu G-K i ścian w trakcie prac"><figcaption>Szpachlowanie sufitu G-K i ścian</figcaption></figure></li>
+        <li><figure><img src="assets/realizacje/scianki-dzialowe-gk-welna-m.jpg" width="540" height="720" loading="lazy" alt="Ścianki działowe G-K wypełnione wełną w biurze"><figcaption>Ścianki działowe G-K z wełną — biuro</figcaption></figure></li>
+        <li><figure><img src="assets/realizacje/scianki-dzialowe-gk-plyty-spoinowanie-m.jpg" width="540" height="720" loading="lazy" alt="Spoinowanie płyt G-K na ściankach działowych"><figcaption>Zbrojenie i spoinowanie połączeń płyt</figcaption></figure></li>
+        <li><figure><img src="assets/realizacje/biuro-scianki-gk-po-m.jpg" width="540" height="720" loading="lazy" alt="Gotowe pomieszczenie biurowe po ściankach G-K, gładziach i malowaniu"><figcaption>Gotowe biuro po zabudowie i malowaniu</figcaption></figure></li>
+        <li><figure><img src="assets/realizacje/korytarz-sklepienie-ceglane-malowanie-m.jpg" width="540" height="720" loading="lazy" alt="Korytarz z ceglanym sklepieniem po malowaniu ścian"><figcaption>Korytarz z ceglanym sklepieniem</figcaption></figure></li>
+        <li><figure><img src="assets/realizacje/klatka-schodowa-cegla-renowacja-m.jpg" width="540" height="720" loading="lazy" alt="Klatka schodowa z odsłoniętą cegłą"><figcaption>Klatka schodowa z cegłą</figcaption></figure></li>
+        <li><figure><img src="assets/realizacje/sciana-dekoracyjna-marmur-zylki-m.jpg" width="406" height="720" loading="lazy" alt="Ściana dekoracyjna z efektem marmuru i złotymi żyłkami"><figcaption>Ściana z efektem marmuru</figcaption></figure></li>
+        <li><figure><img src="assets/realizacje/renowacja-okien-drewnianych-jaworze-m.jpg" width="540" height="720" loading="lazy" alt="Renowacja drewnianych okien w Jaworzu"><figcaption>Renowacja okien drewnianych — Jaworze</figcaption></figure></li>
+        <li><figure><img src="assets/realizacje/poddasze-okno-dachowe-malowanie-m.jpg" width="540" height="720" loading="lazy" alt="Pokój na poddaszu z oknem dachowym po malowaniu"><figcaption>Poddasze z oknem dachowym</figcaption></figure></li>
+        <li><figure><img src="assets/realizacje/loft-wysokie-sciany-malowanie-m.jpg" width="540" height="720" loading="lazy" alt="Wysokie ściany w lofcie po malowaniu"><figcaption>Wysokie ściany w lofcie</figcaption></figure></li>
+      </ul>
+    </section>
+
+    <section class="reviews section-pad" id="opinie" aria-labelledby="reviewsTitle">
+      <div class="reviews-heading">
+        <p class="eyebrow">Opinie klientów</p>
+        <h2 id="reviewsTitle"><span class="lp-hero-stars" aria-hidden="true">★★★★★</span> 5,0 w&nbsp;Google</h2>
+        <p>Co mówią o nas klienci, którzy nas wpuścili do swoich domów.</p>
+      </div>
+      <div class="review-cards">
+        <blockquote class="review-card">
+          <span class="lp-hero-stars" aria-label="Ocena 5 na 5">★★★★★</span>
+          <p>„Bardzo polecam! Płyty, gładzie i malowanie wykonane bardzo starannie i dokładnie.”</p>
+          <cite class="review-author">Justyna W. · opinia z Google</cite>
+        </blockquote>
+        <blockquote class="review-card">
+          <span class="lp-hero-stars" aria-label="Ocena 5 na 5">★★★★★</span>
+          <p>„Miła, profesjonalna i kulturalna załoga dwóch Panów wykonała zlecenie solidnie. Polecam.”</p>
+          <cite class="review-author">Łukasz M. · opinia z Google</cite>
+        </blockquote>
+      </div>
+      <a class="text-link reviews-more" href="https://share.google/P3WPBpt1GnGOxd6JP" target="_blank" rel="noopener">Zobacz wszystkie opinie w Google</a>
     </section>
 
     <section class="intro section-pad" id="o-nas" aria-labelledby="introTitle">
@@ -154,11 +268,8 @@
           </div>
         </div>
         
-        <!-- Tu jest wklejony gotowy, czysty link do GitHuba -->
         <div class="video-showcase">
-          <video autoplay loop muted playsinline>
-            <source src="https://github.com/bbmalowanie-dot/malowanie-bielsko/releases/download/v1/1.mp4" type="video/mp4">
-          </video>
+          <img src="assets/realizacje/poddasze-kamienica-gladzie-malowanie.jpg" srcset="assets/realizacje/poddasze-kamienica-gladzie-malowanie-m.jpg 540w, assets/realizacje/poddasze-kamienica-gladzie-malowanie.jpg 1050w" sizes="(max-width: 900px) 100vw, 450px" width="1050" height="1400" loading="lazy" alt="Odnowione poddasze w kamienicy po gładziach i malowaniu — jasne ściany, okna dachowe, drewniana podłoga">
         </div>
 
       </div>
@@ -252,7 +363,7 @@
 
   <dialog class="menu-dialog" id="menuDialog" aria-label="Menu główne">
     <div class="menu-header"><span>MALOWANIE BIELSKO</span><button type="button" class="dialog-close" aria-label="Zamknij menu"><span>Zamknij</span><span aria-hidden="true">×</span></button></div>
-    <nav aria-label="Menu główne"><a href="#o-nas">Poznaj nas</a><a href="#uslugi">Usługi</a><a href="#wycena">Proces wyceny</a><a href="#blog">Blog</a><a href="cennik/">Cennik</a><a href="#kontakt">Kontakt</a></nav>
+    <nav aria-label="Menu główne"><a href="#o-nas">Poznaj nas</a><a href="#uslugi">Usługi</a><a href="#realizacje">Realizacje</a><a href="#opinie">Opinie</a><a href="#wycena">Proces wyceny</a><a href="#blog">Blog</a><a href="cennik/">Cennik</a><a href="#kontakt">Kontakt</a></nav>
     <fieldset class="appearance-settings">
       <legend>Wygląd strony</legend>
       <div class="appearance-options">

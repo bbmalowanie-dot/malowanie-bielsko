@@ -64,7 +64,7 @@ await writeFile(resolve(root, 'dist/index.html'), home, 'utf8');
 function shell({title,description,path,prefix,body,schema}) {
   const header = home.match(/  <header[\s\S]*?<\/header>/)[0].replaceAll('href="#',`href="${prefix}index.html#`).replaceAll('src="assets/',`src="${prefix}assets/`);
   const menu = home.match(/  <dialog class="menu-dialog"[\s\S]*?<\/dialog>/)[0].replaceAll('href="#',`href="${prefix}index.html#`).replaceAll('href="cennik/',`href="${prefix}cennik/`);
-  const footer = home.match(/  <footer[\s\S]*?<\/footer>/)[0].replaceAll('href="#',`href="${prefix}index.html#`).replaceAll('href="cennik/',`href="${prefix}cennik/`);
+  const footer = home.match(/  <footer class="site-footer"[\s\S]*?<\/footer>/)[0].replaceAll('href="#',`href="${prefix}index.html#`).replaceAll('href="cennik/',`href="${prefix}cennik/`);
   return `<!doctype html>
 <html lang="pl"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#e3f0ef"><meta name="color-scheme" content="light dark"><script src="${prefix}appearance.js?v=9"></script>

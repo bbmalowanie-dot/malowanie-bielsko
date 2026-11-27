@@ -21,8 +21,22 @@ const header = home.match(/  <header[\s\S]*?<\/header>/)[0]
 const menu = home.match(/  <dialog class="menu-dialog"[\s\S]*?<\/dialog>/)[0]
   .replaceAll('href="#', 'href="../../index.html#')
   .replaceAll('href="cennik/"', 'href="../../cennik/"');
-const footer = home.match(/  <footer[\s\S]*?<\/footer>/)[0]
+const footer = home.match(/  <footer class="site-footer"[\s\S]*?<\/footer>/)[0]
   .replaceAll('href="#', 'href="../../index.html#').replaceAll('href="cennik/', 'href="../../cennik/');
+const PHOTOS = {
+  malowanie: [['poddasze-kamienica-po-remoncie', 540, 'Poddasze w kamienicy po malowaniu — jasne ściany i cegła'], ['malowanie-garazu-po-jaworze', 540, 'Garaż w Jaworzu po malowaniu ścian i sufitu'], ['poddasze-okno-dachowe-malowanie', 540, 'Pokój na poddaszu z oknem dachowym po malowaniu'], ['loft-wysokie-sciany-malowanie', 540, 'Wysokie ściany w lofcie po malowaniu']],
+  gladzie: [['mieszkanie-pekniety-sufit-przed', 540, 'Przed: popękany sufit w mieszkaniu w bloku'], ['mieszkanie-gladzie-sufit-gk-w-trakcie', 540, 'W trakcie: szpachlowanie ścian i sufitu'], ['mieszkanie-gladzie-malowanie-po', 540, 'Po: gładkie, białe ściany i sufit'], ['poddasze-kamienica-gladzie-malowanie', 540, 'Poddasze w kamienicy po gładziach i malowaniu']],
+  'sciany-dekoracyjne': [['sciana-dekoracyjna-przed', 540, 'Przed: zniszczona ściana w przedpokoju'], ['sciana-dekoracyjna-beton-czarny', 406, 'Ściana dekoracyjna — czarny beton'], ['sciana-dekoracyjna-czarna-zloto', 406, 'Ściana dekoracyjna — czarna faktura ze złotymi płatkami'], ['sciana-dekoracyjna-marmur-zylki', 406, 'Ściana dekoracyjna z efektem marmuru i żyłkami']],
+  'sufity-zabudowy-gk': [['mieszkanie-sufit-podwieszany-gk-konstrukcja', 540, 'Konstrukcja sufitu podwieszanego G-K w mieszkaniu'], ['scianki-dzialowe-gk-welna', 540, 'Ścianki działowe G-K wypełnione wełną'], ['scianki-dzialowe-gk-plyty-spoinowanie', 540, 'Zbrojenie i spoinowanie połączeń płyt G-K'], ['biuro-scianki-gk-po', 540, 'Gotowe biuro po zabudowie G-K i malowaniu']],
+  'renowacja-drewna': [['renowacja-drzwi-drewnianych-przed', 540, 'Przed: zniszczone drewniane drzwi'], ['renowacja-drzwi-drewnianych-po-jaworze', 540, 'Po: odnowione drzwi wejściowe w Jaworzu'], ['renowacja-okien-drewnianych-przed', 720, 'Przed: zniszczony, zbutwiały parapet okna drewnianego'], ['renowacja-okien-drewnianych-jaworze', 540, 'Renowacja okien drewnianych w Jaworzu']],
+  'prace-wykonczeniowe': [['poddasze-kamienica-przed-remontem', 540, 'Przed: poddasze w kamienicy przed remontem'], ['poddasze-kamienica-po-remoncie', 540, 'Po: poddasze w kamienicy po wykończeniu'], ['korytarz-sklepienie-ceglane-malowanie', 540, 'Korytarz z ceglanym sklepieniem po wykończeniu'], ['klatka-schodowa-cegla-renowacja', 540, 'Klatka schodowa z odsłoniętą cegłą']]
+};
+const gallery = slug => (PHOTOS[slug] || []).length ? `    <section class="service-gallery" aria-labelledby="galleryTitle">
+      <h2 id="galleryTitle">Nasze realizacje</h2>
+      <ul>${PHOTOS[slug].map(([file, w, alt]) => `<li><figure><img src="../../assets/realizacje/${file}-m.jpg" width="${w}" height="${w === 720 ? 540 : 720}" loading="lazy" alt="${escape(alt)}"><figcaption>${escape(alt)}</figcaption></figure></li>`).join('')}</ul>
+      <a class="text-link" href="../../index.html#realizacje">Zobacz więcej realizacji przed i po</a>
+    </section>
+` : '';
 const check = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 12 4 4 8-9"/></svg>';
 
 for (const service of services) {
@@ -84,7 +98,7 @@ ${service.features.map(([heading, description]) => `          <li class="feature
         </div>
       </aside>
     </div>
-    <nav class="other-services" aria-labelledby="otherServicesTitle">
+${gallery(service.slug)}    <nav class="other-services" aria-labelledby="otherServicesTitle">
       <h2 id="otherServicesTitle">Zobacz też pozostałe usługi</h2>
       <div>${services.filter(other => other.slug !== service.slug).map(other => `<a href="../${other.slug}/">${escape(other.label)}</a>`).join('')}</div>
       <a class="return-services text-link" href="../../index.html#start">Wróć do wszystkich usług</a>

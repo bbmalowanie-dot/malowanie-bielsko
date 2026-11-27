@@ -1,0 +1,91 @@
+/* Strona główna: lp-hero, realizacje przed/po, galeria, opinie. Kolory z appearance.css (jasny/ciemny). */
+
+/* ---------- Hero ---------- */
+.lp-hero { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: clamp(28px, 4vw, 64px); align-items: center; margin-bottom: clamp(36px, 5vw, 64px); }
+.lp-hero .eyebrow { color: var(--teal); margin-bottom: 14px; }
+.lp-hero h1 { font-size: clamp(36px, 4.6vw, 68px); font-weight: 400; line-height: 1.04; letter-spacing: -.045em; margin: 0; max-width: 760px; }
+.lp-hero-lead { font-size: clamp(17px, 1.45vw, 21px); line-height: 1.6; margin: 22px 0 0; max-width: 560px; opacity: .88; }
+.lp-hero-ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+.lp-hero-cta {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 54px; padding: 14px 24px;
+  border-radius: 10px; border: 1px solid var(--appearance-border); color: var(--appearance-text); background: var(--appearance-surface);
+  font-size: 17px; font-weight: 600; text-decoration: none; transition: background .2s, transform .15s;
+}
+.lp-hero-cta:hover { background: var(--appearance-hover); transform: translateY(-1px); }
+.lp-hero-cta-primary { background: var(--appearance-selected); color: var(--appearance-selected-text); border-color: var(--appearance-selected); }
+.lp-hero-cta-primary:hover { background: var(--appearance-selected); filter: brightness(1.12); }
+.lp-hero-cta svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linejoin: round; }
+.lp-hero-trust { list-style: none; padding: 0; margin: 28px 0 0; display: flex; flex-wrap: wrap; gap: 10px 26px; font-size: 15px; }
+.lp-hero-trust li { display: flex; align-items: center; gap: 6px; }
+.lp-hero-trust a { color: inherit; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; border-bottom: 1px solid currentColor; padding-bottom: 1px; }
+.lp-hero-stars { color: #e3a008; letter-spacing: 1px; font-size: 1.05em; }
+.lp-hero-media { margin: 0; position: relative; }
+.lp-hero-media img { display: block; width: 100%; height: auto; max-height: min(72vh, 680px); object-fit: cover; border-radius: 18px; box-shadow: 0 24px 50px rgba(11, 53, 66, .16); }
+.lp-hero-media figcaption { position: absolute; left: 14px; bottom: 14px; right: 14px; width: fit-content; max-width: calc(100% - 28px); padding: 8px 12px; border-radius: 8px; background: rgba(11, 53, 66, .78); color: #fff; font-size: 13px; line-height: 1.4; }
+.tiles-title { color: var(--teal); margin: 0 0 16px; }
+@media (max-width: 900px) {
+  .lp-hero { grid-template-columns: 1fr; gap: 24px; }
+  .lp-hero-media img { aspect-ratio: 4 / 3.4; max-height: none; }
+  .lp-hero-cta { flex: 1 1 100%; }
+}
+
+/* ---------- Realizacje ---------- */
+.works-heading, .reviews-heading { max-width: 760px; margin-bottom: 34px; }
+.works-heading .eyebrow, .reviews-heading .eyebrow { color: var(--teal); margin-bottom: 12px; }
+.works-heading h2, .reviews-heading h2 { font-size: clamp(30px, 3.4vw, 50px); font-weight: 400; line-height: 1.1; letter-spacing: -.04em; margin: 0 0 12px; }
+.works-heading > p:last-child, .reviews-heading > p:last-child { font-size: 17px; line-height: 1.6; opacity: .85; margin: 0; }
+.ba-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); gap: 22px; }
+.ba-card { display: flex; flex-direction: column; padding: 14px 14px 20px; border-radius: 16px; background: var(--appearance-surface); border: 1px solid var(--appearance-border); }
+.ba-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 16px; }
+.ba-pair figure { position: relative; margin: 0; }
+.ba-pair img { display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 10px; }
+.ba-tag { position: absolute; top: 8px; left: 8px; padding: 4px 9px; border-radius: 999px; background: rgba(255, 255, 255, .92); color: #0b3542; font-size: 12px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+.ba-tag-after { background: #0b3542; color: #fff; }
+.ba-card h3 { font-size: 20px; font-weight: 600; line-height: 1.3; margin: 0 6px 8px; }
+.ba-card p { font-size: 15.5px; line-height: 1.6; margin: 0 6px 14px; opacity: .88; }
+.ba-card .text-link { margin: auto 6px 0; width: fit-content; }
+.works-gallery-title { font-size: 22px; font-weight: 500; margin: 48px 0 14px; }
+.works-gallery { list-style: none; margin: 0; padding: 0 0 12px; display: grid; grid-auto-flow: column; grid-auto-columns: clamp(200px, 22vw, 280px); gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain; }
+.works-gallery li { scroll-snap-align: start; }
+.works-gallery figure { margin: 0; }
+.works-gallery img { display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 12px; }
+.works-gallery figcaption { font-size: 14px; line-height: 1.4; margin-top: 8px; opacity: .85; }
+
+/* ---------- Opinie ---------- */
+.reviews-heading h2 .lp-hero-stars { font-size: .7em; vertical-align: middle; margin-right: 6px; }
+.review-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 18px; }
+.review-card { margin: 0; padding: 26px; border-radius: 16px; background: var(--appearance-surface); border: 1px solid var(--appearance-border); }
+.review-card p { font-size: clamp(18px, 1.6vw, 22px); line-height: 1.5; margin: 12px 0 16px; }
+.review-author { display: block; font-size: 14px; font-style: normal; opacity: .75; }
+.reviews-more { display: inline-block; margin-top: 22px; }
+
+:root[data-theme="dark"] .works, :root[data-theme="dark"] .reviews { background: var(--dark-bg); color: var(--ink); }
+:root[data-theme="dark"] .ba-tag { background: rgba(16, 47, 58, .9); color: #e3f0f2; }
+:root[data-theme="dark"] .ba-tag-after { background: #a7dce0; color: #102f3a; }
+@media (prefers-reduced-motion: reduce) { .lp-hero-cta { transition: none; } }
+
+/* ---------- Hero: film ---------- */
+.lp-hero-video { width: 100%; max-width: 440px; justify-self: end; }
+.lp-hero-video video { display: block; width: 100%; aspect-ratio: 9 / 16; max-height: min(78vh, 760px); object-fit: cover; border-radius: 18px; background: #d1e3e2; box-shadow: 0 24px 50px rgba(11, 53, 66, .18); }
+.lp-hero-video::after { content: ""; position: absolute; inset: 0; border-radius: 18px; pointer-events: none; background: linear-gradient(to top, rgba(11, 53, 66, .45), transparent 32%); }
+.lp-hero-video figcaption { z-index: 1; }
+.lp-hero-video figcaption::before { content: ""; display: inline-block; width: 8px; height: 8px; margin-right: 8px; border-radius: 50%; background: #ff5a4f; vertical-align: 1px; animation: lp-live 1.6s ease-in-out infinite; }
+@keyframes lp-live { 50% { opacity: .25; } }
+/* Telefon: film jako tło pod napisami, wtopiony gradientem w stronę */
+@media (max-width: 900px) {
+  .service-landing { overflow-x: clip; }
+  .lp-hero { position: relative; isolation: isolate; padding-bottom: 34px; margin-bottom: 30px; }
+  .lp-hero-video { position: absolute; z-index: -1; top: -200px; bottom: 0; left: 50%; width: 100vw; max-width: none; transform: translateX(-50%); }
+  .lp-hero-video video { width: 100%; height: 100%; aspect-ratio: auto; max-height: none; border-radius: 0; box-shadow: none; object-position: 60% 40%; }
+  .lp-hero-video::after { border-radius: 0; background:
+    linear-gradient(180deg, rgba(8, 33, 41, .5) 0%, rgba(8, 33, 41, .28) 30%, rgba(8, 33, 41, .45) 58%, rgba(8, 33, 41, .78) 84%, var(--lp-fade, #cde5e8) 100%); }
+  .lp-hero-video figcaption { display: none; }
+  :root[data-theme="dark"] .lp-hero-video { --lp-fade: #102b36; }
+  .lp-hero-copy { color: #fff; text-shadow: 0 1px 3px rgba(0, 0, 0, .45), 0 2px 18px rgba(0, 0, 0, .4); }
+  .lp-hero-copy .eyebrow { color: #a7e3e6; }
+  .lp-hero-lead { opacity: .95; }
+  .lp-hero-cta:not(.lp-hero-cta-primary) { background: rgba(255, 255, 255, .14); border-color: rgba(255, 255, 255, .5); color: #fff; -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); text-shadow: none; }
+  .lp-hero-cta-primary { text-shadow: none; }
+  .lp-hero-trust, .lp-hero-trust a { color: #fff; }
+}
+@media (prefers-reduced-motion: reduce) { .lp-hero-video figcaption::before { animation: none; } }

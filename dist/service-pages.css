@@ -46,3 +46,12 @@
 @media(max-width:760px){.service-intro{padding:34px 0 32px}.service-intro h1{font-size:clamp(35px,8vw,53px)}.service-lead{font-size:18px;margin-top:22px}.service-breadcrumb{padding-top:24px;gap:9px}.service-detail-layout{grid-template-columns:1fr;gap:34px;padding-top:29px;padding-bottom:43px}.feature-item{grid-template-columns:28px minmax(0,1fr);gap:13px;padding:24px 0 27px}.feature-check{width:28px;height:28px}.feature-item h3{font-size:23px}.feature-item p{font-size:16px;line-height:1.7;margin-top:11px}.service-aside{display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:20px}.service-estimate{padding:24px 20px}.service-poster{padding:12px}.service-poster figcaption{flex-direction:column;gap:6px;padding-top:12px}.other-services{padding:33px 0 45px}.other-services h2{font-size:26px}}
 @media(max-width:540px){.service-aside{grid-template-columns:1fr}.service-estimate{padding:27px 23px}.service-estimate h2{font-size:31px}.service-poster{max-width:350px;width:100%;justify-self:center;padding:17px}.service-poster figcaption{flex-direction:row}.service-highlights{gap:8px}.service-highlights li{font-size:14px;padding:8px 10px}.service-breadcrumb{font-size:14px}.service-intro h1{font-size:40px}.other-services>div{flex-direction:column}.other-services>div>a{font-size:16px;padding:13px 16px}}
 @media(max-width:360px){.service-intro h1{font-size:35px}.feature-item{gap:10px;grid-template-columns:25px minmax(0,1fr)}.feature-check{width:25px;height:25px}.feature-item h3{font-size:22px}.service-highlights li{font-size:14px}}
+
+/* Galeria realizacji na podstronach usług */
+.service-gallery { margin: 56px 0 8px; }
+.service-gallery h2 { font-size: clamp(26px, 3vw, 38px); font-weight: 400; letter-spacing: -.03em; margin: 0 0 18px; }
+.service-gallery ul { list-style: none; margin: 0 0 18px; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.service-gallery figure { margin: 0; }
+.service-gallery img { display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 12px; }
+.service-gallery figcaption { font-size: 14px; line-height: 1.4; margin-top: 8px; opacity: .85; }
+@media (max-width: 800px) { .service-gallery ul { grid-template-columns: repeat(2, minmax(0, 1fr)); } }

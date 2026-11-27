@@ -12,7 +12,7 @@ const relative = html => html.replaceAll('href="#', 'href="../index.html#')
   .replaceAll('href="cennik/#', 'href="#').replaceAll('href="cennik/"', 'href="./" aria-current="page"');
 const header = relative(home.match(/  <header[\s\S]*?<\/header>/)[0]);
 const menu = relative(home.match(/  <dialog class="menu-dialog"[\s\S]*?<\/dialog>/)[0]);
-const footer = relative(home.match(/  <footer[\s\S]*?<\/footer>/)[0]);
+const footer = relative(home.match(/  <footer class="site-footer"[\s\S]*?<\/footer>/)[0]);
 
 const r = ([a, b]) => `${a}–${b} zł/m²`;
 const m = R.malowanie, g = R.gladzie.podloza;
