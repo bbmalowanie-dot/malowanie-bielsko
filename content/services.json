@@ -3,83 +3,260 @@
     "slug": "malowanie",
     "label": "Malowanie",
     "title": "Malowanie wnętrz",
-    "intro": "Od odświeżenia pokoju po malowanie dużych powierzchni. Dobieramy metodę aplikacji i rodzaj farby do Twojego wnętrza.",
-    "tags": ["Natrysk hydrodynamiczny", "Malowanie wałkiem", "Doradztwo techniczne"],
+    "intro": "Malujemy mieszkania, domy, biura i hale w Bielsku-Białej i okolicach — natryskowo albo wałkiem. W cenie zawsze są farba, grunt, zabezpieczenie i sprzątanie po pracy.",
+    "metaDescription": "Malowanie mieszkań, domów, biur i hal w Bielsku-Białej i okolicach. Natrysk lub wałek, od {{malowanie.prywatny.0}} zł/m² netto z materiałem.",
+    "tags": ["Natrysk hydrodynamiczny (airless)", "Malowanie wałkiem", "Mieszkania, domy, biura, hale"],
+    "price": { "from": "od {{malowanie.prywatny.0}} zł/m²", "note": "mieszkania i domy, netto z materiałem · hale od {{malowanie.halaMinimalnyMetraz}} m² — od {{malowanie.hala.0}} zł/m²" },
+    "when": [
+      "Nowe mieszkanie lub dom w stanie deweloperskim — malujemy natryskowo całość przed wprowadzeniem mebli.",
+      "Odświeżenie zamieszkanego mieszkania — okrywamy meble i pracujemy pokój po pokoju.",
+      "Zmiana kolorów, ściana akcentowa, sufit po zalaniu lub zabrudzeniu.",
+      "Biura, lokale usługowe, klatki schodowe i hale — także przy działającym obiekcie, etapami."
+    ],
     "features": [
-      ["Aplikacja natryskowa i tradycyjna", "Dobieramy metodę do zlecenia: bezsmugowy natrysk hydrodynamiczny na dużych metrażach lub tradycyjny wałek przy odświeżeniach."],
-      ["Perfekcyjna powłoka pod każde światło", "Aksamitne, jednolite wykończenie bez smug i pasów, widoczne nawet przy oświetleniu LED."],
-      ["Precyzyjne odcięcia i elastyczne akryle", "Idealnie równe odcięcia ścian od sufitów i profesjonalne akrylowanie szpalet, zapobiegające mikropęknięciom."],
-      ["Dobór farb i doradztwo techniczne", "Stosujemy farby najwyższej jakości na rynku i pomagamy dobrać odpowiednie powłoki do wnętrza."],
-      ["Pancerne zabezpieczenia i czysty odbiór", "Pełna ochrona. Po zakończeniu prac oddajemy inwestorowi czyste, gotowe wnętrze."]
-    ]
+      ["Natrysk albo wałek — dobrany do zlecenia", "Duże, puste powierzchnie malujemy agregatem hydrodynamicznym (airless). Farba kładzie się równą warstwą bez śladów wałka, a praca idzie kilka razy szybciej. W zamieszkanych wnętrzach i przy mniejszych odświeżeniach zwykle lepszy jest wałek — mniej okrywania i brak mgły farby."],
+      ["Przygotowanie podłoża przed farbą", "Sprawdzamy stan i chłonność ścian, matujemy lub myjemy stare powłoki, uzupełniamy drobne ubytki i rysy, a na koniec gruntujemy. Od przygotowania zależy, czy farba równo pokryje ścianę i nie zacznie się łuszczyć."],
+      ["Dwie warstwy i równa powłoka pod światło", "Standardowo kładziemy dwie warstwy farby. Powierzchnię sprawdzamy lampą ustawioną pod kątem — tak, jak później będzie padać światło z okna czy z taśm LED — żeby nie zostały smugi, pasy i prześwity."],
+      ["Proste odcięcia i akryl w narożnikach", "Krawędzie ściana–sufit i ściana–ściana odcinamy na równo, przy zmianie koloru na taśmie. Styki ze stolarką, narożniki i szpalety uszczelniamy elastycznym akrylem, który ogranicza powstawanie rys."],
+      ["Farby dobrane do pomieszczenia", "Do salonu i sypialni — głęboko matowe farby, które dobrze maskują drobne nierówności. Do kuchni, łazienki i przedpokoju — farby odporne na szorowanie i wilgoć. Pomagamy dobrać kolor i rodzaj farby, a materiał kupujemy sami — jest w cenie."],
+      ["Zabezpieczenie i sprzątanie", "Przed malowaniem okrywamy podłogi, okna, drzwi, gniazdka i meble folią i taśmą. Po pracy zdejmujemy zabezpieczenia, sprzątamy i oddajemy wnętrze gotowe do użytku."]
+    ],
+    "process": [
+      ["Rozmowa i wycena", "Dzwonisz albo wysyłasz zdjęcia i metraż. Podajemy orientacyjną cenę, a przy większym zakresie umawiamy bezpłatne oględziny."],
+      ["Ustalenia i termin", "Ustalamy zakres, kolory, rodzaj farby i datę rozpoczęcia. Kosztorys dostajesz na piśmie."],
+      ["Zabezpieczenie i przygotowanie", "Okrywamy wszystko, czego nie malujemy, naprawiamy drobne ubytki i gruntujemy ściany."],
+      ["Malowanie", "Odcięcia, a potem dwie warstwy farby natryskiem lub wałkiem, z kontrolą pod światło."],
+      ["Odbiór", "Oglądamy razem efekt przy dobrym świetle, poprawiamy ewentualne miejsca i sprzątamy."]
+    ],
+    "priceFactors": [
+      "Rodzaj obiektu i metraż — im większa powierzchnia, tym niższa stawka za m².",
+      "Liczba kolorów — każdy kolejny kolor to dodatkowe odcięcia i taśmowanie.",
+      "Stan ścian — ile trzeba naprawić i wyrównać przed malowaniem.",
+      "Pomieszczenia puste czy umeblowane oraz wysokość — powyżej 3 m potrzebne jest rusztowanie lub podnośnik."
+    ],
+    "faq": [
+      ["Ile kosztuje malowanie za m² w Bielsku-Białej?", "W mieszkaniach i domach od {{malowanie.prywatny.0}} zł/m² netto — z farbą, gruntem i zabezpieczeniem. Hale od {{malowanie.halaMinimalnyMetraz}} m² od {{malowanie.hala.0}} zł/m². Cena dotyczy metra malowanej powierzchni ścian i sufitów, a nie podłogi. Orientacyjną kwotę dla swojego wnętrza policzysz w kalkulatorze online."],
+      ["Malowanie natryskowe czy wałkiem — co lepsze?", "Na dużych, pustych powierzchniach natrysk: daje równiejszą powłokę i jest szybszy. W umeblowanym mieszkaniu często rozsądniejszy jest wałek, bo nie trzeba szczelnie okrywać całego wnętrza. Doradzimy przy wycenie."],
+      ["Czy muszę sam kupić farbę?", "Nie. Wszystkie nasze ceny są z materiałem — farbę, grunt, taśmy i folie kupujemy sami. Jeśli masz wybraną konkretną farbę lub kolor z wzornika, po prostu go uwzględnimy."],
+      ["Ile trwa malowanie mieszkania?", "Zależy od metrażu, liczby kolorów i stanu ścian. Puste mieszkanie maluje się szybciej, bo można pracować natryskiem w kilku pomieszczeniach naraz; w zamieszkanym pracujemy pokój po pokoju. Termin podajemy przy wycenie i go dotrzymujemy."],
+      ["Czy można malować świeże tynki?", "Dopiero gdy tynk wyschnie — gipsowy schnie szybciej, cementowo-wapienny potrzebuje więcej czasu. Przed malowaniem sprawdzamy, czy ściana jest sucha, i gruntujemy ją."]
+    ],
+    "articles": ["malowanie-natryskowe-czy-walkiem", "malowanie-scian-sufitow-cena-wycena", "jak-przygotowac-mieszkanie-do-malowania"]
   },
   {
     "slug": "gladzie",
     "label": "Gładzie",
-    "title": "Szpachlowanie i gładzie",
-    "intro": "Gładkie ściany zaczynają się od przygotowania podłoża. Technologię i standard wykończenia ustalamy indywidualnie przy wycenie.",
-    "tags": ["Standardy Q1–Q4", "Aplikacja natryskowa", "Aplikacja tradycyjna"],
+    "title": "Gładzie i szpachlowanie ścian",
+    "intro": "Wyrównujemy ściany i sufity na tynkach gipsowych, cementowo-wapiennych, płytach G-K i starych powłokach — w standardzie Q1–Q4, najczęściej od razu z malowaniem na gotowo.",
+    "metaDescription": "Gładzie i szpachlowanie Q1–Q4 w Bielsku-Białej i okolicach. Gładź z malowaniem na gotowo od {{gladzie.podloza.gipsowy.zMalowaniem.0}} zł/m² netto z materiałem.",
+    "tags": ["Standard Q1–Q4", "Natryskowo i ręcznie", "Gładź + malowanie na gotowo"],
+    "price": { "from": "od {{gladzie.podloza.gipsowy.zMalowaniem.0}} zł/m²", "note": "gładź z malowaniem na gotowo na tynku gipsowym, netto z materiałem · sama gładź od {{gladzie.podloza.gipsowy.sama.0}} zł/m²" },
+    "when": [
+      "Nowe tynki, które mają być idealnie gładkie pod jasne, matowe farby.",
+      "Stare ściany z rysami, ubytkami i nierównościami — po skuciu płytek, zdjęciu tapety czy wymianie instalacji.",
+      "Sufity i zabudowy G-K do wykończenia w wysokim standardzie.",
+      "Wnętrza z dużymi oknami lub oświetleniem LED, w których widać każdą falę na ścianie."
+    ],
     "features": [
-      ["Standardy wykończenia Q1–Q4", "Dobór technologii i standardu ustalamy indywidualnie przy wycenie."],
-      ["Aplikacja natryskowa i tradycyjna", "Dopasowujemy metodę nakładania gładzi do specyfiki inwestycji."],
-      ["Kompleksowe przygotowanie podłoża", "Naprawa pęknięć, zbrojenie łączeń, szpachlowanie tynków i płyt G-K, gruntowanie."],
-      ["Czystość i pancerne zabezpieczenia", "Dokładna ochrona wnętrza. Zostawiamy po sobie wyłącznie gładkie ściany."],
-      ["Gwarancja terminu i sprawna realizacja", "Szanujemy Twój czas — zawsze dotrzymujemy ustalonej daty odbioru."]
-    ]
+      ["Standard Q1–Q4 dopasowany do wnętrza", "Q1–Q2 to wypełnienie spoin i podstawowe wyrównanie — wystarcza pod tapetę lub fakturę. Q3 to gładź na całej powierzchni pod typowe malowanie. Q4 to najwyższy standard z kontrolą pod światłem bocznym — pod głęboki mat i ostre oświetlenie. Standard ustalamy przy wycenie, żebyś nie płacił za Q4 tam, gdzie wystarczy Q3."],
+      ["Przygotowanie podłoża", "Usuwamy luźne fragmenty, poszerzamy i wypełniamy rysy, zbroimy pęknięcia siatką lub flizeliną, prostujemy narożniki narożnikami aluminiowymi lub papierowymi. Podłoże gruntujemy preparatem dobranym do jego chłonności."],
+      ["Natryskowo lub ręcznie — zależnie od metrażu", "Na dużych powierzchniach gładź nakładamy natryskowo i ściągamy długimi pacami — warstwa jest równiejsza, a praca idzie szybciej. Mniejsze pomieszczenia i poprawki wykonujemy ręcznie."],
+      ["Szlifowanie i kontrola pod światło", "Każdą warstwę szlifujemy i sprawdzamy lampą ustawioną pod kątem, poprawiając miejsca, które tego wymagają. Pomieszczenia, w których nie pracujemy, oddzielamy folią."],
+      ["Gładź z malowaniem na gotowo", "Najczęściej robimy całość: gładź, szlif, grunt i dwie warstwy farby. Jedna ekipa odpowiada za efekt od podłoża do koloru — nikt nie przerzuca winy między gładziarzem a malarzem."],
+      ["Akryl i detale", "Styki ze stolarką, narożniki wewnętrzne i połączenia ze ścianą uszczelniamy akrylem. Wnęki okienne i ościeża wykańczamy razem ze ścianami."]
+    ],
+    "process": [
+      ["Wycena", "Na podstawie zdjęć lub oględzin określamy podłoże, potrzebny standard i zakres napraw."],
+      ["Zabezpieczenie", "Okrywamy podłogi, okna i stolarkę, oddzielamy pomieszczenia folią."],
+      ["Naprawy i grunt", "Wypełniamy ubytki, zbroimy rysy, osadzamy narożniki i gruntujemy podłoże."],
+      ["Gładź i szlifowanie", "Nakładamy gładź warstwami, szlifujemy i kontrolujemy pod światło."],
+      ["Malowanie i odbiór", "Gruntujemy i malujemy na gotowo (jeśli jest w zakresie), sprzątamy i odbieramy prace razem z Tobą."]
+    ],
+    "priceFactors": [
+      "Rodzaj podłoża — tynk gipsowy wymaga najmniej materiału, tynk cementowo-wapienny i stare ściany więcej.",
+      "Standard wykończenia — Q4 to więcej warstw i dokładniejsza kontrola niż Q3.",
+      "Sama gładź czy gładź z malowaniem na gotowo.",
+      "Metraż, wysokość pomieszczeń i to, czy wnętrze jest puste czy umeblowane."
+    ],
+    "faq": [
+      ["Ile kosztuje gładź za m²?", "Na tynku gipsowym sama gładź od {{gladzie.podloza.gipsowy.sama.0}} zł/m² netto, a z malowaniem na gotowo od {{gladzie.podloza.gipsowy.zMalowaniem.0}} zł/m². Na tynku cementowo-wapiennym i starych ścianach od {{gladzie.podloza.cementowy.sama.0}} zł/m² (z malowaniem od {{gladzie.podloza.cementowy.zMalowaniem.0}} zł/m²). Ceny są z materiałem."],
+      ["Czym różni się standard Q3 od Q4?", "Q3 to gładź na całej powierzchni, wystarczająca pod większość farb i zwykłe oświetlenie. Q4 to dodatkowa warstwa i dokładne szlifowanie z kontrolą pod światłem bocznym — wybiera się go pod głęboko matowe farby, duże przeszklenia i oświetlenie liniowe LED."],
+      ["Czy na tynk gipsowy trzeba robić gładź?", "Nie zawsze. Dobrze zatarty tynk gipsowy można malować bezpośrednio, ale gładź daje wyraźnie lepszy efekt przy matowych farbach i świetle bocznym. Ocenimy to na miejscu i powiemy szczerze, czy gładź jest potrzebna."],
+      ["Ile schnie gładź przed malowaniem?", "To zależy od grubości warstw, temperatury i wentylacji. Malujemy dopiero wtedy, gdy gładź jest sucha i zagruntowana — pośpiech na tym etapie kończy się przebarwieniami."],
+      ["Czy robicie gładzie w zamieszkanym mieszkaniu?", "Tak. Opróżniamy lub okrywamy pomieszczenie, oddzielamy je folią od reszty mieszkania i pracujemy etapami, żeby dało się normalnie funkcjonować."]
+    ],
+    "articles": ["szpachlowanie-q1-q2-q3-q4", "gladzie-gipsowe-czy-polimerowe", "gruntowanie-scian-przed-malowaniem-i-gladzia"]
   },
   {
     "slug": "sciany-dekoracyjne",
     "label": "Ściany dekoracyjne",
     "title": "Ściany dekoracyjne",
-    "intro": "Beton, naturalna faktura kamienia czy subtelny efekt piasku. Nadajemy ścianom charakter i zabezpieczamy dekoracyjne wykończenie.",
-    "tags": ["Beton architektoniczny", "Trawertyn", "Tynki i efekty dekoracyjne"],
+    "intro": "Beton architektoniczny, trawertyn, efekt marmuru i metaliczne płatki — faktury wykonywane ręcznie. Robimy ściany akcentowe w salonach, przedpokojach i lokalach usługowych.",
+    "metaDescription": "Ściany dekoracyjne w Bielsku-Białej i okolicach: beton architektoniczny, trawertyn, efekt marmuru, złote płatki. Ręczne wykonanie i zabezpieczenie lakierem.",
+    "tags": ["Beton architektoniczny", "Trawertyn i efekt marmuru", "Zabezpieczenie lakierem"],
+    "price": { "from": "Wycena indywidualna", "note": "zależy od techniki i metrażu — wyślij zdjęcie ściany i inspiracji" },
+    "when": [
+      "Ściana za telewizorem lub łóżkiem, która ma nadać charakter całemu pomieszczeniu.",
+      "Przedpokój i klatka schodowa — faktura jest trwalsza i mniej widać na niej zabrudzenia niż na zwykłej farbie.",
+      "Lokale usługowe, recepcje, restauracje i salony, w których wnętrze buduje markę.",
+      "Zniszczona ściana, którą zamiast zwykłego malowania chcesz zamienić w ozdobę."
+    ],
     "features": [
-      ["Beton architektoniczny", "Wykonujemy industrialne ściany z naturalnymi wżerami, gładkie lub w podziale na płyty."],
-      ["Trawertyn klasyczny i drapany", "Elegancka faktura naturalnego kamienia z charakterystycznymi ubytkami i żyłkowaniem."],
-      ["Tynki strukturalne", "Aplikujemy trwałe masy dekoracyjne nadające wnętrzom surowy lub nowoczesny styl."],
-      ["Glinka wenecka i efekty piasku", "Subtelne, aksamitne wykończenia z efektem przetartego pergaminu i pustynnego piasku."],
-      ["Hydrofobowa ochrona i trwałość", "Zabezpieczamy dekoracje dedykowanymi lakierami odpornymi na zmywanie, kurz i wilgoć."]
-    ]
+      ["Beton architektoniczny", "Gładka lub szorstka powierzchnia z naturalnymi porami i przebarwieniami, także w podziale na płyty. Efekt surowego betonu bez ciężaru i kosztu prawdziwego betonu."],
+      ["Trawertyn i efekt kamienia", "Faktura naturalnego kamienia z charakterystycznymi porami i żyłkowaniem — w wersji klasycznej lub drapanej. Pasuje do wnętrz w stylu nowoczesnym i klasycznym."],
+      ["Efekt marmuru, metaliczne płatki i złocenia", "Wielowarstwowe efekty marmuru z żyłkami oraz głębokie, ciemne faktury z płatkami metalu. Przykłady z naszych realizacji — czarna ściana ze złotymi płatkami i marmur ze złotymi żyłkami — znajdziesz w galerii niżej."],
+      ["Glinka wenecka, efekt piasku i tynki strukturalne", "Subtelne, aksamitne powierzchnie o delikatnym połysku albo matowe faktury przypominające piasek. Dobre tam, gdzie efekt ma być elegancki, a nie krzykliwy."],
+      ["Przygotowanie podłoża", "Dekoracja wymaga równego, zagruntowanego podłoża. Usuwamy łuszczące się powłoki, naprawiamy ubytki i wyrównujemy ścianę w ramach zlecenia — nie musisz szukać osobnej ekipy."],
+      ["Zabezpieczenie i trwałość", "Gotową ścianę zabezpieczamy lakierem lub woskiem dobranym do miejsca. Po zabezpieczeniu powierzchnię można przecierać na wilgotno, a faktura nie chłonie brudu."]
+    ],
+    "process": [
+      ["Inspiracja", "Wysyłasz zdjęcie ściany i efektu, który Ci się podoba — z naszej galerii albo z internetu."],
+      ["Dobór techniki i kolorów", "Doradzamy, co sprawdzi się w Twoim wnętrzu i świetle, i ustalamy kolorystykę."],
+      ["Przygotowanie podłoża", "Naprawiamy i wyrównujemy ścianę, gruntujemy pod wybraną technikę."],
+      ["Wykonanie warstw", "Nakładamy kolejne warstwy ręcznie, z przerwami na schnięcie — to one budują głębię efektu."],
+      ["Zabezpieczenie i odbiór", "Lakierujemy lub woskujemy powierzchnię, sprzątamy i oddajemy gotową ścianę."]
+    ],
+    "priceFactors": [
+      "Technika — liczba warstw i czas pracy różnią się między betonem, trawertynem a marmurem.",
+      "Powierzchnia — jedna ściana akcentowa czy całe pomieszczenie.",
+      "Stan podłoża — ile trzeba naprawić przed wykonaniem dekoracji.",
+      "Materiały — płatki metalu, specjalne masy i rodzaj zabezpieczenia."
+    ],
+    "faq": [
+      ["Ile kosztuje ściana dekoracyjna?", "Cena zależy od techniki, powierzchni i stanu ściany, dlatego wyceniamy ją indywidualnie. Najszybciej: wyślij zdjęcie ściany z przybliżonymi wymiarami i zdjęcie efektu, który Ci się podoba — odpowiemy z orientacyjną ceną."],
+      ["Czy ścianę dekoracyjną można myć?", "Tak. Po zabezpieczeniu lakierem można ją przecierać wilgotną ściereczką. Rodzaj zabezpieczenia dobieramy do miejsca — inny do salonu, inny do przedpokoju czy kuchni."],
+      ["Czy da się zrobić dekorację na starej, zniszczonej ścianie?", "Tak, po przygotowaniu podłoża. Przykład z naszej galerii: w przedpokoju ze zniszczonej pomarańczowej ściany zrobiliśmy czarną fakturę ze złotymi płatkami."],
+      ["Ile trwa wykonanie ściany dekoracyjnej?", "Zwykle kilka dni, bo kolejne warstwy muszą wyschnąć przed nałożeniem następnych. Dokładny czas podajemy przy wycenie, po wybraniu techniki."]
+    ],
+    "articles": []
   },
   {
     "slug": "sufity-zabudowy-gk",
     "label": "Sufity i zabudowy G-K",
-    "title": "Sufity i zabudowy G-K",
-    "intro": "Od równej płaszczyzny sufitu po wnęki karniszowe i zabudowy LED. Wykonujemy konstrukcje z płyt gipsowo-kartonowych dopasowane do przestrzeni.",
-    "tags": ["Sufity podwieszane", "Zabudowy LED", "Ścianki działowe"],
+    "title": "Sufity podwieszane i zabudowy G-K",
+    "intro": "Sufity podwieszane jedno- i wielopoziomowe, wnęki pod LED i karnisze, ścianki działowe z wełną. Robimy konstrukcję, płyty i zbrojenie spoin, a na życzenie także gładź i malowanie na gotowo.",
+    "metaDescription": "Sufity podwieszane G-K, wnęki LED i karniszowe, ścianki działowe w Bielsku-Białej i okolicach. Sufit od {{sufityGK.poziomy.jeden.stawka.0}} zł/m² netto z materiałem.",
+    "tags": ["Sufity podwieszane", "Wnęki LED i karniszowe", "Ścianki działowe z wełną"],
+    "price": { "from": "od {{sufityGK.poziomy.jeden.stawka.0}} zł/m²", "note": "sufit jednopoziomowy, netto z materiałem · wnęka LED od {{sufityGK.wnekaLED.stawka.0}} zł/mb · ścianka działowa od {{zabudowyGK.stawka.0}} zł/m²" },
+    "when": [
+      "Krzywy lub popękany sufit, którego nie opłaca się naprawiać tynkiem.",
+      "Ukryte oświetlenie: linie LED, oprawy wpuszczane, podświetlane wnęki i karnisze.",
+      "Miejsce na instalacje — wentylację, rekuperację, przewody — schowane nad sufitem.",
+      "Nowy podział mieszkania lub biura: dodatkowy pokój, garderoba, wydzielona strefa."
+    ],
     "features": [
-      ["Laserowa precyzja i idealny poziom", "Konstrukcje montujemy w oparciu o niwelatory laserowe, gwarantując idealną płaszczyznę sufitu."],
-      ["Trwałe spoinowanie bez pęknięć", "Stosujemy profesjonalne taśmy zbrojące i elastyczne masy szpachlowe na wszystkich łączeniach płyt."],
-      ["Zabudowy LED i wnęki karniszowe", "Wykonujemy nowoczesne sufity wielopoziomowe, ukryte linie świetlne oraz zabudowy karniszy."],
-      ["Ścianki działowe i wygłuszenia", "Stawiamy stabilne ściany z wełną mineralną, zapewniając właściwą izolację akustyczną i termiczną."],
-      ["Sztywne konstrukcje pod obciążenia", "Wzmacniamy profile pod montaż ciężkich szafek, luster, telewizorów oraz masywnych lamp."]
-    ]
+      ["Konstrukcja wypoziomowana laserem", "Profile montujemy na wieszakach według niwelatora laserowego. Sufit jest w poziomie na całej powierzchni, nawet gdy strop nad nim jest krzywy."],
+      ["Miejsce na instalacje i oświetlenie", "Przed zamknięciem sufitu ustalamy rozmieszczenie lamp i zostawiamy przestrzeń na przewody, kanały wentylacji i rekuperacji. Elektryk podłącza oprawy, a my przygotowujemy pod nie konstrukcję."],
+      ["Wnęki LED, karnisze i sufity wielopoziomowe", "Wykonujemy uskoki, podświetlane wnęki i zabudowy karniszy, w których szyna lub karnisz chowają się w suficie. Detale planujemy razem z Tobą, zanim powstanie konstrukcja."],
+      ["Zbrojenie spoin taśmą", "Płyty mocujemy z przesunięciem spoin, a połączenia zbroimy taśmą i szpachlujemy masą do spoin. To najważniejszy sposób, żeby na suficie G-K nie pojawiały się rysy wzdłuż łączeń."],
+      ["Ścianki działowe z wełną mineralną", "Stawiamy stabilne ścianki na profilach, wypełnione wełną dla lepszej izolacji akustycznej. W miejscach pod drzwi, szafki czy telewizor dajemy wzmocnienia."],
+      ["Wykończenie na gotowo", "Na życzenie robimy całość: konstrukcję, płyty, spoiny, gładź i malowanie. Jedna ekipa odpowiada za sufit od profili po ostatnią warstwę farby."]
+    ],
+    "process": [
+      ["Pomiar i ustalenia", "Mierzymy pomieszczenie, ustalamy wysokość sufitu, rozmieszczenie lamp, wnęk i karniszy."],
+      ["Konstrukcja", "Montujemy wieszaki i profile, poziomujemy laserem, przygotowujemy miejsce na instalacje."],
+      ["Płyty", "Przykręcamy płyty G-K — w łazience impregnowane, odporne na wilgoć."],
+      ["Spoiny", "Zbroimy połączenia taśmą i szpachlujemy spoiny."],
+      ["Gładź, malowanie i odbiór", "Jeśli są w zakresie — gładź i malowanie na gotowo, potem sprzątanie i odbiór."]
+    ],
+    "priceFactors": [
+      "Powierzchnia i kształt — sufit jednopoziomowy jest tańszy niż wielopoziomowy z uskokami.",
+      "Liczba metrów bieżących wnęk LED i karniszowych.",
+      "Wysokość pomieszczenia i dostęp do miejsca pracy.",
+      "Zakres wykończenia — sam sufit ze spoinami czy od razu z gładzią i malowaniem."
+    ],
+    "faq": [
+      ["Ile kosztuje sufit podwieszany za m²?", "Jednopoziomowy od {{sufityGK.poziomy.jeden.stawka.0}} zł/m² netto z materiałem (konstrukcja, płyty, montaż), wielopoziomowy od {{sufityGK.poziomy.wiele.stawka.0}} zł/m². Wnęka pod LED od {{sufityGK.wnekaLED.stawka.0}} zł/mb, karniszowa od {{sufityGK.wnekaKarnisz.stawka.0}} zł/mb, zbrojenie spoin taśmą od {{sufityGK.zbrojenieTasma.stawka.0}} zł/m². Gładź i malowanie liczymy osobno — wszystko połączysz w kalkulatorze online."],
+      ["O ile obniży się sufit?", "Przy prostym suficie na wieszakach obniżenie jest niewielkie — kilka centymetrów. Więcej miejsca trzeba, gdy nad sufitem mają biec kanały wentylacji, rekuperacji lub głębokie oprawy wpuszczane. Ustalamy to przy pomiarze."],
+      ["Czy na suficie G-K pojawią się pęknięcia?", "Ryzyko ograniczamy: płyty mocujemy z przesunięciem spoin, połączenia zbroimy taśmą i szpachlujemy masą do spoin, a konstrukcję poziomujemy laserem. Większość rys na sufitach G-K bierze się z pominięcia tych kroków."],
+      ["Czy można zrobić sufit G-K w łazience?", "Tak — z płyt impregnowanych, odpornych na wilgoć, przy sprawnej wentylacji. Taki sufit wykańczamy farbą do pomieszczeń wilgotnych."]
+    ],
+    "articles": ["sufit-podwieszany-gk-planowanie", "zabudowa-karnisza-sufit-podwieszany-led", "zabudowy-gk-scianki-dzialowe"]
   },
   {
     "slug": "renowacja-drewna",
     "label": "Renowacja i ochrona drewna",
     "title": "Renowacja i ochrona drewna",
-    "intro": "Przywracamy drewnu jego naturalny charakter. Oczyszczamy powierzchnie, uzupełniamy ubytki i dobieramy ochronne wykończenie.",
-    "tags": ["Renowacja", "Impregnacja", "Oleje, lakiery i woski"],
+    "intro": "Odnawiamy drzwi, okna, schody, belki i inne elementy z drewna. Usuwamy zniszczone powłoki, naprawiamy ubytki i zabezpieczamy drewno lakierem, olejem lub lazurą.",
+    "metaDescription": "Renowacja drzwi, okien, schodów i belek drewnianych w Bielsku-Białej i okolicach. Szlifowanie, naprawa ubytków, lakier, olej lub lazura.",
+    "tags": ["Drzwi i okna drewniane", "Schody i belki", "Lakiery, oleje, lazury"],
+    "price": { "from": "Wycena indywidualna", "note": "zależy od stanu drewna i liczby elementów — wyślij zdjęcia" },
+    "when": [
+      "Drzwi wejściowe z porysowanym, wyblakłym lub łuszczącym się lakierem.",
+      "Okna drewniane z odchodzącą farbą i zniszczonymi parapetami.",
+      "Schody, poręcze i balustrady, które straciły wygląd po latach użytkowania.",
+      "Belki, podbitki i inne elementy z drewna wymagające zabezpieczenia przed wilgocią i słońcem."
+    ],
     "features": [
-      ["Uzupełnianie ubytków i pęknięć", "Wypełniamy szczeliny i ubytki profesjonalnymi masami oraz kitami dobranymi pod odcień drewna."],
-      ["Precyzyjne oczyszczanie powierzchni", "Usuwamy stare, spękane warstwy lakierów i bezpyłowo szlifujemy drewno do surowego stanu."],
-      ["Głęboka impregnacja techniczna", "Zabezpieczamy materiał przed wilgocią, promieniami UV, sinizną oraz szkodnikami biologicznymi."],
-      ["Olejowanie, lakierowanie i woski", "Stosujemy twarde woski olejne i lakiery podkreślające usłojenie oraz naturalną strukturę."],
-      ["Schody, belki i elementy ozdobne", "Odnawiamy drewniane stopnie, balustrady, podsufitki, lamele oraz dekoracyjne konstrukcje."]
-    ]
+      ["Ocena stanu drewna", "Sprawdzamy, czy zniszczona jest tylko powłoka, czy też samo drewno. Miękkie, zbutwiałe fragmenty usuwamy i uzupełniamy — malowanie na chore drewno niczego nie rozwiązuje."],
+      ["Usuwanie starych powłok i szlifowanie", "Stary lakier i farbę usuwamy mechanicznie lub chemicznie, zależnie od elementu, i szlifujemy drewno papierem o stopniowanej gradacji aż do zdrowej, równej powierzchni."],
+      ["Naprawa ubytków i pęknięć", "Wypełniamy szczeliny, pęknięcia i ubytki masami do drewna dobranymi pod jego odcień, żeby naprawy nie rzucały się w oczy."],
+      ["Impregnacja", "Drewno na zewnątrz zabezpieczamy impregnatem chroniącym przed wilgocią, grzybami i sinizną. To warstwa, od której zależy, jak długo wytrzyma całe wykończenie."],
+      ["Lakier, olej, lazura lub farba", "Na zewnątrz stosujemy powłoki odporne na słońce i deszcz, wewnątrz lakiery i oleje podkreślające usłojenie. Kolor i stopień połysku dobieramy razem z Tobą."],
+      ["Zabezpieczenie otoczenia", "Okucia, szyby, uszczelki i elementy wokół okrywamy przed szlifowaniem i malowaniem, a po pracy sprzątamy."]
+    ],
+    "process": [
+      ["Zdjęcia i ocena", "Wysyłasz zdjęcia elementów — oceniamy stan drewna i proponujemy sposób renowacji."],
+      ["Zabezpieczenie", "Okrywamy okucia, szyby i otoczenie miejsca pracy."],
+      ["Usuwanie powłok i szlif", "Zdejmujemy stare warstwy i szlifujemy do zdrowego drewna."],
+      ["Naprawy i impregnacja", "Uzupełniamy ubytki i zabezpieczamy drewno impregnatem."],
+      ["Wykończenie i odbiór", "Nakładamy warstwy lakieru, oleju lub lazury i podpowiadamy, jak dbać o drewno."]
+    ],
+    "priceFactors": [
+      "Liczba i wielkość elementów — jedne drzwi czy wszystkie okna w domu.",
+      "Stan drewna — ile warstw trzeba zdjąć i ile napraw wykonać.",
+      "Rodzaj wykończenia — lakier, olej, lazura czy farba kryjąca.",
+      "Praca na zewnątrz lub na wysokości — rusztowanie i zależność od pogody."
+    ],
+    "faq": [
+      ["Czy opłaca się odnawiać stare drzwi i okna?", "Jeśli drewno jest zdrowe — zwykle tak. Renowacja kosztuje ułamek ceny nowej stolarki, a solidne drewniane drzwi i okna po odnowieniu służą kolejne lata. Przykład: drzwi wejściowe w Jaworzu w galerii poniżej."],
+      ["Lakier czy olej — co wybrać?", "Lakier tworzy twardą powłokę, odporną na ścieranie — dobry na drzwi i schody. Olej wnika w drewno, podkreśla usłojenie i łatwo go odświeżyć miejscowo. Na zewnątrz często najlepsza jest lazura. Doradzimy przy wycenie."],
+      ["Czy renowację drewna robicie przez cały rok?", "Elementy wewnątrz — tak. Prace na zewnątrz wykonujemy przy odpowiedniej temperaturze i suchej pogodzie, zwykle od wiosny do jesieni."],
+      ["Jak często trzeba odświeżać drewno na zewnątrz?", "Zależy od nasłonecznienia i rodzaju powłoki — elementy od strony południowej i zachodniej wymagają tego częściej. Po renowacji podpowiemy, kiedy i czym odświeżyć powłokę."]
+    ],
+    "articles": []
   },
   {
     "slug": "prace-wykonczeniowe",
     "label": "Prace wykończeniowe",
     "title": "Detale i prace wykończeniowe",
-    "intro": "Parapety, ukryte drzwi, listwy i lamele. Dbamy o detale oraz prace naprawcze, które składają się na gotowe wnętrze.",
-    "tags": ["Parapety i drzwi ukryte", "Listwy i lamele", "Poprawki i naprawy"],
+    "intro": "Drzwi ukryte, parapety, listwy, lamele, tapety i naprawy przed malowaniem. Domykamy wykończenie wnętrza tak, żeby po remoncie nie zostały niedoróbki.",
+    "metaDescription": "Prace wykończeniowe w Bielsku-Białej i okolicach: drzwi ukryte, parapety, listwy, lamele, tapetowanie od {{tapetowanie.stawka.0}} zł/m², naprawy ścian i narożników.",
+    "tags": ["Drzwi ukryte i parapety", "Listwy, lamele, tapety", "Naprawy i poprawki"],
+    "price": { "from": "Tapetowanie od {{tapetowanie.stawka.0}} zł/m²", "note": "netto · pozostałe prace wyceniamy według listy — wyślij zdjęcia" },
+    "when": [
+      "Mieszkanie od dewelopera z listą drobiazgów do zrobienia przed wprowadzeniem.",
+      "Drzwi ukryte, które trzeba wykończyć na równo ze ścianą.",
+      "Tapeta na jednej ścianie albo lamele jako akcent we wnętrzu.",
+      "Pęknięcia, odbite narożniki i ubytki po instalacjach do naprawy przed malowaniem."
+    ],
     "features": [
-      ["Osadzanie i obróbka parapetów", "Precyzyjny montaż, poziomowanie oraz estetyczne wyprowadzenie glifów i styków ze ścianą."],
-      ["Obróbka drzwi ukrytych", "Szpachlowanie ościeżnic na zero ze ścianą z użyciem siatek zbrojących przeciw spękaniom."],
-      ["Montaż listew i lameli", "Czyste docinanie kątów listew przypodłogowych, ściennych sztukaterii oraz nowoczesnych lameli."],
-      ["Poprawki i prace naprawcze", "Usuwanie pęknięć tynku, prostowanie krzywizn oraz naprawa narożników przed finiszem."]
-    ]
+      ["Drzwi ukryte", "Ościeżnice drzwi ukrytych szpachlujemy na równo ze ścianą, zbroimy styk siatką przeciw pęknięciom i malujemy razem ze ścianą, tak żeby drzwi znikały w płaszczyźnie."],
+      ["Parapety i ościeża", "Osadzamy i poziomujemy parapety, wyprowadzamy glify i wykańczamy styk parapetu ze ścianą akrylem."],
+      ["Listwy i sztukateria", "Montujemy listwy przypodłogowe, sufitowe i ścienne. Narożniki docinamy na równo, łączenia szpachlujemy i malujemy, żeby listwa wyglądała jak część ściany."],
+      ["Lamele ścienne", "Montujemy lamele na ścianach i zabudowach — z równym rozstawem i dokładnie dociętymi krawędziami przy suficie, podłodze i narożnikach."],
+      ["Tapetowanie", "Przygotowujemy ścianę, gruntujemy i kleimy tapetę z dopasowaniem wzoru. Tapetę wybierasz Ty — pomożemy policzyć, ile rolek potrzeba."],
+      ["Naprawy i poprawki", "Usuwamy pęknięcia tynku, naprawiamy odbite narożniki, uzupełniamy bruzdy po instalacjach i prostujemy krzywizny — przed malowaniem albo jako poprawki po innych ekipach."]
+    ],
+    "process": [
+      ["Lista prac", "Wysyłasz zdjęcia i spis tego, co trzeba zrobić — nawet drobiazgi."],
+      ["Wycena łączna", "Wyceniamy całość jednym kosztorysem, bez dopłat za każdy drobiazg osobno."],
+      ["Kolejność", "Ustalamy, co robimy przed malowaniem, a co po nim — tak, żeby niczego nie poprawiać dwa razy."],
+      ["Wykonanie", "Realizujemy prace, zabezpieczając podłogi i stolarkę."],
+      ["Odbiór", "Przechodzimy razem przez listę punkt po punkcie i sprzątamy."]
+    ],
+    "priceFactors": [
+      "Liczba i rodzaj prac na liście.",
+      "Połączenie z innymi usługami — drobne prace przy malowaniu lub gładziach wychodzą taniej niż osobny przyjazd.",
+      "Stan ścian i elementów, które trzeba naprawić.",
+      "Materiały — listwy, lamele i parapety mogą być nasze lub wybrane przez Ciebie."
+    ],
+    "faq": [
+      ["Czy przyjmujecie małe zlecenia?", "Tak, od {{minimalneZlecenie}} zł netto. Drobne prace najlepiej połączyć z malowaniem lub gładziami — wychodzi taniej niż osobny przyjazd ekipy."],
+      ["Ile kosztuje tapetowanie?", "Od {{tapetowanie.stawka.0}} zł/m² netto — przygotowanie ściany, klej i klejenie z dopasowaniem wzoru. Tapetę wybierasz i kupujesz Ty."],
+      ["Czy montujecie drzwi ukryte?", "Wykańczamy drzwi ukryte na równo ze ścianą: szpachlowanie ościeżnicy, zbrojenie styku i malowanie. Zakres — z montażem ościeżnicy czy tylko wykończenie — ustalamy przy wycenie."],
+      ["W jakiej kolejności robić prace wykończeniowe?", "Najpierw zabudowy i naprawy, potem gładzie i grunt, na końcu malowanie, a listwy i część detali po malowaniu. Więcej o tym piszemy w artykule o kolejności prac poniżej."]
+    ],
+    "articles": ["wykonczenie-mieszkania-kolejnosc-prac", "co-przeslac-do-wyceny-prac-wykonczeniowych"]
   }
 ]

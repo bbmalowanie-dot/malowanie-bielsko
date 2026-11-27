@@ -55,3 +55,74 @@
 .service-gallery img { display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 12px; }
 .service-gallery figcaption { font-size: 14px; line-height: 1.4; margin-top: 8px; opacity: .85; }
 @media (max-width: 800px) { .service-gallery ul { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+/* ---------- Rozbudowane podstrony usług: cena, CTA, sekcje, FAQ ---------- */
+.svc-price { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; margin: 28px 0 0; }
+.svc-price span { font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #467a82; }
+.svc-price strong { font-size: clamp(28px, 3vw, 40px); font-weight: 500; letter-spacing: -.03em; line-height: 1.1; }
+.svc-price small { flex-basis: 100%; font-size: 15px; line-height: 1.5; color: #4b6670; }
+.svc-ctas { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+.svc-cta { display: inline-flex; align-items: center; justify-content: center; gap: 9px; min-height: 52px; padding: 13px 22px; border-radius: 8px; border: 1px solid #b9d3d5; background: #fff; color: var(--ink); font-size: 16px; font-weight: 600; text-decoration: none; transition: background .2s, transform .15s; }
+.svc-cta:hover { background: #edf6f5; transform: translateY(-1px); }
+.svc-cta-primary { background: var(--ink); border-color: var(--ink); color: #fff; }
+.svc-cta-primary:hover { background: #1c5968; }
+.svc-cta-ghost { background: transparent; }
+.svc-cta svg { width: 19px; height: 19px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linejoin: round; }
+.service-content { min-width: 0; }
+.svc-block { padding: 0 0 46px; }
+.svc-block + .svc-block { border-top: 1px solid #dfe8e9; padding-top: 40px; }
+.svc-block > h2 { font-size: clamp(26px, 2.6vw, 36px); font-weight: 400; line-height: 1.15; letter-spacing: -.035em; margin: 0 0 20px; color: inherit; }
+.service-specification.svc-block > h2 { font-size: clamp(26px, 2.6vw, 36px); color: inherit; margin-bottom: 4px; }
+.svc-when { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.svc-when li { padding: 18px 18px 18px 46px; border-radius: 10px; background: #f4f9f8; border: 1px solid #dce9ea; font-size: 16px; line-height: 1.6; position: relative; }
+.svc-when li::before { content: ""; position: absolute; left: 18px; top: 24px; width: 14px; height: 8px; border-left: 2px solid #387a83; border-bottom: 2px solid #387a83; transform: rotate(-45deg); }
+.svc-steps { list-style: none; margin: 0; padding: 0; counter-reset: krok; display: grid; gap: 4px; }
+.svc-steps li { counter-increment: krok; display: grid; grid-template-columns: 46px minmax(0, 1fr); column-gap: 16px; padding: 14px 0; }
+.svc-steps li::before { content: counter(krok); grid-row: span 2; display: grid; place-items: center; width: 42px; height: 42px; border-radius: 50%; background: var(--ink); color: #fff; font-weight: 600; font-size: 17px; }
+.svc-steps h3 { font-size: 20px; font-weight: 600; line-height: 1.3; margin: 0; }
+.svc-steps p { font-size: 16.5px; line-height: 1.65; margin: 6px 0 0; color: #4b6570; }
+.svc-pricing { }
+.svc-pricing ul { margin: 0 0 18px; padding-left: 22px; }
+.svc-pricing li { font-size: 16.5px; line-height: 1.65; margin-bottom: 8px; }
+.svc-pricing-note { font-size: 15px; line-height: 1.6; color: #4b6670; margin: 0 0 22px; }
+.svc-faq details { border-bottom: 1px solid #dfe8e9; }
+.svc-faq summary { cursor: pointer; list-style: none; padding: 20px 40px 20px 0; position: relative; font-size: 19px; font-weight: 600; line-height: 1.4; }
+.svc-faq summary::-webkit-details-marker { display: none; }
+.svc-faq summary::after { content: "+"; position: absolute; right: 6px; top: 16px; font-size: 26px; font-weight: 300; color: #387a83; transition: transform .2s; }
+.svc-faq details[open] summary::after { transform: rotate(45deg); }
+.svc-faq p { font-size: 16.5px; line-height: 1.7; margin: 0 0 22px; color: #4b6570; max-width: 720px; }
+.svc-articles { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.svc-articles a { display: block; padding: 16px 18px; border: 1px solid #ccdedf; border-radius: 8px; font-size: 16.5px; line-height: 1.45; text-decoration: none; color: inherit; }
+.svc-articles a::after { content: " →"; color: #387a83; }
+.svc-articles a:hover { background: #edf6f5; border-color: var(--teal); }
+.service-aside { position: sticky; top: calc(var(--header-height, 121px) + 20px); }
+.estimate-sms { display: block; text-align: center; margin-top: 10px; padding: 12px 10px; border: 1px solid #b9d3d5; border-radius: 5px; font-size: 15px; font-weight: 600; color: inherit; text-decoration: none; }
+.estimate-sms:hover { background: #fff; }
+.estimate-trust { list-style: none; margin: 20px 0 0; padding: 16px 0 0; border-top: 1px solid #d2e5e5; display: grid; gap: 6px; font-size: 14.5px; }
+.estimate-trust span { color: #e3a008; }
+.svc-final { margin: 40px 0 0; padding: clamp(28px, 4vw, 48px); border-radius: 16px; background: var(--ink); color: #fff; }
+.svc-final h2 { font-size: clamp(26px, 3vw, 40px); font-weight: 400; line-height: 1.15; letter-spacing: -.035em; margin: 0 0 12px; max-width: 820px; }
+.svc-final p { font-size: 16.5px; line-height: 1.6; margin: 0; opacity: .85; max-width: 760px; }
+.svc-final .svc-cta { background: rgba(255, 255, 255, .1); border-color: rgba(255, 255, 255, .45); color: #fff; }
+.svc-final .svc-cta:hover { background: rgba(255, 255, 255, .2); }
+.svc-final .svc-cta-primary { background: #a7dce0; border-color: #a7dce0; color: #102f3a; }
+.svc-final .svc-cta-primary:hover { background: #c2edef; }
+.svc-final + .other-services { margin-top: 48px; }
+@media (max-width: 760px) {
+  .svc-when { grid-template-columns: 1fr; }
+  .svc-ctas .svc-cta { flex: 1 1 100%; }
+  .service-aside { position: static; }
+  .svc-faq summary { font-size: 17.5px; }
+}
+[data-theme="dark"] .svc-price span { color: var(--dark-accent, #a7dce0); }
+[data-theme="dark"] .svc-price small, [data-theme="dark"] .svc-steps p, [data-theme="dark"] .svc-faq p, [data-theme="dark"] .svc-pricing-note { color: var(--dark-muted, #b9d0d4); }
+[data-theme="dark"] .svc-cta { background: #1b414e; border-color: #3d6b78; color: #e3f0f2; }
+[data-theme="dark"] .svc-cta:hover { background: #285565; }
+[data-theme="dark"] .svc-cta-primary, [data-theme="dark"] .svc-steps li::before { background: #a7dce0; border-color: #a7dce0; color: #102f3a; }
+[data-theme="dark"] .svc-cta-ghost { background: transparent; }
+[data-theme="dark"] .svc-when li { background: #17394a; border-color: #2e5866; }
+[data-theme="dark"] .svc-when li::before { border-color: #a7dce0; }
+[data-theme="dark"] .svc-block + .svc-block, [data-theme="dark"] .svc-faq details, [data-theme="dark"] .estimate-trust { border-color: #2e5866; }
+[data-theme="dark"] .svc-faq summary::after, [data-theme="dark"] .svc-articles a::after { color: #a7dce0; }
+[data-theme="dark"] .svc-articles a, [data-theme="dark"] .estimate-sms { border-color: #3d6b78; }
+[data-theme="dark"] .svc-articles a:hover, [data-theme="dark"] .estimate-sms:hover { background: #1b414e; }
+[data-theme="dark"] .svc-final { background: #17394a; border: 1px solid #2e5866; }

@@ -38,11 +38,43 @@ const gallery = slug => (PHOTOS[slug] || []).length ? `    <section class="servi
     </section>
 ` : '';
 const check = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 12 4 4 8-9"/></svg>';
+const phoneIcon = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 3h3l1.6 4.2-2.1 1.4a11 11 0 0 0 6.3 6.3l1.4-2.1L21 14.4v3A2.6 2.6 0 0 1 18.4 20 15.4 15.4 0 0 1 4 5.6 2.6 2.6 0 0 1 6.6 3Z"/></svg>';
+const rates = JSON.parse(await readFile(resolve(root, 'content/stawki.json'), 'utf8'));
+const posts = JSON.parse(await readFile(resolve(root, 'content/posts.json'), 'utf8'));
+// {{malowanie.prywatny.0}} → wartość ze stawki.json, żeby ceny na podstronach zgadzały się z kalkulatorem
+const fill = text => text.replace(/\{\{([\w.]+)\}\}/g, (_, path) => {
+  const value = path.split('.').reduce((node, key) => node?.[key], rates);
+  if (value === undefined) throw new Error(`Brak stawki: ${path}`);
+  return typeof value === 'number' ? value.toLocaleString('pl-PL') : value;
+});
+const strip = text => text.replace(/\s+/g, ' ').trim();
+const ctaButtons = label => `<div class="svc-ctas">
+        <a class="svc-cta svc-cta-primary" href="tel:+48726747602">${phoneIcon}Zadzwoń: 726 747 602</a>
+        <a class="svc-cta" href="../../cennik/#kalkulator">Policz cenę online</a>
+        <a class="svc-cta svc-cta-ghost" href="../../index.html#oddzwonimy">Zamów oddzwonienie</a>
+      </div>`;
 
 for (const service of services) {
   const title = escape(service.title);
   const seoTitle = `${title} Bielsko-Biała i okolice — Malowanie Bielsko`;
-  const description = escape(`${service.intro} Bielsko-Biała i okolice. Bezpłatna wycena: 726 747 602.`);
+  const description = escape(fill(service.metaDescription || `${service.intro} Bielsko-Biała i okolice.`));
+  const priceFrom = escape(fill(service.price.from));
+  const priceNote = escape(fill(service.price.note));
+  const faq = service.faq.map(([q, a]) => [q, fill(a)]);
+  const articles = (service.articles || []).map(slug => posts.find(post => post.slug === slug)).filter(Boolean);
+  const schema = JSON.stringify({
+    '@context': 'https://schema.org',
+    '@graph': [
+      { '@type': 'Service', name: service.title, serviceType: service.label, description: strip(service.intro),
+        url: `https://malowaniebielsko.pl/uslugi/${service.slug}/`,
+        provider: { '@id': 'https://malowaniebielsko.pl/#firma' },
+        areaServed: [{ '@type': 'City', name: 'Bielsko-Biała' }, { '@type': 'AdministrativeArea', name: 'powiat bielski' }] },
+      { '@type': 'FAQPage', mainEntity: faq.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) },
+      { '@type': 'BreadcrumbList', itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Usługi', item: 'https://malowaniebielsko.pl/#uslugi' },
+        { '@type': 'ListItem', position: 2, name: service.label, item: `https://malowaniebielsko.pl/uslugi/${service.slug}/` }] }
+    ]
+  }).replace(/</g, '\\u003c');
   const html = `<!doctype html>
 <html lang="pl">
 <head>
@@ -61,12 +93,13 @@ for (const service of services) {
   <title>${seoTitle}</title>
   <link rel="icon" type="image/png" href="../../assets/logo-192.png">
   <link rel="stylesheet" href="../../styles.css">
-  <link rel="stylesheet" href="../../service-pages.css">
+  <link rel="stylesheet" href="../../service-pages.css?v=2">
   <link rel="stylesheet" href="../../brand-theme.css">
   <link rel="stylesheet" href="../../blog-contact.css">
   <link rel="stylesheet" href="../../appearance.css?v=9">
   <link rel="stylesheet" href="../../layout-refinements.css?v=9">
   <script src="../../app.js?v=9" defer></script>
+  <script type="application/ld+json">${schema}</script>
 </head>
 <body class="service-page">
   <a href="#main" class="skip-link">Przejdź do treści</a>
@@ -79,26 +112,58 @@ ${header}
       <h1 id="serviceTitle">${title}</h1>
       <p class="service-lead">${escape(service.intro)}</p>
       <ul class="service-highlights" aria-label="Najważniejsze informacje">${service.tags.map(tag => `<li>${escape(tag)}</li>`).join('')}</ul>
+      <p class="svc-price"><span>Cena</span><strong>${priceFrom}</strong><small>${priceNote}</small></p>
+      ${ctaButtons()}
     </section>
     <div class="service-detail-layout">
-      <section class="service-specification" aria-labelledby="specificationTitle">
-        <h2 id="specificationTitle">Zakres i sposób wykonania</h2>
-        <ul class="feature-list">
-${service.features.map(([heading, description]) => `          <li class="feature-item"><span class="feature-check">${check}</span><div><h3>${escape(heading)}</h3><p>${escape(description)}</p></div></li>`).join('\n')}
-        </ul>
-      </section>
+      <div class="service-content">
+        <section class="svc-block" aria-labelledby="whenTitle">
+          <h2 id="whenTitle">Kiedy nas wołasz</h2>
+          <ul class="svc-when">${service.when.map(item => `<li>${escape(item)}</li>`).join('')}</ul>
+        </section>
+        <section class="service-specification svc-block" aria-labelledby="specificationTitle">
+          <h2 id="specificationTitle">Zakres i sposób wykonania</h2>
+          <ul class="feature-list">
+${service.features.map(([heading, text]) => `          <li class="feature-item"><span class="feature-check">${check}</span><div><h3>${escape(heading)}</h3><p>${escape(text)}</p></div></li>`).join('\n')}
+          </ul>
+        </section>
+        <section class="svc-block" aria-labelledby="processTitle">
+          <h2 id="processTitle">Jak przebiega realizacja</h2>
+          <ol class="svc-steps">${service.process.map(([heading, text]) => `<li><h3>${escape(heading)}</h3><p>${escape(text)}</p></li>`).join('')}</ol>
+        </section>
+        <section class="svc-block svc-pricing" aria-labelledby="pricingTitle">
+          <h2 id="pricingTitle">Od czego zależy cena</h2>
+          <ul>${service.priceFactors.map(item => `<li>${escape(item)}</li>`).join('')}</ul>
+          <p class="svc-pricing-note">Wszystkie ceny podajemy netto i z materiałem. Dla mieszkań i domów najczęściej obowiązuje 8% VAT, w pozostałych przypadkach 23%.</p>
+          <a class="svc-cta svc-cta-primary" href="../../cennik/#kalkulator">Policz orientacyjną cenę w minutę</a>
+        </section>
+        <section class="svc-block" aria-labelledby="faqTitle">
+          <h2 id="faqTitle">Najczęstsze pytania</h2>
+          <div class="svc-faq">${faq.map(([q, a], i) => `<details${i === 0 ? ' open' : ''}><summary>${escape(q)}</summary><p>${escape(a)}</p></details>`).join('')}</div>
+        </section>
+${articles.length ? `        <section class="svc-block" aria-labelledby="articlesTitle">
+          <h2 id="articlesTitle">Poradniki na blogu</h2>
+          <ul class="svc-articles">${articles.map(post => `<li><a href="../../blog/${post.slug}/">${escape(post.title)}</a></li>`).join('')}</ul>
+        </section>
+` : ''}      </div>
       <aside class="service-aside" aria-label="Bezpłatna wycena">
         <div class="service-estimate">
-          <p class="eyebrow">Porozmawiajmy o wnętrzu</p>
-          <h2>Umów się na<br>bezpłatną wycenę.</h2>
-          <p>Opowiedz nam o planowanych pracach. Wspólnie ustalimy zakres i szczegóły realizacji.</p>
+          <p class="eyebrow">Bezpłatna wycena</p>
+          <h2>Zadzwoń albo wyślij zdjęcia.</h2>
+          <p>Powiedz, co i gdzie trzeba zrobić. Orientacyjną cenę podamy od razu, a dokładny kosztorys dostaniesz na piśmie.</p>
           <a class="estimate-phone" href="tel:+48726747602"><span>Zadzwoń</span><strong>726 747 602</strong></a>
+          <a class="estimate-sms" href="sms:+48726747602">Wyślij SMS ze zdjęciem</a>
           <a class="estimate-email" href="mailto:kontakt@malowaniebielsko.pl?subject=${encodeURIComponent('Wycena: ' + service.label)}"><span>Napisz lub prześlij projekt</span><strong>kontakt@malowaniebielsko.pl</strong></a>
-          <a class="estimate-process-link" href="../../index.html#wycena">Jak wygląda proces wyceny?</a>
+          <ul class="estimate-trust"><li><span aria-hidden="true">★</span> 5,0 w opiniach Google</li><li>Ceny z materiałem</li><li>Kosztorys na piśmie</li></ul>
         </div>
       </aside>
     </div>
-${gallery(service.slug)}    <nav class="other-services" aria-labelledby="otherServicesTitle">
+${gallery(service.slug)}    <section class="svc-final" aria-labelledby="finalTitle">
+      <h2 id="finalTitle">${escape(service.label)} w Bielsku-Białej i okolicach — umów bezpłatną wycenę</h2>
+      <p>Pracujemy w Bielsku-Białej i okolicach — m.in. w Jaworzu, Czechowicach-Dziedzicach, Kozach, Wilkowicach i Szczyrku. Większe zlecenia realizujemy też dalej, np. w Cieszynie.</p>
+      ${ctaButtons()}
+    </section>
+    <nav class="other-services" aria-labelledby="otherServicesTitle">
       <h2 id="otherServicesTitle">Zobacz też pozostałe usługi</h2>
       <div>${services.filter(other => other.slug !== service.slug).map(other => `<a href="../${other.slug}/">${escape(other.label)}</a>`).join('')}</div>
       <a class="return-services text-link" href="../../index.html#start">Wróć do wszystkich usług</a>
@@ -109,8 +174,7 @@ ${footer}
 ${menu}
 </body>
 </html>
-`;
-  const dir = resolve(root, 'dist/uslugi', service.slug);
+`;  const dir = resolve(root, 'dist/uslugi', service.slug);
   await mkdir(dir, { recursive: true });
   await writeFile(resolve(dir, 'index.html'), html, 'utf8');
 }
