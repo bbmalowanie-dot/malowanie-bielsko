@@ -152,3 +152,13 @@
   .callback-card .cb-consent, .callback-card .cb-msg { grid-column: 1 / -1; }
   .callback-card button[type="submit"] { grid-row: 1; grid-column: 4; padding: 0 26px; }
 }
+/* Cennik: typografia i FAQ spójne z resztą strony */
+.pricing-page main h1 { font-weight: 400; letter-spacing: -.045em; }
+.pricing-page main h2 { font-size: clamp(28px, 3vw, 40px); font-weight: 400; letter-spacing: -.035em; line-height: 1.15; }
+.pricing-page main details { border-bottom: 1px solid var(--appearance-border); }
+.pricing-page main details summary { cursor: pointer; list-style: none; position: relative; padding: 20px 40px 20px 0; font-size: 18px; font-weight: 500; line-height: 1.4; }
+.pricing-page main details summary::-webkit-details-marker { display: none; }
+.pricing-page main details summary::after { content: "+"; position: absolute; right: 6px; top: 15px; font-size: 26px; font-weight: 300; color: var(--teal); transition: transform .2s; }
+:root[data-theme="dark"] .pricing-page main details summary::after { color: var(--dark-accent, #a7dce0); }
+.pricing-page main details[open] summary::after { transform: rotate(45deg); }
+.pricing-page main details p { margin: 0 0 22px; font-size: 16.5px; line-height: 1.7; opacity: .88; }

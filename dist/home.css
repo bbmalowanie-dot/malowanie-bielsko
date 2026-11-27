@@ -92,3 +92,44 @@
   .lp-hero-trust li { gap: 5px; }
   .lp-hero-trust a { border-bottom: 0; padding: 0; }
 }@media (prefers-reduced-motion: reduce) { .lp-hero-video figcaption::before { animation: none; } }
+/* ---------- Spójność typografii i elementów (cała strona główna) ---------- */
+/* Nagłówki sekcji: jeden styl — cienki krój, ten sam rozmiar i odstępy liter */
+.works-heading h2, .reviews-heading h2, #o-nas .display-title, #uslugi .services-statement, #wycena h2, #blog h2, #kontakt .contact-title {
+  font-weight: 400; letter-spacing: -.04em; line-height: 1.1; font-size: clamp(36px, 3.6vw, 56px);
+}
+/* Nagłówki kart: ta sama waga */
+.ba-card h3, #wycena .estimate-steps h3, .works-gallery-title { font-weight: 500; letter-spacing: -.02em; }
+#wycena .estimate-steps > li::before { font-weight: 500; }
+/* Etykiety nad nagłówkami: wszędzie jak .eyebrow */
+#kontakt .contact-area, #o-nas .section-kicker p { text-transform: uppercase; letter-spacing: .085em; font-size: 14px; color: var(--teal); }
+:root[data-theme="dark"] #kontakt .contact-area, :root[data-theme="dark"] #o-nas .section-kicker p { color: var(--dark-accent, #a7dce0); }
+
+/* Kalkulator pod kafelkami usług — karta w stylu kafelków */
+.lp-calc { position: relative; display: grid; gap: 6px; margin-top: 22px; padding: 22px 64px 22px 24px; border-radius: 14px; border: 1px solid var(--appearance-border); background: var(--appearance-surface); color: var(--appearance-text); text-decoration: none; transition: background .2s, transform .15s; }
+.lp-calc:hover { background: var(--appearance-hover); transform: translateY(-1px); }
+.lp-calc-label { font-size: 13px; text-transform: uppercase; letter-spacing: .085em; color: var(--teal); }
+:root[data-theme="dark"] .lp-calc-label { color: var(--dark-accent, #a7dce0); }
+.lp-calc strong { font-size: 22px; font-weight: 500; letter-spacing: -.02em; line-height: 1.25; }
+.lp-calc-text { font-size: 15.5px; line-height: 1.5; opacity: .85; }
+.lp-calc-arrow { position: absolute; right: 22px; top: 50%; transform: translateY(-50%); display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; border: 1px solid currentColor; font-size: 18px; opacity: .8; }
+
+/* Przycisk w sekcji procesu wyceny — taki sam jak w hero */
+.estimate-cta { margin-top: 28px; width: fit-content; }
+
+/* Stopka: link do polityki w osobnej linii */
+.footer-legal { display: block; margin-top: 6px; }
+.footer-legal a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+
+@media (max-width: 760px) {
+  .works-heading h2, .reviews-heading h2, #o-nas .display-title, #uslugi .services-statement, #wycena h2, #blog h2, #kontakt .contact-title { font-size: 32px; }
+  .ba-card h3, #wycena .estimate-steps h3 { font-size: 21px; line-height: 1.3; }
+  #wycena .estimate-steps > li::before { font-size: 21px; top: 29px; }
+  .works-gallery-title { font-size: 21px; }
+  #o-nas .section-kicker { padding-bottom: 0; border-bottom: 0; margin-bottom: 18px; }
+  #o-nas .section-kicker .line-mark, #o-nas .section-kicker > span:last-child { display: none; }
+  #o-nas .video-showcase { aspect-ratio: 4 / 5; max-height: 68svh; max-width: none; }
+  .estimate-cta { width: 100%; }
+  .lp-calc { padding: 20px 60px 20px 20px; }
+  .lp-calc strong { font-size: 20px; }
+}
+@media (max-width: 760px) { .site-footer .footer-tagline { max-width: none; } }

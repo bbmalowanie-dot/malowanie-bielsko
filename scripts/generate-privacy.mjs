@@ -36,7 +36,7 @@ const html = `<!doctype html>
   <title>Polityka prywatności — Malowanie Bielsko</title>
   <link rel="icon" type="image/png" href="../assets/logo-192.png">
   <link rel="stylesheet" href="../styles.css">
-  <link rel="stylesheet" href="../service-pages.css?v=3">
+  <link rel="stylesheet" href="../service-pages.css?v=4">
   <link rel="stylesheet" href="../brand-theme.css">
   <link rel="stylesheet" href="../blog-contact.css">
   <link rel="stylesheet" href="../appearance.css?v=9">
