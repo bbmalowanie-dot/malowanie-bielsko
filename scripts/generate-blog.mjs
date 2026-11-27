@@ -71,7 +71,7 @@ function shell({title,description,path,prefix,body,schema}) {
 <title>${esc(title)} — Malowanie Bielsko</title>
 <meta name="description" content="${esc(description)}"><meta name="robots" content="index, follow"><link rel="canonical" href="${origin}${path}">
 <meta property="og:title" content="${esc(title)} — Malowanie Bielsko"><meta property="og:description" content="${esc(description)}"><meta property="og:type" content="${path==='/blog/'?'website':'article'}"><meta property="og:url" content="${origin}${path}"><meta property="og:image" content="${origin}/assets/logo-transparent.png">
-<link rel="icon" type="image/png" href="${prefix}assets/logo-192.png"><link rel="stylesheet" href="${prefix}styles.css"><link rel="stylesheet" href="${prefix}brand-theme.css"><link rel="stylesheet" href="${prefix}blog-contact.css"><link rel="stylesheet" href="${prefix}appearance.css?v=9"><link rel="stylesheet" href="${prefix}layout-refinements.css?v=16"><script src="${prefix}app.js?v=9" defer></script>
+<link rel="icon" type="image/png" href="${prefix}assets/logo-192.png"><link rel="stylesheet" href="${prefix}styles.css"><link rel="stylesheet" href="${prefix}brand-theme.css"><link rel="stylesheet" href="${prefix}blog-contact.css"><link rel="stylesheet" href="${prefix}appearance.css?v=9"><link rel="stylesheet" href="${prefix}layout-refinements.css?v=19"><script src="${prefix}app.js?v=9" defer></script>
 ${jsonLd(schema)}
 </head><body class="blog-page"><a href="#main" class="skip-link">Przejdź do treści</a>
 ${header}

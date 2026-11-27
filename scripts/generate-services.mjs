@@ -98,7 +98,7 @@ for (const service of services) {
   <link rel="stylesheet" href="../../brand-theme.css">
   <link rel="stylesheet" href="../../blog-contact.css">
   <link rel="stylesheet" href="../../appearance.css?v=9">
-  <link rel="stylesheet" href="../../layout-refinements.css?v=16">
+  <link rel="stylesheet" href="../../layout-refinements.css?v=19">
   <script src="../../app.js?v=9" defer></script>
   <script type="application/ld+json">${schema}</script>
 </head>

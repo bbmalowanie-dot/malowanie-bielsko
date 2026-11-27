@@ -69,7 +69,7 @@ const html = `<!doctype html>
   <link rel="stylesheet" href="../brand-theme.css">
   <link rel="stylesheet" href="../blog-contact.css">
   <link rel="stylesheet" href="../appearance.css?v=12">
-  <link rel="stylesheet" href="../layout-refinements.css?v=16">
+  <link rel="stylesheet" href="../layout-refinements.css?v=19">
   <link rel="stylesheet" href="../wycena.css?v=14">
   <script src="../app.js?v=12" defer></script>
   <script src="../wycena.js?v=13" defer></script>

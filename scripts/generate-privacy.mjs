@@ -40,7 +40,7 @@ const html = `<!doctype html>
   <link rel="stylesheet" href="../brand-theme.css">
   <link rel="stylesheet" href="../blog-contact.css">
   <link rel="stylesheet" href="../appearance.css?v=9">
-  <link rel="stylesheet" href="../layout-refinements.css?v=16">
+  <link rel="stylesheet" href="../layout-refinements.css?v=19">
   <style>
     .pp { max-width: 820px; padding: 40px 0 70px; }
     .pp h1 { font-size: clamp(36px, 4.6vw, 60px); font-weight: 400; letter-spacing: -.045em; line-height: 1.08; margin: 0 0 14px; }
