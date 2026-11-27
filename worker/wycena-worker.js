@@ -86,9 +86,37 @@ ${quote.notes.map(n => `<p style="font-size:13px;color:#405e69;margin:10px 0 0">
   return { html, text };
 }
 
+// Safari/iOS odtwarza <video> tylko, gdy serwer obsługuje Range (odpowiedź 206).
+async function serveVideo(request, env) {
+  const plain = new Request(request.url, { method: 'GET' });
+  const res = await env.ASSETS.fetch(plain);
+  if (!res.ok) return res;
+  const body = await res.arrayBuffer();
+  const size = body.byteLength;
+  const headers = new Headers(res.headers);
+  headers.set('Accept-Ranges', 'bytes');
+  headers.set('Cache-Control', 'public, max-age=604800');
+  const match = /^bytes=(\d*)-(\d*)$/.exec(request.headers.get('Range') || '');
+  if (!match || (match[1] === '' && match[2] === '')) {
+    headers.set('Content-Length', String(size));
+    return new Response(request.method === 'HEAD' ? null : body, { status: 200, headers });
+  }
+  let start, end;
+  if (match[1] === '') { start = Math.max(0, size - Number(match[2])); end = size - 1; }
+  else { start = Number(match[1]); end = match[2] === '' ? size - 1 : Math.min(Number(match[2]), size - 1); }
+  if (start >= size || start > end) {
+    headers.set('Content-Range', `bytes */${size}`);
+    return new Response(null, { status: 416, headers });
+  }
+  headers.set('Content-Range', `bytes ${start}-${end}/${size}`);
+  headers.set('Content-Length', String(end - start + 1));
+  return new Response(request.method === 'HEAD' ? null : body.slice(start, end + 1), { status: 206, headers });
+}
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
+    if (url.pathname.startsWith('/assets/video/') && env.ASSETS && (request.method === 'GET' || request.method === 'HEAD')) return serveVideo(request, env);
     if (!url.pathname.startsWith('/api/')) return env.ASSETS ? env.ASSETS.fetch(request) : json({ ok: false }, 404);
     if (url.pathname !== '/api/wycena') return json({ ok: false, error: 'Nie znaleziono' }, 404);
     if (!env.RESEND_API_KEY) return json({ ok: false, error: 'Wysyłka nie jest jeszcze skonfigurowana.' }, 503);
