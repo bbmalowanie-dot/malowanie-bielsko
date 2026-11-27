@@ -79,7 +79,7 @@ ${service.features.map(([heading, description]) => `          <li class="feature
           <h2>Umów się na<br>bezpłatną wycenę.</h2>
           <p>Opowiedz nam o planowanych pracach. Wspólnie ustalimy zakres i szczegóły realizacji.</p>
           <a class="estimate-phone" href="tel:+48726747602"><span>Zadzwoń</span><strong>726 747 602</strong></a>
-          <a class="estimate-email" href="mailto:bb.malowanie@gmail.com?subject=${encodeURIComponent('Wycena: ' + service.label)}"><span>Napisz lub prześlij projekt</span><strong>bb.malowanie@gmail.com</strong></a>
+          <a class="estimate-email" href="mailto:kontakt@malowaniebielsko.pl?subject=${encodeURIComponent('Wycena: ' + service.label)}"><span>Napisz lub prześlij projekt</span><strong>kontakt@malowaniebielsko.pl</strong></a>
           <a class="estimate-process-link" href="../../index.html#wycena">Jak wygląda proces wyceny?</a>
         </div>
       </aside>

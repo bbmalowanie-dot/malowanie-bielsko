@@ -11,7 +11,7 @@ let home = await readFile(resolve(root, 'dist/index.html'), 'utf8');
 const organization = {
   '@type':'HousePainter','@id':origin+'/#firma',name:'Malowanie Bielsko',url:origin+'/',
   description:'Malowanie wnętrz, gładzie i szpachlowanie Q1–Q4, zabudowy G-K oraz prace wykończeniowe w Bielsku-Białej i okolicach.',
-  email:'bb.malowanie@gmail.com',telephone:'+48726747602',
+  email:'kontakt@malowaniebielsko.pl',telephone:'+48726747602',
   logo:{'@type':'ImageObject',url:origin+'/assets/logo-transparent.png'},image:origin+'/assets/logo-transparent.png',
   address:{'@type':'PostalAddress',addressLocality:'Bielsko-Biała',addressRegion:'śląskie',addressCountry:'PL'},
   areaServed:[{'@type':'City',name:'Bielsko-Biała'},{'@type':'AdministrativeArea',name:'powiat bielski'}],
@@ -81,7 +81,7 @@ ${menu}
 </body></html>`;
 }
 function articleContact(prefix) {
-  return `<aside class="article-contact"><p class="eyebrow">Twój pomysł. Nasza praca.</p><h2>Porozmawiajmy o Twoim wnętrzu.</h2><p>Możesz zadzwonić, napisać lub przesłać projekt do bezpłatnej wyceny.</p><div><a href="mailto:bb.malowanie@gmail.com?subject=Projekt%20do%20wyceny">Napisz: bb.malowanie@gmail.com</a><a href="tel:+48726747602">Zadzwoń: 726 747 602</a></div><a class="text-link" href="${prefix}index.html#kontakt">Zobacz wszystkie możliwości kontaktu</a></aside>`;
+  return `<aside class="article-contact"><p class="eyebrow">Twój pomysł. Nasza praca.</p><h2>Porozmawiajmy o Twoim wnętrzu.</h2><p>Możesz zadzwonić, napisać lub przesłać projekt do bezpłatnej wyceny.</p><div><a href="mailto:kontakt@malowaniebielsko.pl?subject=Projekt%20do%20wyceny">Napisz: kontakt@malowaniebielsko.pl</a><a href="tel:+48726747602">Zadzwoń: 726 747 602</a></div><a class="text-link" href="${prefix}index.html#kontakt">Zobacz wszystkie możliwości kontaktu</a></aside>`;
 }
 
 const groups=topics.map(topic=>({...topic,posts:posts.filter(post=>topicOf(post)===topic.id)})).filter(group=>group.posts.length);

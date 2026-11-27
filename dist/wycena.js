@@ -20,6 +20,7 @@
   };
   const photos = [];
   let step = 0;
+  let mode = 'telefon';
 
   const OBIEKTY = {
     prywatny: [['mieszkanie', 'Mieszkanie', 'Blok, kamienica, apartament'], ['dom', 'Dom', 'Dom jednorodzinny, bliźniak, szeregowiec']],
@@ -199,24 +200,31 @@
   }
 
   function contactForm(lead) {
-    return `<form class="wz-form" id="wzForm" novalidate>
+    return `<form class="wz-form" id="wzForm" novalidate data-mode="${mode}">
       <p class="wz-form-lead">${esc(lead)}</p>
-      <div class="wz-grid">
-        <label class="wz-field"><span>Imię *</span><input name="imie" autocomplete="given-name" required maxlength="80"></label>
-        <label class="wz-field"><span>Telefon *</span><input name="telefon" type="tel" autocomplete="tel" inputmode="tel" required maxlength="30" placeholder="np. 600 100 200"></label>
-        <label class="wz-field"><span>Miejscowość *</span><input name="miejscowosc" autocomplete="address-level2" required maxlength="80" placeholder="np. Bielsko-Biała"></label>
-        <label class="wz-field"><span>E-mail</span><input name="email" type="email" autocomplete="email" maxlength="120"></label>
-        <label class="wz-field"><span>Kiedy chcesz zacząć?</span><select name="termin"><option>Jak najszybciej</option><option>W ciągu miesiąca</option><option>Za 1–3 miesiące</option><option>Termin elastyczny</option></select></label>
-        <label class="wz-field wz-full"><span>Dodatkowe informacje</span><textarea name="wiadomosc" rows="3" maxlength="3000" placeholder="Np. liczba pomieszczeń, pęknięcia, preferowane dni, szczegóły wnęk"></textarea></label>
+      <div class="wz-seg wz-mode" role="group" aria-label="Jak się skontaktować">
+        <button type="button" data-mode="telefon" aria-pressed="${mode === 'telefon'}">📞 Zadzwońcie do mnie</button>
+        <button type="button" data-mode="zdjecia" aria-pressed="${mode === 'zdjecia'}">📷 Wyślę zdjęcia do wyceny</button>
       </div>
-      <div class="wz-photos">
+      <p class="wz-mode-info" data-only="telefon">Zostaw numer — oddzwonimy w wybranej porze. Podaj e-mail, a od razu wyślemy Ci podsumowanie tej wyceny.</p>
+      <p class="wz-mode-info" data-only="zdjecia">Dołącz zdjęcia pomieszczeń — przygotujemy dokładniejszą wycenę. Podsumowanie wyślemy na Twój e-mail.</p>
+      <div class="wz-grid">
+        <label class="wz-field"><span>Imię *</span><input name="imie" autocomplete="given-name" maxlength="80"></label>
+        <label class="wz-field"><span>Telefon *</span><input name="telefon" type="tel" autocomplete="tel" inputmode="tel" maxlength="30" placeholder="np. 600 100 200"></label>
+        <label class="wz-field" data-only="telefon"><span>Kiedy najlepiej zadzwonić?</span><select name="kiedy"><option>Jak najszybciej</option><option>Rano (8–12)</option><option>Po południu (12–17)</option><option>Wieczorem (17–20)</option><option>W weekend</option></select></label>
+        <label class="wz-field"><span>E-mail <small>(wyślemy podsumowanie)</small></span><input name="email" type="email" autocomplete="email" maxlength="120"></label>
+        <label class="wz-field"><span>Miejscowość<b data-only="zdjecia"> *</b></span><input name="miejscowosc" autocomplete="address-level2" maxlength="80" placeholder="np. Bielsko-Biała"></label>
+        <label class="wz-field" data-only="zdjecia"><span>Kiedy chcesz zacząć?</span><select name="termin"><option>Jak najszybciej</option><option>W ciągu miesiąca</option><option>Za 1–3 miesiące</option><option>Termin elastyczny</option></select></label>
+        <label class="wz-field wz-full" data-only="zdjecia"><span>Dodatkowe informacje</span><textarea name="wiadomosc" rows="3" maxlength="3000" placeholder="Np. liczba pomieszczeń, pęknięcia, preferowane dni, szczegóły wnęk"></textarea></label>
+      </div>
+      <div class="wz-photos" data-only="zdjecia">
         <label class="wz-upload"><input type="file" id="wzFiles" accept="image/*" multiple><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h3l2-3h6l2 3h3v12H4Z"/><circle cx="12" cy="13" r="3.5"/></svg>Dodaj zdjęcia pomieszczeń</span><small>Do ${MAX_PHOTOS} zdjęć. Zmniejszymy je automatycznie.</small></label>
         <ul class="wz-thumbs" id="wzThumbs"></ul>
       </div>
       <label class="wz-hp" aria-hidden="true">Strona www<input name="strona_www" tabindex="-1" autocomplete="off"></label>
-      <label class="wz-check"><input type="checkbox" name="zgoda" required><span>Zgadzam się na kontakt w sprawie wyceny. Dane wykorzystamy wyłącznie do przygotowania oferty, a na prośbę wysłaną na bb.malowanie@gmail.com usuniemy je. *</span></label>
+      <label class="wz-check"><input type="checkbox" name="zgoda"><span>Zgadzam się na kontakt telefoniczny i e-mailowy w sprawie wyceny. Dane wykorzystamy wyłącznie do przygotowania oferty, a na prośbę wysłaną na kontakt@malowaniebielsko.pl usuniemy je. *</span></label>
       <p class="wz-error" id="wzError" role="alert" hidden></p>
-      <button class="wz-submit" type="submit">Wyślij zgłoszenie</button>
+      <button class="wz-submit" type="submit">${mode === 'telefon' ? 'Zamów rozmowę' : 'Wyślij zgłoszenie'}</button>
       <p class="wz-or">albo zadzwoń: <a href="tel:+48726747602">726 747 602</a></p>
     </form>`;
   }
@@ -322,36 +330,50 @@
       const [p] = photos.splice(+b.dataset.remove, 1);
       URL.revokeObjectURL(p.url); drawThumbs();
     });
+    form.querySelectorAll('[data-mode]').forEach(b => b.addEventListener('click', () => {
+      mode = b.dataset.mode; form.dataset.mode = mode;
+      form.querySelectorAll('[data-mode]').forEach(x => x.setAttribute('aria-pressed', x.dataset.mode === mode));
+      form.querySelector('.wz-submit').textContent = mode === 'telefon' ? 'Zamów rozmowę' : 'Wyślij zgłoszenie';
+      err.hidden = true;
+    }));
     form.addEventListener('submit', async e => {
       e.preventDefault();
       err.hidden = true;
-      const bad = [...form.querySelectorAll('[required]')].find(el => el.type === 'checkbox' ? !el.checked : !el.value.trim());
-      const phone = form.telefon.value.replace(/[^\d+]/g, '');
-      if (bad || phone.replace(/\D/g, '').length < 9) {
-        err.textContent = bad?.name === 'zgoda' ? 'Zaznacz zgodę na kontakt.' : 'Uzupełnij imię, poprawny numer telefonu i miejscowość.';
-        err.hidden = false; (bad || form.telefon).focus(); return;
-      }
+      const fail = (msg, el) => { err.textContent = msg; err.hidden = false; el?.focus(); };
+      if (!form.imie.value.trim()) return fail('Podaj imię.', form.imie);
+      if (form.telefon.value.replace(/\D/g, '').length < 9) return fail('Podaj poprawny numer telefonu.', form.telefon);
+      if (form.email.value.trim() && !/^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i.test(form.email.value.trim())) return fail('Sprawdź adres e-mail.', form.email);
+      if (mode === 'zdjecia' && !form.miejscowosc.value.trim()) return fail('Podaj miejscowość.', form.miejscowosc);
+      if (!form.zgoda.checked) return fail('Zaznacz zgodę na kontakt.', form.zgoda);
       const btn = form.querySelector('.wz-submit');
+      const label = btn.textContent;
       btn.disabled = true; btn.textContent = 'Wysyłam…';
       const fd = new FormData(form);
+      fd.set('rodzaj', mode);
+      if (mode === 'telefon') { fd.delete('termin'); fd.delete('wiadomosc'); } else fd.delete('kiedy');
       fd.set('podsumowanie', summary());
-      photos.forEach((p, i) => fd.append('zdjecia', p.file, `zdjecie-${i + 1}-${p.file.name}`));
+      if (anyPriced()) { const q = quote(); fd.set('wycena_json', JSON.stringify({ lines: q.lines, total: q.total, minimum: q.minimum, notes: q.notes, individual: q.individual })); }
+      if (mode === 'zdjecia') photos.forEach((p, i) => fd.append('zdjecia', p.file, `zdjecie-${i + 1}-${p.file.name}`));
       try {
         const res = await fetch(API, { method: 'POST', body: fd });
         const data = await res.json().catch(() => ({}));
         if (!res.ok || !data.ok) throw new Error(data.error || 'Błąd wysyłki');
-        track('wycena_wyslana', { uslugi: S.uslugi.join(','), klient: S.klient });
-        root.innerHTML = `<div class="wz-done"><span aria-hidden="true">✓</span><h2 class="wz-title" tabindex="-1">Dziękujemy, ${esc(form.imie.value.trim())}!</h2><p>Zgłoszenie dotarło. Oddzwonimy najszybciej, jak to możliwe — zwykle tego samego lub następnego dnia roboczego.</p><a class="wz-submit" href="tel:+48726747602">Pilne? Zadzwoń: 726 747 602</a></div>`;
+        track(mode === 'telefon' ? 'oddzwonienie_zamowione' : 'wycena_wyslana', { uslugi: S.uslugi.join(','), klient: S.klient });
+        const mail = form.email.value.trim();
+        const when = form.kiedy?.value;
+        root.innerHTML = `<div class="wz-done"><span aria-hidden="true">✓</span><h2 class="wz-title" tabindex="-1">Dziękujemy, ${esc(form.imie.value.trim())}!</h2>
+          <p>${mode === 'telefon' ? `Zadzwonimy na numer <strong>${esc(form.telefon.value.trim())}</strong>${when && when !== 'Jak najszybciej' ? ` — ${esc(when.toLowerCase())}` : ' najszybciej, jak to możliwe'}.` : 'Zgłoszenie ze zdjęciami dotarło. Przygotujemy wycenę i oddzwonimy — zwykle tego samego lub następnego dnia roboczego.'}</p>
+          ${mail && data.mailed ? `<p>Podsumowanie wyceny wysłaliśmy na <strong>${esc(mail)}</strong>. Sprawdź też folder Oferty lub Spam.</p>` : ''}
+          <a class="wz-submit" href="tel:+48726747602">Pilne? Zadzwoń: 726 747 602</a></div>`;
         root.querySelector('.wz-title').focus();
       } catch (ex) {
-        btn.disabled = false; btn.textContent = 'Wyślij zgłoszenie';
-        const body = encodeURIComponent(`Dzień dobry,\nproszę o wycenę.\n\n${summary()}\n\nImię: ${form.imie.value}\nTelefon: ${form.telefon.value}\nMiejscowość: ${form.miejscowosc.value}\n${form.wiadomosc.value}`);
-        err.innerHTML = `Nie udało się wysłać formularza. Zadzwoń: <a href="tel:+48726747602">726 747 602</a> albo <a href="mailto:bb.malowanie@gmail.com?subject=${encodeURIComponent('Wycena ze strony')}&body=${body}">wyślij e-mail z podsumowaniem</a> i dołącz zdjęcia.`;
+        btn.disabled = false; btn.textContent = label;
+        const body = encodeURIComponent(`Dzień dobry,\n${mode === 'telefon' ? 'proszę o telefon w sprawie wyceny.' : 'proszę o wycenę.'}\n\n${summary()}\n\nImię: ${form.imie.value}\nTelefon: ${form.telefon.value}\nMiejscowość: ${form.miejscowosc.value}\n${form.wiadomosc?.value || ''}`);
+        err.innerHTML = `Nie udało się wysłać formularza. Zadzwoń: <a href="tel:+48726747602">726 747 602</a> albo <a href="mailto:kontakt@malowaniebielsko.pl?subject=${encodeURIComponent('Wycena ze strony')}&body=${body}">wyślij e-mail z podsumowaniem</a>.`;
         err.hidden = false;
       }
     });
   }
-
   function track(event, params) {
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({ event, ...params });

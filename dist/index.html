@@ -23,6 +23,8 @@
   <link rel="stylesheet" href="appearance.css?v=9">
   <link rel="stylesheet" href="layout-refinements.css?v=9">
   <script src="app.js?v=9" defer></script>
+  <link rel="stylesheet" href="wycena.css?v=12">
+  <script src="oddzwon.js?v=12" defer></script>
   
   <!-- Dodatkowy styl dla układu dwukolumnowego z pionowym wideo -->
   <style>
@@ -71,7 +73,7 @@
       color: var(--about-accent, #1C5B6B);
     }
   </style>
-  <script id="organizationData" type="application/ld+json">{"@context":"https://schema.org","@type":"HousePainter","@id":"https://malowaniebielsko.pl/#firma","name":"Malowanie Bielsko","url":"https://malowaniebielsko.pl/","description":"Malowanie wnętrz, gładzie i szpachlowanie Q1–Q4, zabudowy G-K oraz prace wykończeniowe w Bielsku-Białej i okolicach.","email":"bb.malowanie@gmail.com","telephone":"+48726747602","logo":{"@type":"ImageObject","url":"https://malowaniebielsko.pl/assets/logo-transparent.png"},"image":"https://malowaniebielsko.pl/assets/logo-transparent.png","address":{"@type":"PostalAddress","addressLocality":"Bielsko-Biała","addressRegion":"śląskie","addressCountry":"PL"},"areaServed":[{"@type":"City","name":"Bielsko-Biała"},{"@type":"AdministrativeArea","name":"powiat bielski"}],"knowsAbout":["malowanie ścian i sufitów","malowanie natryskowe","gładzie gipsowe","szpachlowanie Q1–Q4","zabudowy G-K","sufity podwieszane"],"sameAs":["https://www.instagram.com/malowanie_bielsko/","https://www.facebook.com/profile.php?id=61594850486109"]}</script>
+  <script id="organizationData" type="application/ld+json">{"@context":"https://schema.org","@type":"HousePainter","@id":"https://malowaniebielsko.pl/#firma","name":"Malowanie Bielsko","url":"https://malowaniebielsko.pl/","description":"Malowanie wnętrz, gładzie i szpachlowanie Q1–Q4, zabudowy G-K oraz prace wykończeniowe w Bielsku-Białej i okolicach.","email":"kontakt@malowaniebielsko.pl","telephone":"+48726747602","logo":{"@type":"ImageObject","url":"https://malowaniebielsko.pl/assets/logo-transparent.png"},"image":"https://malowaniebielsko.pl/assets/logo-transparent.png","address":{"@type":"PostalAddress","addressLocality":"Bielsko-Biała","addressRegion":"śląskie","addressCountry":"PL"},"areaServed":[{"@type":"City","name":"Bielsko-Biała"},{"@type":"AdministrativeArea","name":"powiat bielski"}],"knowsAbout":["malowanie ścian i sufitów","malowanie natryskowe","gładzie gipsowe","szpachlowanie Q1–Q4","zabudowy G-K","sufity podwieszane"],"sameAs":["https://www.instagram.com/malowanie_bielsko/","https://www.facebook.com/profile.php?id=61594850486109"]}</script>
 </head>
 <body>
   <a href="#main" class="skip-link">Przejdź do treści</a>
@@ -211,7 +213,18 @@
       <p class="contact-lead">Masz pomysł, gotowy projekt albo dopiero planujesz zmiany? Wybierz wygodny sposób kontaktu i poproś o bezpłatną wycenę.</p>
       <div class="contact-options">
         <article class="contact-option"><span class="contact-option-label">Porozmawiajmy</span><h3>Zadzwoń i opowiedz o planach.</h3><p>Omówimy zakres prac i ustalimy, jak przygotować wycenę Twojego wnętrza.</p><a class="contact-number" href="tel:+48726747602">726 747 602</a><a class="contact-action" href="tel:+48726747602">Zadzwoń po bezpłatną wycenę</a></article>
-        <article class="contact-option contact-option-email"><span class="contact-option-label">Napisz lub prześlij projekt</span><h3>Twój projekt może zacząć się od maila.</h3><p>Opisz zakres prac, podaj metraż i planowany termin. Do wiadomości możesz dołączyć projekt PDF, rzuty lub zdjęcia wnętrza.</p><a class="contact-email" href="mailto:bb.malowanie@gmail.com">bb.malowanie@gmail.com</a><a class="contact-action" href="mailto:bb.malowanie@gmail.com?subject=Projekt%20do%20wyceny&amp;body=Dzie%C5%84%20dobry%2C%0D%0Aprosz%C4%99%20o%20bezp%C5%82atn%C4%85%20wycen%C4%99%20prac.%0D%0A%0D%0AMiejscowo%C5%9B%C4%87%3A%20%0D%0AZakres%20prac%3A%20%0D%0APowierzchnia%3A%20%0D%0APlanowany%20termin%3A%20%0D%0A%0D%0AW%20za%C5%82%C4%85czeniu%20przesy%C5%82am%20projekt%20lub%20zdj%C4%99cia.%0D%0A">Napisz i dołącz projekt</a><span class="contact-email-note">Przycisk otworzy Twoją pocztę. Pliki dołączysz do wiadomości.</span></article>
+        <article class="contact-option contact-option-email"><span class="contact-option-label">Napisz lub prześlij projekt</span><h3>Twój projekt może zacząć się od maila.</h3><p>Opisz zakres prac, podaj metraż i planowany termin. Do wiadomości możesz dołączyć projekt PDF, rzuty lub zdjęcia wnętrza.</p><a class="contact-email" href="mailto:kontakt@malowaniebielsko.pl">kontakt@malowaniebielsko.pl</a><a class="contact-action" href="mailto:kontakt@malowaniebielsko.pl?subject=Projekt%20do%20wyceny&amp;body=Dzie%C5%84%20dobry%2C%0D%0Aprosz%C4%99%20o%20bezp%C5%82atn%C4%85%20wycen%C4%99%20prac.%0D%0A%0D%0AMiejscowo%C5%9B%C4%87%3A%20%0D%0AZakres%20prac%3A%20%0D%0APowierzchnia%3A%20%0D%0APlanowany%20termin%3A%20%0D%0A%0D%0AW%20za%C5%82%C4%85czeniu%20przesy%C5%82am%20projekt%20lub%20zdj%C4%99cia.%0D%0A">Napisz i dołącz projekt</a><span class="contact-email-note">Przycisk otworzy Twoją pocztę. Pliki dołączysz do wiadomości.</span></article>
+        <article class="contact-option contact-option-email callback-card" id="oddzwonimy"><span class="contact-option-label">Oddzwonimy</span><h3>Nie możesz teraz rozmawiać? Zostaw numer.</h3><p>Zadzwonimy w wybranej porze, omówimy zakres prac i umówimy bezpłatne oględziny. Wolisz najpierw poznać cenę? <a href="cennik/#kalkulator">Policz ją w kalkulatorze</a>.</p>
+          <form data-callback novalidate>
+            <label>Imię<input name="imie" autocomplete="given-name" maxlength="80"></label>
+            <label>Telefon<input name="telefon" type="tel" inputmode="tel" autocomplete="tel" maxlength="30" placeholder="np. 600 100 200"></label>
+            <label>Kiedy zadzwonić?<select name="kiedy"><option>Jak najszybciej</option><option>Rano (8–12)</option><option>Po południu (12–17)</option><option>Wieczorem (17–20)</option><option>W weekend</option></select></label>
+            <label class="wz-hp" aria-hidden="true">Strona www<input name="strona_www" tabindex="-1" autocomplete="off"></label>
+            <label class="cb-consent"><input type="checkbox" name="zgoda"><span>Zgadzam się na kontakt telefoniczny w sprawie wyceny.</span></label>
+            <button type="submit">Zamów rozmowę</button>
+            <p class="cb-msg" role="status" hidden></p>
+          </form>
+        </article>
       </div>
       <a class="back-top contact-return" href="#start">Wróć na początek</a>
     </section>
@@ -249,7 +262,7 @@
     </fieldset>
     <div class="menu-footer">
       <div class="menu-email">
-        <a href="mailto:bb.malowanie@gmail.com">bb.malowanie@gmail.com</a>
+        <a href="mailto:kontakt@malowaniebielsko.pl">kontakt@malowaniebielsko.pl</a>
       </div>
       <div class="menu-socials">
         <a href="https://www.instagram.com/malowanie_bielsko/" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">Instagram</a>

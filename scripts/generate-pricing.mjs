@@ -87,7 +87,7 @@ ${header}
     </section>
     <section class="calc-section" aria-label="Kalkulator wyceny">
       <div class="calc-shell" id="kalkulator">
-        <noscript><p>Kalkulator wymaga włączonego JavaScriptu. Zadzwoń: <a href="tel:+48726747602">726 747 602</a> lub napisz: <a href="mailto:bb.malowanie@gmail.com">bb.malowanie@gmail.com</a>.</p></noscript>
+        <noscript><p>Kalkulator wymaga włączonego JavaScriptu. Zadzwoń: <a href="tel:+48726747602">726 747 602</a> lub napisz: <a href="mailto:kontakt@malowaniebielsko.pl">kontakt@malowaniebielsko.pl</a>.</p></noscript>
       </div>
       <script id="stawki" type="application/json">${ratesJson}</script>
     </section>

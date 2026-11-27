@@ -1,0 +1,19 @@
+// Konfiguracja Workera "malowanie-bielsko" (Cloudflare buduje go z GitHuba: npx wrangler deploy).
+// Strona = pliki z dist/. Worker uruchamia się tylko dla /api/* (formularze wyceny i oddzwonienia).
+// Sekret RESEND_API_KEY ustawiony w panelu Cloudflare: Worker → Settings → Variables and Secrets.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "malowanie-bielsko",
+  "main": "worker/wycena-worker.js",
+  "compatibility_date": "2026-11-20",
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "run_worker_first": ["/api/*"]
+  },
+  "vars": {
+    "OWNER": "kontakt@malowaniebielsko.pl",
+    "FROM": "Malowanie Bielsko <kontakt@malowaniebielsko.pl>"
+  },
+  "observability": { "enabled": true }
+}

@@ -146,7 +146,7 @@ i istniejące wartości slug.
 
 KONTAKT
 Telefon: 726 747 602 (tel:+48726747602).
-E-mail: bb.malowanie@gmail.com.
+E-mail: kontakt@malowaniebielsko.pl.
 Przyciski e-mail korzystają z mailto: i otwierają skonfigurowaną pocztę użytkownika.
 Odwiedzający sam dołącza projekt PDF, zdjęcia lub inne pliki i wysyła wiadomość.
 Strona nie zawiera formularza wysyłkowego ani funkcji przechowywania załączników.

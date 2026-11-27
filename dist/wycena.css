@@ -128,3 +128,27 @@
   .wz-grid2, .wz-grid3 { grid-template-columns: 1fr; }
   .wz-lines td { white-space: normal; }
 }
+/* Tryb kontaktu: telefon / zdjęcia */
+.wz-mode { margin-bottom: 10px; }
+.wz-mode button { font-weight: 600; }
+.wz-mode-info { margin: 0 0 16px; font-size: 15px; line-height: 1.5; }
+.wz-form[data-mode="telefon"] [data-only="zdjecia"], .wz-form[data-mode="zdjecia"] [data-only="telefon"] { display: none !important; }
+.wz-field small { font-weight: 400; opacity: .75; }
+
+/* Szybki formularz oddzwonienia (strona główna) */
+.callback-card form { display: grid; gap: 10px; margin-top: 14px; }
+.callback-card input, .callback-card select { width: 100%; min-height: 48px; padding: 12px 14px; border-radius: 10px; box-sizing: border-box; border: 1px solid var(--appearance-border); background: var(--paper, #fff); color: inherit; font: inherit; font-size: 16px; }
+:root[data-theme="dark"] .callback-card input, :root[data-theme="dark"] .callback-card select { background: var(--dark-raised, #1b414e); }
+.callback-card label { display: grid; gap: 5px; font-size: 14px; }
+.callback-card .cb-consent { display: flex; gap: 10px; align-items: flex-start; font-size: 13px; line-height: 1.45; }
+.callback-card .cb-consent input { width: 20px; height: 20px; min-height: 0; flex: 0 0 auto; margin: 0; }
+.callback-card button[type="submit"] { min-height: 50px; border: 0; border-radius: 10px; background: var(--appearance-selected); color: var(--appearance-selected-text); font: inherit; font-size: 16px; font-weight: 600; cursor: pointer; }
+.callback-card .cb-msg { font-size: 14.5px; line-height: 1.5; margin: 4px 0 0; }
+.callback-card .wz-hp { position: absolute; left: -9999px; }.callback-card { grid-column: 1 / -1; }
+.callback-card h3 { max-width: none; }
+.callback-card > p a { color: inherit; font-weight: 600; text-underline-offset: 3px; }
+@media (min-width: 900px) {
+  .callback-card form { grid-template-columns: 1fr 1fr 1fr auto; align-items: end; }
+  .callback-card .cb-consent, .callback-card .cb-msg { grid-column: 1 / -1; }
+  .callback-card button[type="submit"] { grid-row: 1; grid-column: 4; padding: 0 26px; }
+}
