@@ -115,7 +115,21 @@
             <source src="assets/video/malowanie-natryskowe-hero.mp4" type="video/mp4">
           </video>
           <figcaption>Na żywo z budowy: malowanie natryskowe ścian</figcaption>
-          <script>if (matchMedia('(prefers-reduced-motion: reduce)').matches) { var v = document.currentScript.parentNode.querySelector('video'); v.removeAttribute('autoplay'); v.pause(); }</script>
+          <script>
+          (function () {
+            var v = document.currentScript.parentNode.querySelector('video');
+            // Telefony bywają kapryśne z autoodtwarzaniem: wymuś wyciszenie, startuj ręcznie,
+            // a gdy przeglądarka zablokuje (np. tryb oszczędzania baterii) — ruszaj przy pierwszym dotyku.
+            v.muted = true; v.defaultMuted = true; v.setAttribute('muted', '');
+            var start = function () { var p = v.play(); if (p && p.catch) p.catch(function () {}); };
+            var onGesture = function () { start(); if (!v.paused) ['touchend', 'click', 'keydown'].forEach(function (e) { removeEventListener(e, onGesture, true); }); };
+            ['touchend', 'click', 'keydown'].forEach(function (e) { addEventListener(e, onGesture, { capture: true, passive: true }); });
+            document.addEventListener('visibilitychange', function () { if (!document.hidden) start(); });
+            v.addEventListener('canplay', start, { once: true });
+            if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { if (es[0].isIntersecting) start(); }).observe(v);
+            start();
+          })();
+          </script>
         </figure>
       </div>
       <p class="tiles-title eyebrow" id="nasze-uslugi">Nasze usługi — wybierz i sprawdź szczegóły</p>
