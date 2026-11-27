@@ -133,3 +133,5 @@
   .lp-calc strong { font-size: 20px; }
 }
 @media (max-width: 760px) { .site-footer .footer-tagline { max-width: none; } }
+
+.estimate-calc-link { color: inherit; font-weight: 600; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--teal); }

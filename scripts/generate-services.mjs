@@ -20,7 +20,8 @@ const header = home.match(/  <header[\s\S]*?<\/header>/)[0]
   .replaceAll('src="assets/', 'src="../../assets/');
 const menu = home.match(/  <dialog class="menu-dialog"[\s\S]*?<\/dialog>/)[0]
   .replaceAll('href="#', 'href="../../index.html#')
-  .replaceAll('href="cennik/"', 'href="../../cennik/"');
+  .replaceAll('href="cennik/"', 'href="../../cennik/"')
+  .replaceAll('src="assets/', 'src="../../assets/');
 const footer = home.match(/  <footer class="site-footer"[\s\S]*?<\/footer>/)[0]
   .replaceAll('href="#', 'href="../../index.html#').replaceAll('href="cennik/', 'href="../../cennik/');
 const PHOTOS = {
@@ -97,7 +98,7 @@ for (const service of services) {
   <link rel="stylesheet" href="../../brand-theme.css">
   <link rel="stylesheet" href="../../blog-contact.css">
   <link rel="stylesheet" href="../../appearance.css?v=9">
-  <link rel="stylesheet" href="../../layout-refinements.css?v=13">
+  <link rel="stylesheet" href="../../layout-refinements.css?v=16">
   <script src="../../app.js?v=9" defer></script>
   <script type="application/ld+json">${schema}</script>
 </head>
